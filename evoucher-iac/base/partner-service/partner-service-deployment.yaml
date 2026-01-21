@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: partner-service
+  namespace: production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: partner-service
+  template:
+    metadata:
+      labels:
+        app: partner-service
+    spec:
+      containers:
+        - name: partner-service
+          image: registry.git.altimedia.vn/evoucher/partner-service:main
+          ports:
+            - containerPort: 8090 # Replace this with the port the application listens on
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: partner-service-properties
+      imagePullSecrets:
+        - name: regcred

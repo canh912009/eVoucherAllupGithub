@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sms-callback-receive
+  namespace: production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sms-callback-receive
+  template:
+    metadata:
+      labels:
+        app: sms-callback-receive
+    spec:
+      containers:
+        - name: sms-callback-receive
+          image: registry.git.altimedia.vn/evoucher/sms-callback-receive:main
+          ports:
+            - containerPort: 9999 # Replace this with the port the application listens on
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: sms-callback-receive-properties
+      imagePullSecrets:
+        - name: regcred
+

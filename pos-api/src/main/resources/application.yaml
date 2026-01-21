@@ -1,0 +1,16 @@
+
+location:
+  log: /evoucher/logs/pos_api
+server:
+  port: 8088
+contact: 1234-5678
+base_webpos: http://192.168.0.125:1992
+pos_ver_type: P101
+
+component:
+  service-be:
+    url: http://192.168.0.125:8083/evoucher
+
+spring:
+  jackson:
+    time-zone: Asia/Ho_Chi_Minh

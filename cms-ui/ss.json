@@ -1,0 +1,35 @@
+{
+  "id": 533,
+  "type": null,
+  "voucherUUID": "029e7278-f024-44e8-9189-25dbfe6847a1",
+  "toVoucherUUID": "4b144e3a-5f77-43c0-9d70-709ed72fd5bd",
+  "transferDate": "2025-05-14 14:30:07",
+  "targetNumber": "0385150880",
+  "targetName": "1",
+  "accessLink": "https://sec.vietteltv.com.vn/1SV8",
+  "pinStatus": "USED",
+  "systemType": "XPAY",
+  "balance": 0.0,
+  "initAmount": 9999.0,
+  "pin": null,
+  "transferStatusCode": "RECPTED"
+}
+
+
+
+{
+  "id": 533,
+  "type": null,
+  "voucherUUID": "029e7278-f024-44e8-9189-25dbfe6847a1",
+  "toVoucherUUID": "4b144e3a-5f77-43c0-9d70-709ed72fd5bd",
+  "transferDate": "2025-05-14 14:30:07",
+  "targetNumber": "0385150880",
+  "targetName": "1",
+  "accessLink": "https://sec.vietteltv.com.vn/1SV8",
+  "pinStatus": "USED",
+  "system": "XPAY",
+  "balance": 0.0,
+  "initAmount": 9999.0,
+  "pin": null,
+  "transferStatusCode": "RECPTED"
+}

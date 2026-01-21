@@ -1,0 +1,663 @@
+2023/06/12 09:06:24 [TRACE] 1S7f32pcuiaCqpwRpwSFJ /link/get 컨텍스트저장 UKey:''
+2023/06/12 09:06:24 [TRACE] 9zJcjyCkOzahznJvNjwgQi /link/get 컨텍스트저장 UKey:''
+2023/06/12 09:25:30 [TRACE] gHPSJL8OPW0196uBRIuJM6 ----------------------------------------------------
+2023/06/12 09:25:30 [TRACE] gHPSJL8OPW0196uBRIuJM6 /AudWc 요청토큰: c73af2b2-7071-4e4d-ab33-da6a9613d1f8
+2023/06/12 09:25:30 [TRACE] gHPSJL8OPW0196uBRIuJM6 2024-06-07 00:00:00 +0700 +07
+2023/06/12 09:25:30 [TRACE] gHPSJL8OPW0196uBRIuJM6 ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 09:25:30 [TRACE] gHPSJL8OPW0196uBRIuJM6 AudWc CheckExists()
+2023/06/12 09:25:30 [TRACE] gHPSJL8OPW0196uBRIuJM6 AudWc CheckSecureLink()
+2023/06/12 09:25:30 [TRACE] gHPSJL8OPW0196uBRIuJM6 AudWc CheckCount()
+2023/06/12 09:25:30 [TRACE] gHPSJL8OPW0196uBRIuJM6 AudWc CheckExpire()
+2023/06/12 09:25:30 [TRACE] gHPSJL8OPW0196uBRIuJM6 AudWc CheckAuth()
+2023/06/12 09:25:30 [TRACE] gHPSJL8OPW0196uBRIuJM6 AudWc ServeLink()
+2023/06/12 09:25:30 [TRACE] gHPSJL8OPW0196uBRIuJM6 AudWc Redirect()
+2023/06/12 09:25:30 [TRACE] gHPSJL8OPW0196uBRIuJM6 AudWc GET 리다이렉트
+2023/06/12 09:25:30 [TRACE] gHPSJL8OPW0196uBRIuJM6 /AudWc 컨텍스트저장 UKey:'AudWc'
+2023/06/12 09:25:31 [TRACE] a2rrbngoT453hN8SNZglFp /link/get 컨텍스트저장 UKey:''
+2023/06/12 11:38:11 [INFO] Random Seed Initialized
+2023/06/12 11:38:11 [INFO] Log Level TRACE
+2023/06/12 11:38:11 [INFO] Log Path /root/urlybud/urlybud/log
+2023/06/12 11:38:11 [INFO] Process ID 2777
+2023/06/12 11:38:11 [INFO] Build Date 2023-05-30_11:08:25
+2023/06/12 11:38:11 [INFO] Build Version v1.0.0-27-g961289c
+2023/06/12 11:38:11 [INFO] Build Revision 961289c9f6e0edb303a826651b112874aef72fe7
+2023/06/12 11:38:11 [INFO] License Info
+2023/06/12 11:38:11 [INFO] [31m	2024-06-07 ub.urlybud.aqua.castis.io[0m
+2023/06/12 11:38:11 [INFO] [31m	2099-12-31 192.168.0.125[0m
+2023/06/12 11:38:11 [INFO] [31m	2123-05-19 localhost[0m
+2023/06/12 11:38:11 [INFO] Database Connected
+2023/06/12 11:38:11 [INFO] Database Connection Info Hosts:[localhost:27017]
+2023/06/12 11:38:11 [INFO] Database Connection Info HTTPClient:&{0xed9600 <nil> <nil> 0s}
+2023/06/12 11:38:11 [INFO] Database Index Created log:RequestTime_1 unique:false
+2023/06/12 11:38:11 [INFO] Database Index Created log:ReqID_1 unique:false
+2023/06/12 11:38:11 [INFO] Database Index Created log:Path_1 unique:false
+2023/06/12 11:38:11 [INFO] Database Index Created log:Dir_1 unique:false
+2023/06/12 11:38:11 [INFO] Database Index Created link:Seq_1 unique:false
+2023/06/12 11:38:11 [INFO] Database Index Created link:Bid_1 unique:false
+2023/06/12 11:38:11 [INFO] Database Index Created link:Cid_1 unique:false
+2023/06/12 11:38:11 [INFO] Database Index Created link:CSeq_1 unique:false
+2023/06/12 11:38:11 [INFO] Database Index Created link:Gid_1 unique:false
+2023/06/12 11:38:11 [INFO] Database Index Created link:Uid_1 unique:false
+2023/06/12 11:38:11 [INFO] Database Index Created link:Idt_1 unique:false
+2023/06/12 11:38:11 [INFO] Database Index Created link:Status_1 unique:false
+2023/06/12 11:38:11 [INFO] Database Index Created link:Parent_1 unique:false
+2023/06/12 11:38:11 [INFO] Database Index Created evtlog:Idt_1 unique:false
+2023/06/12 11:38:11 [INFO] API List
+2023/06/12 11:38:11 [INFO] 	/event/list         : event.List
+2023/06/12 11:38:11 [INFO] 	/link/claim         : link.Claim
+2023/06/12 11:38:11 [INFO] 	/link/get           : link.Get
+2023/06/12 11:38:11 [INFO] 	/link/list          : link.List
+2023/06/12 11:38:11 [INFO] 	/link/set           : link.Set
+2023/06/12 11:38:11 [INFO] 	/link/tumbler/add   : link.TAdd
+2023/06/12 11:38:11 [INFO] 	/link/tumbler/set   : link.TSet
+2023/06/12 11:38:11 [INFO] Rule List
+2023/06/12 11:38:11 [INFO] 	atype               : link.AType
+2023/06/12 11:38:11 [INFO] 	max                 : validator.Max
+2023/06/12 11:38:11 [INFO] 	min                 : validator.Min
+2023/06/12 11:38:11 [INFO] 	url                 : validator.Url
+2023/06/12 11:38:11 [INFO] Auth Type List
+2023/06/12 11:38:11 [INFO] 	AuthBoxPassword
+2023/06/12 11:38:11 [INFO] 	AuthPassword
+2023/06/12 11:38:11 App Started. :80 main.muxB  
+2023/06/12 11:38:11 App Started. :2000 main.muxA  
+2023/06/12 11:48:27 [TRACE] 3gwbgSoBJgW5CnF2ybs7Tf ----------------------------------------------------
+2023/06/12 11:48:27 [TRACE] 3gwbgSoBJgW5CnF2ybs7Tf /AudWc 토큰생성: 9fcb9dbb-f7c7-48b7-bdd8-034ad2522ff0
+2023/06/12 11:48:27 [TRACE] 3gwbgSoBJgW5CnF2ybs7Tf 2024-06-07 00:00:00 +0700 +07
+2023/06/12 11:48:27 [TRACE] 3gwbgSoBJgW5CnF2ybs7Tf ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 11:48:27 [TRACE] 3gwbgSoBJgW5CnF2ybs7Tf AudWc CheckExists()
+2023/06/12 11:48:27 [TRACE] 3gwbgSoBJgW5CnF2ybs7Tf AudWc CheckSecureLink()
+2023/06/12 11:48:27 [TRACE] 3gwbgSoBJgW5CnF2ybs7Tf AudWc CheckCount()
+2023/06/12 11:48:27 [TRACE] 3gwbgSoBJgW5CnF2ybs7Tf AudWc CheckExpire()
+2023/06/12 11:48:27 [TRACE] 3gwbgSoBJgW5CnF2ybs7Tf AudWc CheckAuth()
+2023/06/12 11:48:27 [TRACE] 3gwbgSoBJgW5CnF2ybs7Tf AudWc ServeLink()
+2023/06/12 11:48:27 [TRACE] 3gwbgSoBJgW5CnF2ybs7Tf AudWc Redirect()
+2023/06/12 11:48:27 [TRACE] 3gwbgSoBJgW5CnF2ybs7Tf AudWc GET 리다이렉트
+2023/06/12 11:48:27 [TRACE] 3gwbgSoBJgW5CnF2ybs7Tf /AudWc 컨텍스트저장 UKey:'AudWc'
+2023/06/12 11:48:31 [TRACE] 3L1SlelDLxra85EPnJZdkX 클라이언트 map[ClientName:evoucher Idt:1685413263730 _id:c4e0f406-4bb1-4a74-8e46-83fafdda3776]
+2023/06/12 11:48:31 [TRACE] 3L1SlelDLxra85EPnJZdkX /link/get 컨텍스트저장 UKey:''
+2023/06/12 11:50:47 [TRACE] 2gCmlTHzmTgjCQNTZSrvhB ----------------------------------------------------
+2023/06/12 11:50:47 [TRACE] 2gCmlTHzmTgjCQNTZSrvhB /AudWc 토큰생성: 51b428c8-2a57-487c-9ad3-216a595b7958
+2023/06/12 11:50:47 [TRACE] 2gCmlTHzmTgjCQNTZSrvhB 2024-06-07 00:00:00 +0700 +07
+2023/06/12 11:50:47 [TRACE] 2gCmlTHzmTgjCQNTZSrvhB ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 11:50:47 [TRACE] 2gCmlTHzmTgjCQNTZSrvhB AudWc CheckExists()
+2023/06/12 11:50:47 [TRACE] 2gCmlTHzmTgjCQNTZSrvhB AudWc CheckSecureLink()
+2023/06/12 11:50:47 [TRACE] 2gCmlTHzmTgjCQNTZSrvhB AudWc CheckCount()
+2023/06/12 11:50:47 [TRACE] 2gCmlTHzmTgjCQNTZSrvhB AudWc CheckExpire()
+2023/06/12 11:50:47 [TRACE] 2gCmlTHzmTgjCQNTZSrvhB AudWc CheckAuth()
+2023/06/12 11:50:47 [TRACE] 2gCmlTHzmTgjCQNTZSrvhB AudWc ServeLink()
+2023/06/12 11:50:47 [TRACE] 2gCmlTHzmTgjCQNTZSrvhB AudWc Redirect()
+2023/06/12 11:50:47 [TRACE] 2gCmlTHzmTgjCQNTZSrvhB AudWc GET 리다이렉트
+2023/06/12 11:50:47 [TRACE] 2gCmlTHzmTgjCQNTZSrvhB /AudWc 컨텍스트저장 UKey:'AudWc'
+2023/06/12 11:50:47 [TRACE] aZ3HjBbUaAd7oQZoSAfiIu /link/get 컨텍스트저장 UKey:''
+2023/06/12 11:59:54 [TRACE] 8kjxkHKO1gPiDMbA6NoTWL /link/get 컨텍스트저장 UKey:''
+2023/06/12 11:59:54 [TRACE] jY70ss55gTwgIw1ARZjRNA /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:00:47 [TRACE] fViAc2CiFyx9ZF5K0ciLeX /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:00:47 [TRACE] gNdljg4q4HAiNsw7hdysPs /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:01:18 [TRACE] 56MXhtHeKsw7gkPpJMogSW /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:01:18 [TRACE] bhQV24fp7xj4Y8RywAD378 /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:02:04 [TRACE] 9zuD7YlMIvz7wqLup2xS6K /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:02:04 [TRACE] kxFMqyb7yl1jX21Afgjbpt /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:02:20 [TRACE] bnjauX2bcER5GaCC1EXLTr /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:03:38 [TRACE] 40OTStJWpvhaFuyIJyCgjL /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:03:38 [TRACE] jxsJQy5VVFEfHzTHxi1csI /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:03:40 [TRACE] c81p4kpeOPbfK0zIedIVrT /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:03:40 [TRACE] apcMupY20ak806mzIcMslT /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:03:43 [TRACE] 9n39kNJKot3gBHZ5g5IrT7 /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:03:43 [TRACE] gEpDrV7f0lXh1fnRb969e2 /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:03:52 [TRACE] cOofkzQIhcPeE23yhnbneI /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:03:52 [TRACE] iGcY5wYEJgLlfLbU4qe2Yr /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:04:05 [TRACE] 7yNLaoqKLq9dE0mKQXJzdK /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:04:05 [TRACE] fUT1ikGTvwieZ072nA1NRq /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:04:53 [TRACE] iEyzflR3as74GM0eNH26EQ /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:04:53 [TRACE] gyZMPADFeYv1HJriJhROX9 /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:07:23 [TRACE] lJlaS0wYBzpcBJq2MkfKvN /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:07:23 [TRACE] hzfxyAXymzjhZ5Uvxd51aD /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:07:45 [TRACE] 6zPIqtayNUc6Dg5jC24ypV /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:07:45 [TRACE] 6hO4XWsNGYz83juxFZYUXR /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:08:33 [TRACE] 7Cs407S7uC6lXqaqEj9T0d /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:08:33 [TRACE] eVxKHhCxPEe5paljeaQG7j /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:08:34 [TRACE] 5pvIt8UUGFxgkfBQYGWTrJ /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:08:34 [TRACE] 9mYSS0DzAaV4ghFZCPxZBB /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:08:35 [TRACE] cfBnQxPExC56D8JEIdo8sL /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:08:36 [TRACE] 3ju9rY2qo8Gge7tfVWz6WT /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:08:36 [TRACE] 5843sm5OOCteEOEES02hLv /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:08:37 [TRACE] 8eJHiYls2q7fjT8B7tLCgk /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:08:37 [TRACE] 1SZR22gAZIjgxxIj8BoRxE /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:09:50 [TRACE] hCrwHJBX1aMaBQryYOkb3P /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:09:50 [TRACE] ctDnl4YDdN5itQP3ckMk6T /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:09:50 [TRACE] 8FDX8gHGBmv3sjuUlpd259 /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:09:50 [TRACE] hPnIoesWtoKjcSR8G0A3IE /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:10:01 [TRACE] ccQULeDa6ah1DeLjKvWEoU /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:10:01 [TRACE] btvIcduKkSc1VUkinNTtRC /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:10:02 [TRACE] dKhRL4n3iCGf2c1ZfX2YWW /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:10:02 [TRACE] 49CWYFd7CkBeKR5MPzfQjo /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:10:10 [TRACE] kWoYdrnLZdPj3LJQ230ZVR /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:10:10 [TRACE] 2pRFgkHqYSIeH5BzL6e6Er /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:10:15 [TRACE] 56Edspnpef4BaSIyPsba6 /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:10:15 [TRACE] hGk6TChWllP4MTdapp5Ss5 /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:10:44 [TRACE] cBIJOOLeufO9KbIN6kVwCM /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:10:44 [TRACE] i51gvdekzuAddXz0pWnDKM /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:10:45 [TRACE] 1AV0EVCNiN6hsvhg0mGqVt /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:10:52 [TRACE] d2YAfFPrn794UcJM0lDwYB /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:10:52 [TRACE] 9BN03K4P8qO1EcpkRw7i9o /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:11:34 [TRACE] cmkQ1W3Gk2n29ml10eTeEP /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:11:44 [TRACE] 9bYjoxgS0PZ5404oqUzKaf /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:12:19 [TRACE] 3OibbVZC3CLkQ38oxsAwSb /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:15:35 [TRACE] 63htUsc5BgGfdMDrtaRQqM /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:15:35 [TRACE] 88vQtEK8jKl1iJAZRVu5G5 /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:15:55 [TRACE] cV7v5OyBaFOiqFEKrbPUeK /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:15:55 [TRACE] 4hIFUvUwrXTiY7RIvBJf6r /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:16:16 [TRACE] bA3Z0aeeju794cIphCd4tq /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:16:16 [TRACE] 97vLDvWPG8Ij95ly4MVuqX /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:16:18 [TRACE] hdRb5pim1QteWYcFGkFApY /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:16:18 [TRACE] kJt0XM16QTIgeETYCsm2x1 /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:17:47 [TRACE] e9w4UzsECeVfGmW0yXQAMB /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:17:47 [TRACE] jecN52BOxnNhatUnpS1uPo /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:17:50 [TRACE] kP7E29sEboL9jNI1a1RDZI /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:17:50 [TRACE] 2lzlJ0lilc71DY0KN0vLaH /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:17:57 [TRACE] d2AjU4jZEdy8a8jvoSspWn /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:17:57 [TRACE] gyia5tztWVcc616k7KoFvp /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:18:09 [TRACE] 6hAQHOyOxlglrZkmcjb1tZ /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:18:09 [TRACE] dUPPypmASADfR4DMilpdlR /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:18:17 [TRACE] 9AQXLD2dl0Rcek3grFySR8 /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:18:17 [TRACE] fs3c2ti5zeJff5hVXh7PBe /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:18:24 [TRACE] 2egoufQ72qI2BR8Sy6FTwd /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:18:24 [TRACE] 7OvKLuZQuROadqBLENRqzr /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:20:58 [TRACE] gee7GIwkdMkjh1LldIJquk /link/get 컨텍스트저장 UKey:''
+2023/06/12 12:20:58 [TRACE] 96iNzDP7IgOeheuSv6sWyQ /link/get 컨텍스트저장 UKey:''
+2023/06/12 13:32:57 [TRACE] haNgfGOgKft9LTrn87diYq /link/get 컨텍스트저장 UKey:''
+2023/06/12 13:32:57 [TRACE] 7KDa88wyuUEgwuhiK7eYzw /link/get 컨텍스트저장 UKey:''
+2023/06/12 13:37:39 [TRACE] 477z1fE3tCP59rkouLHcoF /link/get 컨텍스트저장 UKey:''
+2023/06/12 13:37:39 [TRACE] 13fsLbcTEAfii3FUyn18m1 /link/get 컨텍스트저장 UKey:''
+2023/06/12 13:42:16 [TRACE] jlgClD1bXYifpiGCoaWQxc /link/set 컨텍스트저장 UKey:'GzgvO'
+2023/06/12 15:09:29 [INFO] Random Seed Initialized
+2023/06/12 15:09:29 [INFO] Log Level TRACE
+2023/06/12 15:09:29 [INFO] Log Path /root/urlybud/urlybud/log
+2023/06/12 15:09:29 [INFO] Process ID 6387
+2023/06/12 15:09:29 [INFO] Build Date 2023-05-30_11:08:25
+2023/06/12 15:09:29 [INFO] Build Version v1.0.0-27-g961289c
+2023/06/12 15:09:29 [INFO] Build Revision 961289c9f6e0edb303a826651b112874aef72fe7
+2023/06/12 15:09:29 [INFO] License Info
+2023/06/12 15:09:29 [INFO] [31m	2024-06-07 ub.urlybud.aqua.castis.io[0m
+2023/06/12 15:09:29 [INFO] [31m	2099-12-31 192.168.0.125[0m
+2023/06/12 15:09:29 [INFO] [31m	2123-05-19 localhost[0m
+2023/06/12 15:09:29 [INFO] Database Connected
+2023/06/12 15:09:29 [INFO] Database Connection Info Hosts:[localhost:27017]
+2023/06/12 15:09:29 [INFO] Database Connection Info HTTPClient:&{0xed9600 <nil> <nil> 0s}
+2023/06/12 15:09:29 [INFO] Database Index Created log:RequestTime_1 unique:false
+2023/06/12 15:09:29 [INFO] Database Index Created log:ReqID_1 unique:false
+2023/06/12 15:09:29 [INFO] Database Index Created log:Path_1 unique:false
+2023/06/12 15:09:29 [INFO] Database Index Created log:Dir_1 unique:false
+2023/06/12 15:09:29 [INFO] Database Index Created link:Seq_1 unique:false
+2023/06/12 15:09:29 [INFO] Database Index Created link:Bid_1 unique:false
+2023/06/12 15:09:29 [INFO] Database Index Created link:Cid_1 unique:false
+2023/06/12 15:09:29 [INFO] Database Index Created link:CSeq_1 unique:false
+2023/06/12 15:09:29 [INFO] Database Index Created link:Gid_1 unique:false
+2023/06/12 15:09:29 [INFO] Database Index Created link:Uid_1 unique:false
+2023/06/12 15:09:29 [INFO] Database Index Created link:Idt_1 unique:false
+2023/06/12 15:09:29 [INFO] Database Index Created link:Status_1 unique:false
+2023/06/12 15:09:29 [INFO] Database Index Created link:Parent_1 unique:false
+2023/06/12 15:09:29 [INFO] Database Index Created evtlog:Idt_1 unique:false
+2023/06/12 15:09:29 [INFO] API List
+2023/06/12 15:09:29 [INFO] 	/event/list         : event.List
+2023/06/12 15:09:29 [INFO] 	/link/claim         : link.Claim
+2023/06/12 15:09:29 [INFO] 	/link/get           : link.Get
+2023/06/12 15:09:29 [INFO] 	/link/list          : link.List
+2023/06/12 15:09:29 [INFO] 	/link/set           : link.Set
+2023/06/12 15:09:29 [INFO] 	/link/tumbler/add   : link.TAdd
+2023/06/12 15:09:29 [INFO] 	/link/tumbler/set   : link.TSet
+2023/06/12 15:09:29 [INFO] Rule List
+2023/06/12 15:09:29 [INFO] 	atype               : link.AType
+2023/06/12 15:09:29 [INFO] 	max                 : validator.Max
+2023/06/12 15:09:29 [INFO] 	min                 : validator.Min
+2023/06/12 15:09:29 [INFO] 	url                 : validator.Url
+2023/06/12 15:09:29 [INFO] Auth Type List
+2023/06/12 15:09:29 [INFO] 	AuthPassword
+2023/06/12 15:09:29 [INFO] 	AuthBoxPassword
+2023/06/12 15:09:29 App Started. :2000 main.muxA  
+2023/06/12 15:09:29 App Started. :80 main.muxB  
+2023/06/12 15:10:17 [TRACE] kmN4mjNQogNi7GCVZk3bTT 클라이언트 map[ClientName:evoucher Idt:1685413263730 _id:c4e0f406-4bb1-4a74-8e46-83fafdda3776]
+2023/06/12 15:10:17 [TRACE] kmN4mjNQogNi7GCVZk3bTT /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:10:22 [TRACE] 8qxFN3GjtDkhIXTXUi7Nny /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:10:26 [TRACE] 8anfkOGlReM7qboednqL9G /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:10:37 [TRACE] bo0hjBfbFszlB3MoABFyj9 /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:10:46 [TRACE] k68BwfBdm2x6AMyUlZqgHu /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:10:48 [TRACE] dHMcka9wdVikHZDN4e8H00 /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:10:49 [TRACE] bx6aLRKanQZ5fSwbsRX7XG /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:10:52 [TRACE] cAztjxnAgmV16yzVdkNGCN /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:13:20 [TRACE] hmLJv9nn3RgIXdmK0u5gA /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:13:35 [TRACE] bLtgfaZClbN2WDDjs3fcc5 /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:14:01 [TRACE] dlIsfyQ3zAWkC17SLAyzZP /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:16:49 [TRACE] fl8OPWjEZR5k1mMEwKiwsh /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:17:52 [TRACE] 9xXWDZeKV1PlPd363BBjee /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:17:56 [TRACE] hHxJx4KasaU1mG1uqkWoVE /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:17:59 [TRACE] 79lyjVeZP234gXuLrq51FU /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:18:02 [TRACE] 3oQFUNb9MHWgyEiElAWQUJ /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:18:06 [TRACE] 2TbO9BQXbZ5d3YR9LX8ajB /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:18:49 [TRACE] bnm8AaCpwp8jEWOfOHJZQt /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:18:57 [TRACE] bee1fX7UGhqkhMEb3l86bg /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:19:19 [TRACE] acOMwRG1yNidaW8OYaKZEN /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:21:27 [TRACE] 1DZGsxfdDNn6ZZWnMiWoUl /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:21:29 [TRACE] iVGSmYVLkOqi7BtmAkZIhx /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:25:09 [TRACE] 5xAjPK1zvEPjBHcI94ba7k /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:25:22 [TRACE] carXjkb6K0JiyKls1bWPnF /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:25:45 [TRACE] 3E7ahMBhwvZ3CLTuEcV9Rf /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:26:15 [TRACE] 6GVECjO3IbOaAmLKD8DhwL /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:26:55 [TRACE] 8cnmEwcv4k0jECLVoTxVM7 /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:27:38 [TRACE] 2ajGeTJFTfi6z2gXpWWaSq /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:29:00 [TRACE] 15M49CgQxD6dkcpkWJPfbs /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:30:59 [TRACE] lqQVBPzpxPw10YVBNI6DL9 /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:42:57 [TRACE] YVDWaaYfoWdBKmqQSaJeL /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:44:54 [TRACE] iDEclhAVAOUf8hb9qFVS4D /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:45:13 [TRACE] 9xdPiTF8PzchbureuzUYAr /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:45:15 [TRACE] 49qYUMCLIOK86UpglZGnCi /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:45:46 [TRACE] e9Ky4H74Ifp6mDYlBuzqVc /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:45:49 [TRACE] eCC5JqXqx3a6oO5TfGL297 /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:47:18 [TRACE] b4wGZnHMS1ScFAgPUZXtAa /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:51:46 [TRACE] 9uSyImIyWEAbm4yYoIXWqi /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:52:00 [TRACE] iF5cXN5PvxpdS6EL2N3neK /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:53:19 [TRACE] cd7m4c80dNVqQP5eNFnu7 /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:54:07 [TRACE] 1HYH6OSZPu0dGFCs9FiiJO /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:56:03 [TRACE] f8ON32TWh0ni8v2Pk8NSlq /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:56:50 [TRACE] 4Qj5Vh5kymSkkvb8Ed41Kc /link/get 컨텍스트저장 UKey:''
+2023/06/12 15:59:24 [TRACE] bzguzldj4Ak1fN0fEpfSX3 /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:02:09 [TRACE] lfGhMjcRfIVhx5VrP3CrFQ /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:02:29 [TRACE] gDvikwyWaT41hTqNZZGpC4 /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:07:53 [TRACE] 47DPAqvCo6f7sRNAhqJeLD /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:08:59 [TRACE] 4G6uxVnUsK2kowx87F6WFX /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:10:58 [TRACE] 2nAUysEhnvwh7muePUvADC /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:12:26 [TRACE] 1YckqZW8rJJ3ev8MpidgTX /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:13:00 [TRACE] joxzH1CwYZ5etnWMUrpa0Z /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:13:21 [TRACE] 5QaBU6ve12OaLvjioO2Hvm /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:14:13 [TRACE] ip0uU9TfytyclikL19EiNZ /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:14:37 [TRACE] 9FFoGhQxHW8itKVXuGhusz /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:14:41 [TRACE] c8NyuMgCSkt6rupAXTl26w /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:15:04 [TRACE] ddm1fcGUYHdlrbBqwG3L4I /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:15:06 [TRACE] fHWmk6Eht3g7NwBhE76XIP /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:15:18 [TRACE] hDmXli73xVbhlNhJI58HYS /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:15:34 [TRACE] hwq4YQmFDSdFlESYM4x0u /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:16:33 [TRACE] aEPhx3FIgsI9eX9Oa4kQ7d /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:16:37 [TRACE] 1qF6Ao3nzHP6DhrwovJlmu /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:17:20 [TRACE] An7PqmL3IElxIb7gKGIPK /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:19:23 [TRACE] 9spKZIJThT71WMdXeN7lDC /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:20:11 [TRACE] IzpGe7sORb5md4wllgHF7 /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:20:27 [TRACE] kQsMlNhyske8aLDuP9cO48 /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:22:11 [TRACE] 8nTFkCy47yekMbVjAQcMcX /link/set 컨텍스트저장 UKey:'SJlfc'
+2023/06/12 16:22:29 [TRACE] jZmD4vTSjX036wAbfqonCn /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:24:33 [TRACE] 8JnJWVJMolCgLJl6cx5xfC /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:28:51 [TRACE] 4qQODbLNELThKuOiN3BVf0 /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:29:46 [TRACE] dKVIWim4bIXdw9KhRCOkCW /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:35:38 [TRACE] 4z7iLgQygGV9OUmHhW8Pta /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:35:42 [TRACE] hPNOnhTTx7fjnCM9wshzaJ /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:36:02 [TRACE] 7etFZBgKmoB2w0jOESY1vT /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:37:08 [TRACE] 1jyMofw3BE3eW6nysqsdEE /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:41:02 [TRACE] gGipj3md1jXdp6Zd5JBNKN /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:41:07 [TRACE] clzlpxbS8MvbirK2MfHmPS /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:42:34 [TRACE] fMat39wtub77JE7FQs45zR /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:42:34 [TRACE] eO5IR7pN3zsjOGpBSe2AwT /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:42:36 [TRACE] knEePcEEXMUcKxKpyNvzJR /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:43:49 [TRACE] 1ZK55zHBKRui13n2w1RG3i /link/set 컨텍스트저장 UKey:'NF8Xm'
+2023/06/12 16:45:03 [TRACE] iUnDoPkV2NRfbftJPkDYLr ----------------------------------------------------
+2023/06/12 16:45:03 [TRACE] iUnDoPkV2NRfbftJPkDYLr /AudWc 토큰생성: 09eca18c-d36f-46e4-9c80-3370b6d7e113
+2023/06/12 16:45:03 [TRACE] iUnDoPkV2NRfbftJPkDYLr 2024-06-07 00:00:00 +0700 +07
+2023/06/12 16:45:03 [TRACE] iUnDoPkV2NRfbftJPkDYLr ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 16:45:03 [TRACE] iUnDoPkV2NRfbftJPkDYLr AudWc CheckExists()
+2023/06/12 16:45:03 [TRACE] iUnDoPkV2NRfbftJPkDYLr AudWc CheckSecureLink()
+2023/06/12 16:45:03 [TRACE] iUnDoPkV2NRfbftJPkDYLr AudWc CheckCount()
+2023/06/12 16:45:03 [TRACE] iUnDoPkV2NRfbftJPkDYLr AudWc CheckExpire()
+2023/06/12 16:45:03 [TRACE] iUnDoPkV2NRfbftJPkDYLr AudWc CheckAuth()
+2023/06/12 16:45:03 [TRACE] iUnDoPkV2NRfbftJPkDYLr AudWc ServeLink()
+2023/06/12 16:45:03 [TRACE] iUnDoPkV2NRfbftJPkDYLr AudWc Redirect()
+2023/06/12 16:45:03 [TRACE] iUnDoPkV2NRfbftJPkDYLr AudWc GET 리다이렉트
+2023/06/12 16:45:03 [TRACE] iUnDoPkV2NRfbftJPkDYLr /AudWc 컨텍스트저장 UKey:'AudWc'
+2023/06/12 16:45:03 [TRACE] RUdMi5sGkUu260hKBeub /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:45:51 [TRACE] l99VPsPanIBbGZJzq6QipI ----------------------------------------------------
+2023/06/12 16:45:51 [TRACE] l99VPsPanIBbGZJzq6QipI /AudWc 요청토큰: 09eca18c-d36f-46e4-9c80-3370b6d7e113
+2023/06/12 16:45:51 [TRACE] l99VPsPanIBbGZJzq6QipI 2024-06-07 00:00:00 +0700 +07
+2023/06/12 16:45:51 [TRACE] l99VPsPanIBbGZJzq6QipI ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 16:45:51 [TRACE] l99VPsPanIBbGZJzq6QipI AudWc CheckExists()
+2023/06/12 16:45:51 [TRACE] l99VPsPanIBbGZJzq6QipI AudWc CheckSecureLink()
+2023/06/12 16:45:51 [TRACE] l99VPsPanIBbGZJzq6QipI AudWc CheckCount()
+2023/06/12 16:45:51 [TRACE] l99VPsPanIBbGZJzq6QipI AudWc CheckExpire()
+2023/06/12 16:45:51 [TRACE] l99VPsPanIBbGZJzq6QipI AudWc CheckAuth()
+2023/06/12 16:45:51 [TRACE] l99VPsPanIBbGZJzq6QipI AudWc ServeLink()
+2023/06/12 16:45:51 [TRACE] l99VPsPanIBbGZJzq6QipI AudWc Redirect()
+2023/06/12 16:45:51 [TRACE] l99VPsPanIBbGZJzq6QipI AudWc GET 리다이렉트
+2023/06/12 16:45:51 [TRACE] l99VPsPanIBbGZJzq6QipI /AudWc 컨텍스트저장 UKey:'AudWc'
+2023/06/12 16:45:51 [TRACE] 6BvZF3K1RZKdHnUuyhZXRw /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:46:20 [TRACE] eqHtlQv2rvs2tHIKPcpBXY ----------------------------------------------------
+2023/06/12 16:46:20 [TRACE] eqHtlQv2rvs2tHIKPcpBXY /AudWc 토큰생성: 77bd72eb-3258-4035-a642-38e566ca408b
+2023/06/12 16:46:20 [TRACE] eqHtlQv2rvs2tHIKPcpBXY 2024-06-07 00:00:00 +0700 +07
+2023/06/12 16:46:20 [TRACE] eqHtlQv2rvs2tHIKPcpBXY ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 16:46:20 [TRACE] eqHtlQv2rvs2tHIKPcpBXY AudWc CheckExists()
+2023/06/12 16:46:20 [TRACE] eqHtlQv2rvs2tHIKPcpBXY AudWc CheckSecureLink()
+2023/06/12 16:46:20 [TRACE] eqHtlQv2rvs2tHIKPcpBXY AudWc CheckCount()
+2023/06/12 16:46:20 [TRACE] eqHtlQv2rvs2tHIKPcpBXY AudWc CheckExpire()
+2023/06/12 16:46:20 [TRACE] eqHtlQv2rvs2tHIKPcpBXY AudWc CheckAuth()
+2023/06/12 16:46:20 [TRACE] eqHtlQv2rvs2tHIKPcpBXY AudWc ServeLink()
+2023/06/12 16:46:20 [TRACE] eqHtlQv2rvs2tHIKPcpBXY AudWc Redirect()
+2023/06/12 16:46:20 [TRACE] eqHtlQv2rvs2tHIKPcpBXY AudWc GET 리다이렉트
+2023/06/12 16:46:20 [TRACE] eqHtlQv2rvs2tHIKPcpBXY /AudWc 컨텍스트저장 UKey:'AudWc'
+2023/06/12 16:46:21 [TRACE] a5DO6W84U73eQloAPYesAo /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:46:50 [TRACE] ds2wvcKe3wo5IpoPDDJNwh /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:47:42 [TRACE] 1AgJFfPb7jjgFMkabzMJZd ----------------------------------------------------
+2023/06/12 16:47:42 [TRACE] 1AgJFfPb7jjgFMkabzMJZd /AudWc 토큰생성: c24569ba-e65c-4705-a805-7cd5372cd02d
+2023/06/12 16:47:42 [TRACE] 1AgJFfPb7jjgFMkabzMJZd 2024-06-07 00:00:00 +0700 +07
+2023/06/12 16:47:42 [TRACE] 1AgJFfPb7jjgFMkabzMJZd ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 16:47:42 [TRACE] 1AgJFfPb7jjgFMkabzMJZd AudWc CheckExists()
+2023/06/12 16:47:42 [TRACE] 1AgJFfPb7jjgFMkabzMJZd AudWc CheckSecureLink()
+2023/06/12 16:47:42 [TRACE] 1AgJFfPb7jjgFMkabzMJZd AudWc CheckCount()
+2023/06/12 16:47:42 [TRACE] 1AgJFfPb7jjgFMkabzMJZd AudWc CheckExpire()
+2023/06/12 16:47:42 [TRACE] 1AgJFfPb7jjgFMkabzMJZd AudWc CheckAuth()
+2023/06/12 16:47:42 [TRACE] 1AgJFfPb7jjgFMkabzMJZd AudWc ServeLink()
+2023/06/12 16:47:42 [TRACE] 1AgJFfPb7jjgFMkabzMJZd AudWc Redirect()
+2023/06/12 16:47:42 [TRACE] 1AgJFfPb7jjgFMkabzMJZd AudWc GET 리다이렉트
+2023/06/12 16:47:42 [TRACE] 1AgJFfPb7jjgFMkabzMJZd /AudWc 컨텍스트저장 UKey:'AudWc'
+2023/06/12 16:47:42 [TRACE] 8IfSw0zAeYif9X6qiT1NWf /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:48:30 [TRACE] i6HB8gMAYFY2nw7xkAybUr /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:48:32 [TRACE] g8bHnLCPcXf5UEIVGUCAOC /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:48:34 [TRACE] ltGctIFc4tPbkXLEEV6IVU /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:52:18 [TRACE] eQUyUti9CJK2VR411sKHuH ----------------------------------------------------
+2023/06/12 16:52:18 [TRACE] eQUyUti9CJK2VR411sKHuH /AudWc 요청토큰: c24569ba-e65c-4705-a805-7cd5372cd02d
+2023/06/12 16:52:18 [TRACE] eQUyUti9CJK2VR411sKHuH 2024-06-07 00:00:00 +0700 +07
+2023/06/12 16:52:18 [TRACE] eQUyUti9CJK2VR411sKHuH ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 16:52:18 [TRACE] eQUyUti9CJK2VR411sKHuH AudWc CheckExists()
+2023/06/12 16:52:18 [TRACE] eQUyUti9CJK2VR411sKHuH AudWc CheckSecureLink()
+2023/06/12 16:52:18 [TRACE] eQUyUti9CJK2VR411sKHuH AudWc CheckCount()
+2023/06/12 16:52:18 [TRACE] eQUyUti9CJK2VR411sKHuH AudWc CheckExpire()
+2023/06/12 16:52:18 [TRACE] eQUyUti9CJK2VR411sKHuH AudWc CheckAuth()
+2023/06/12 16:52:18 [TRACE] eQUyUti9CJK2VR411sKHuH AudWc ServeLink()
+2023/06/12 16:52:18 [TRACE] eQUyUti9CJK2VR411sKHuH AudWc Redirect()
+2023/06/12 16:52:18 [TRACE] eQUyUti9CJK2VR411sKHuH AudWc GET 리다이렉트
+2023/06/12 16:52:18 [TRACE] eQUyUti9CJK2VR411sKHuH /AudWc 컨텍스트저장 UKey:'AudWc'
+2023/06/12 16:52:19 [TRACE] 5Kn3P5nDYqbfEOeTP22nnK /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:52:48 [TRACE] 5RfxWqU9VPM6ck3XZEc83X /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:53:52 [TRACE] gL9hpyKcaOkbieuGW5N9WC /link/set 컨텍스트저장 UKey:'54ciN'
+2023/06/12 16:56:49 [TRACE] 4IBWFLwTZ7El0UUxUU1Pjp ----------------------------------------------------
+2023/06/12 16:56:49 [TRACE] 4IBWFLwTZ7El0UUxUU1Pjp /AudWc 요청토큰: c24569ba-e65c-4705-a805-7cd5372cd02d
+2023/06/12 16:56:49 [TRACE] 4IBWFLwTZ7El0UUxUU1Pjp 2024-06-07 00:00:00 +0700 +07
+2023/06/12 16:56:49 [TRACE] 4IBWFLwTZ7El0UUxUU1Pjp ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 16:56:49 [TRACE] 4IBWFLwTZ7El0UUxUU1Pjp AudWc CheckExists()
+2023/06/12 16:56:49 [TRACE] 4IBWFLwTZ7El0UUxUU1Pjp AudWc CheckSecureLink()
+2023/06/12 16:56:49 [TRACE] 4IBWFLwTZ7El0UUxUU1Pjp AudWc CheckCount()
+2023/06/12 16:56:49 [TRACE] 4IBWFLwTZ7El0UUxUU1Pjp AudWc CheckExpire()
+2023/06/12 16:56:49 [TRACE] 4IBWFLwTZ7El0UUxUU1Pjp AudWc CheckAuth()
+2023/06/12 16:56:49 [TRACE] 4IBWFLwTZ7El0UUxUU1Pjp AudWc ServeLink()
+2023/06/12 16:56:49 [TRACE] 4IBWFLwTZ7El0UUxUU1Pjp AudWc Redirect()
+2023/06/12 16:56:49 [TRACE] 4IBWFLwTZ7El0UUxUU1Pjp AudWc GET 리다이렉트
+2023/06/12 16:56:49 [TRACE] 4IBWFLwTZ7El0UUxUU1Pjp /AudWc 컨텍스트저장 UKey:'AudWc'
+2023/06/12 16:56:49 [TRACE] esa4C9ht0OYk9LqrbkjuMm /link/get 컨텍스트저장 UKey:''
+2023/06/12 16:59:05 [TRACE] eNWIHekKRImb5zoIjPJ7VI ----------------------------------------------------
+2023/06/12 16:59:05 [TRACE] eNWIHekKRImb5zoIjPJ7VI /AudWc 요청토큰: c24569ba-e65c-4705-a805-7cd5372cd02d
+2023/06/12 16:59:05 [TRACE] eNWIHekKRImb5zoIjPJ7VI 2024-06-07 00:00:00 +0700 +07
+2023/06/12 16:59:05 [TRACE] eNWIHekKRImb5zoIjPJ7VI ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 16:59:05 [TRACE] eNWIHekKRImb5zoIjPJ7VI AudWc CheckExists()
+2023/06/12 16:59:05 [TRACE] eNWIHekKRImb5zoIjPJ7VI AudWc CheckSecureLink()
+2023/06/12 16:59:05 [TRACE] eNWIHekKRImb5zoIjPJ7VI AudWc CheckCount()
+2023/06/12 16:59:05 [TRACE] eNWIHekKRImb5zoIjPJ7VI AudWc CheckExpire()
+2023/06/12 16:59:05 [TRACE] eNWIHekKRImb5zoIjPJ7VI AudWc CheckAuth()
+2023/06/12 16:59:05 [TRACE] eNWIHekKRImb5zoIjPJ7VI AudWc ServeLink()
+2023/06/12 16:59:05 [TRACE] eNWIHekKRImb5zoIjPJ7VI AudWc Redirect()
+2023/06/12 16:59:05 [TRACE] eNWIHekKRImb5zoIjPJ7VI AudWc GET 리다이렉트
+2023/06/12 16:59:05 [TRACE] eNWIHekKRImb5zoIjPJ7VI /AudWc 컨텍스트저장 UKey:'AudWc'
+2023/06/12 16:59:05 [TRACE] 2cTcGubd5kbbAZjwZ5PjuC /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:05:14 [TRACE] 2JpPoVf389tleRrgE5Q4eO /link/set 컨텍스트저장 UKey:'MEiVa'
+2023/06/12 17:07:29 [TRACE] 4g6IeUY3yEMlukDsDdaLUw /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:07:50 [TRACE] 85T21A2krVR6UE6Tt4rUtL /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:08:20 [TRACE] gOEsZYkwtVvi8IniZnO9LO ----------------------------------------------------
+2023/06/12 17:08:20 [TRACE] gOEsZYkwtVvi8IniZnO9LO /AudWc 요청토큰: c24569ba-e65c-4705-a805-7cd5372cd02d
+2023/06/12 17:08:20 [TRACE] gOEsZYkwtVvi8IniZnO9LO 2024-06-07 00:00:00 +0700 +07
+2023/06/12 17:08:20 [TRACE] gOEsZYkwtVvi8IniZnO9LO ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 17:08:20 [TRACE] gOEsZYkwtVvi8IniZnO9LO AudWc CheckExists()
+2023/06/12 17:08:20 [TRACE] gOEsZYkwtVvi8IniZnO9LO AudWc CheckSecureLink()
+2023/06/12 17:08:20 [TRACE] gOEsZYkwtVvi8IniZnO9LO AudWc CheckCount()
+2023/06/12 17:08:20 [TRACE] gOEsZYkwtVvi8IniZnO9LO AudWc CheckExpire()
+2023/06/12 17:08:20 [TRACE] gOEsZYkwtVvi8IniZnO9LO AudWc CheckAuth()
+2023/06/12 17:08:20 [TRACE] gOEsZYkwtVvi8IniZnO9LO AudWc ServeLink()
+2023/06/12 17:08:20 [TRACE] gOEsZYkwtVvi8IniZnO9LO AudWc Redirect()
+2023/06/12 17:08:20 [TRACE] gOEsZYkwtVvi8IniZnO9LO AudWc GET 리다이렉트
+2023/06/12 17:08:20 [TRACE] gOEsZYkwtVvi8IniZnO9LO /AudWc 컨텍스트저장 UKey:'AudWc'
+2023/06/12 17:08:20 [TRACE] j4Hj6VkxYdx4xCjmlOLTfL /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:09:27 [TRACE] 2MnFaLBL8eafK1ce2CjJI5 /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:09:29 [TRACE] hjoTuBVeMDJgSwiqwDxXHG /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:10:03 [TRACE] cNrlcCgdcSq42BeHtym9CC /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:15:54 [TRACE] k4ueYe4AnwflcoSq6M7Xr2 /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:21:19 [TRACE] caRUcIbE2Ks7EK5iVNJeDU /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:21:34 [TRACE] fFe4DSF8434kIgQXvJMU01 /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:22:03 [TRACE] bhYwmScDZp59NAVjVzL10e /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:22:04 [TRACE] 4Hxt6NNTU2mfkkMH6BE3Nu /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:22:05 [TRACE] kMsIuz1w1Be1yfCkgariaL /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:22:06 [TRACE] kZLKoksKly08txIPydtoOS /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:22:09 [TRACE] grV76j43TrukgPQvoXYhcc /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:22:10 [TRACE] 2ERBbykCJdE16VpRMMMCt8 /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:22:13 [TRACE] 8L3KdBm7sH8gFju7BtAbk9 /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:33:25 [TRACE] 1J9Re3ifRJhiobexatYTy1 /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:33:30 [TRACE] fxcd4Qcm1Ws252Ubn0iyVS /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:33:32 [TRACE] 8zO0nJtPvCihAEhQg5I80O /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:33:46 [TRACE] jJ6wE203IY7cFwKYy2UbeB /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:33:48 [TRACE] 5lOwoa3pGXy6TDro56ispZ /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:37:25 [TRACE] gHJPMXbx56SeTcHpfftFQS /link/set 컨텍스트저장 UKey:'rmFEl'
+2023/06/12 17:38:39 [TRACE] hUisDGaa8OxbDrlZQxJLVW ----------------------------------------------------
+2023/06/12 17:38:39 [TRACE] hUisDGaa8OxbDrlZQxJLVW /AudWc 요청토큰: c24569ba-e65c-4705-a805-7cd5372cd02d
+2023/06/12 17:38:39 [TRACE] hUisDGaa8OxbDrlZQxJLVW 2024-06-07 00:00:00 +0700 +07
+2023/06/12 17:38:39 [TRACE] hUisDGaa8OxbDrlZQxJLVW ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 17:38:39 [TRACE] hUisDGaa8OxbDrlZQxJLVW AudWc CheckExists()
+2023/06/12 17:38:39 [TRACE] hUisDGaa8OxbDrlZQxJLVW AudWc CheckSecureLink()
+2023/06/12 17:38:39 [TRACE] hUisDGaa8OxbDrlZQxJLVW AudWc CheckCount()
+2023/06/12 17:38:39 [TRACE] hUisDGaa8OxbDrlZQxJLVW AudWc CheckExpire()
+2023/06/12 17:38:39 [TRACE] hUisDGaa8OxbDrlZQxJLVW AudWc CheckAuth()
+2023/06/12 17:38:39 [TRACE] hUisDGaa8OxbDrlZQxJLVW AudWc ServeLink()
+2023/06/12 17:38:39 [TRACE] hUisDGaa8OxbDrlZQxJLVW AudWc Redirect()
+2023/06/12 17:38:39 [TRACE] hUisDGaa8OxbDrlZQxJLVW AudWc GET 리다이렉트
+2023/06/12 17:38:39 [TRACE] hUisDGaa8OxbDrlZQxJLVW /AudWc 컨텍스트저장 UKey:'AudWc'
+2023/06/12 17:38:39 [TRACE] 628iNdSReZv3Y2pIp7QPKh /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:38:58 [TRACE] 7lydb16RtLobpZ3NkKZ0S5 ----------------------------------------------------
+2023/06/12 17:38:58 [TRACE] 7lydb16RtLobpZ3NkKZ0S5 /PGOC3 토큰생성: b13d8dcd-557d-48e2-8513-ddf67d7088df
+2023/06/12 17:38:58 [TRACE] 7lydb16RtLobpZ3NkKZ0S5 2024-06-07 00:00:00 +0700 +07
+2023/06/12 17:38:58 [TRACE] 7lydb16RtLobpZ3NkKZ0S5 ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 17:38:58 [TRACE] 7lydb16RtLobpZ3NkKZ0S5 PGOC3 CheckExists()
+2023/06/12 17:38:58 [TRACE] 7lydb16RtLobpZ3NkKZ0S5 PGOC3 CheckSecureLink()
+2023/06/12 17:38:58 [TRACE] 7lydb16RtLobpZ3NkKZ0S5 PGOC3 CheckCount()
+2023/06/12 17:38:58 [TRACE] 7lydb16RtLobpZ3NkKZ0S5 PGOC3 CheckExpire()
+2023/06/12 17:38:58 [TRACE] 7lydb16RtLobpZ3NkKZ0S5 PGOC3 CheckAuth()
+2023/06/12 17:38:58 [TRACE] 7lydb16RtLobpZ3NkKZ0S5 PGOC3 ServeLink()
+2023/06/12 17:38:58 [TRACE] 7lydb16RtLobpZ3NkKZ0S5 PGOC3 Redirect()
+2023/06/12 17:38:58 [TRACE] 7lydb16RtLobpZ3NkKZ0S5 PGOC3 GET 리다이렉트
+2023/06/12 17:38:58 [TRACE] 7lydb16RtLobpZ3NkKZ0S5 /PGOC3 컨텍스트저장 UKey:'PGOC3'
+2023/06/12 17:42:17 [TRACE] 3K3YTt48YBeglxe6JHNn9C /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:42:19 [TRACE] hBuz7tclRIz1XRjSkqRsYz /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:45:10 [TRACE] dG6OGSso97glk9KX5sz1Xt /link/set 컨텍스트저장 UKey:'vq1U0'
+2023/06/12 17:46:13 [TRACE] 6lCslZ7n5J22bMhr4DyxJX /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:51:41 [TRACE] 8Hn6wTo6h5capjjCCwHZnn /link/set 컨텍스트저장 UKey:'pkZxz'
+2023/06/12 17:51:50 [TRACE] 1LQdmOA8Judj8pkXKMpFPo ----------------------------------------------------
+2023/06/12 17:51:50 [TRACE] 1LQdmOA8Judj8pkXKMpFPo /pkZxz 요청토큰: c24569ba-e65c-4705-a805-7cd5372cd02d
+2023/06/12 17:51:50 [TRACE] 1LQdmOA8Judj8pkXKMpFPo 2024-06-07 00:00:00 +0700 +07
+2023/06/12 17:51:50 [TRACE] 1LQdmOA8Judj8pkXKMpFPo ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 17:51:50 [TRACE] 1LQdmOA8Judj8pkXKMpFPo pkZxz CheckExists()
+2023/06/12 17:51:50 [TRACE] 1LQdmOA8Judj8pkXKMpFPo pkZxz CheckSecureLink()
+2023/06/12 17:51:50 [TRACE] 1LQdmOA8Judj8pkXKMpFPo pkZxz CheckCount()
+2023/06/12 17:51:50 [TRACE] 1LQdmOA8Judj8pkXKMpFPo pkZxz CheckExpire()
+2023/06/12 17:51:50 [TRACE] 1LQdmOA8Judj8pkXKMpFPo pkZxz CheckAuth()
+2023/06/12 17:51:50 [TRACE] 1LQdmOA8Judj8pkXKMpFPo pkZxz ServeLink()
+2023/06/12 17:51:50 [TRACE] 1LQdmOA8Judj8pkXKMpFPo pkZxz Redirect()
+2023/06/12 17:51:50 [TRACE] 1LQdmOA8Judj8pkXKMpFPo pkZxz GET 리다이렉트
+2023/06/12 17:51:50 [TRACE] 1LQdmOA8Judj8pkXKMpFPo /pkZxz 컨텍스트저장 UKey:'pkZxz'
+2023/06/12 17:51:50 [TRACE] 2SqxC6Jq4NQewETjPyZ2Aw /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:52:18 [TRACE] DI9tobLViC6Dgibx9Bnd1 /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:52:26 [TRACE] d84BMFBz3AEb0qpr7b60ci /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:52:39 [TRACE] 1nJl5o96beXcwPr9jdSGSQ /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:53:01 [TRACE] 5juYSp1bLBTlOQnDt9d4um /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:53:03 [TRACE] fHdFcBp7Xy72pMq4zPFU6W /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:53:05 [TRACE] 2iRvROyyFMw3Mow6OuE3TI /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:53:10 [TRACE] e0qIkK0WpNi1x4gupguSaF /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:53:38 [TRACE] 2X99xA6D5Gy9XbjSk8dC8F /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:54:35 [TRACE] dHnLi5LVcXub35KmLuto5I /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:54:35 [TRACE] 4D31nTJe0OM5A1WWWsXqME /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:54:43 [TRACE] 8ARcpJoz6e45JNoat7IUVZ /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:54:43 [TRACE] h19biflU5iOaoEOE1wrV9P /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:55:42 [TRACE] kG7EnNU06xfeJEOWw4gmu9 /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:55:42 [TRACE] 25luuD57BQtlADsZNYLKNk /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:55:48 [TRACE] joIaC2lpaHg5qJWR8GS0OE /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:55:48 [TRACE] 3WeWNRC80tN62p7tG2hEFJ /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:56:14 [TRACE] k6Lo0PBqTDq9Qq1NRm4h3E /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:56:15 [TRACE] huyEiMzG0gk1Ry4jBu6Dm6 /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:56:27 [TRACE] bU7ObQOZzCF4l6joP3RqtZ /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:56:27 [TRACE] 1cKvTfh2hZicvEdUJS5JYr /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:56:55 [TRACE] 8PlGcsNaRBFhH2CuCp4IaI /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:58:01 [TRACE] hISZdBWEWg7LJwM2MOf8g /link/get 컨텍스트저장 UKey:''
+2023/06/12 17:59:22 [TRACE] 7IGaPx58yBthd1fl7rnlLW /link/get 컨텍스트저장 UKey:''
+2023/06/12 18:03:03 [TRACE] fauZDHEihyWgY0mFdx7wVv /link/set 컨텍스트저장 UKey:'PGP9M'
+2023/06/12 18:03:15 [TRACE] kAM7k3jeErmhurvRuZW858 ----------------------------------------------------
+2023/06/12 18:03:15 [TRACE] kAM7k3jeErmhurvRuZW858 /PGP9M 요청토큰: c24569ba-e65c-4705-a805-7cd5372cd02d
+2023/06/12 18:03:15 [TRACE] kAM7k3jeErmhurvRuZW858 2024-06-07 00:00:00 +0700 +07
+2023/06/12 18:03:15 [TRACE] kAM7k3jeErmhurvRuZW858 ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 18:03:15 [TRACE] kAM7k3jeErmhurvRuZW858 PGP9M CheckExists()
+2023/06/12 18:03:15 [TRACE] kAM7k3jeErmhurvRuZW858 PGP9M CheckSecureLink()
+2023/06/12 18:03:15 [TRACE] kAM7k3jeErmhurvRuZW858 PGP9M CheckCount()
+2023/06/12 18:03:15 [TRACE] kAM7k3jeErmhurvRuZW858 PGP9M CheckExpire()
+2023/06/12 18:03:15 [TRACE] kAM7k3jeErmhurvRuZW858 PGP9M CheckAuth()
+2023/06/12 18:03:15 [TRACE] kAM7k3jeErmhurvRuZW858 PGP9M ServeLink()
+2023/06/12 18:03:15 [TRACE] kAM7k3jeErmhurvRuZW858 PGP9M Redirect()
+2023/06/12 18:03:15 [TRACE] kAM7k3jeErmhurvRuZW858 PGP9M GET 리다이렉트
+2023/06/12 18:03:15 [TRACE] kAM7k3jeErmhurvRuZW858 /PGP9M 컨텍스트저장 UKey:'PGP9M'
+2023/06/12 18:03:16 [TRACE] lNUw4vLZrljiMqRGTPwZvm /link/get 컨텍스트저장 UKey:''
+2023/06/12 18:03:35 [TRACE] 4ZQ0B39s5xskI7CpyhDQoq /link/get 컨텍스트저장 UKey:''
+2023/06/12 18:03:44 [TRACE] ja7vBxpp0T2dioDdyEzRGn /link/get 컨텍스트저장 UKey:''
+2023/06/12 18:04:01 [TRACE] 5pKyY6Aw4On53uuWleOP18 /link/get 컨텍스트저장 UKey:''
+2023/06/12 18:04:39 [TRACE] 6VQXwflz0Ww3MR8Z6NR5XK /link/get 컨텍스트저장 UKey:''
+2023/06/12 18:05:01 [TRACE] LM020xY6Ia1rNKMGdiV5P /link/get 컨텍스트저장 UKey:''
+2023/06/12 18:08:04 [TRACE] 39QGj9CUArabhKBQMc4POX /link/get 컨텍스트저장 UKey:''
+2023/06/12 18:13:32 [TRACE] hcbi43HAlww3ubFhjbrdMD ----------------------------------------------------
+2023/06/12 18:13:32 [TRACE] hcbi43HAlww3ubFhjbrdMD /AudWc 요청토큰: c24569ba-e65c-4705-a805-7cd5372cd02d
+2023/06/12 18:13:32 [TRACE] hcbi43HAlww3ubFhjbrdMD 2024-06-07 00:00:00 +0700 +07
+2023/06/12 18:13:32 [TRACE] hcbi43HAlww3ubFhjbrdMD ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 18:13:32 [TRACE] hcbi43HAlww3ubFhjbrdMD AudWc CheckExists()
+2023/06/12 18:13:32 [TRACE] hcbi43HAlww3ubFhjbrdMD AudWc CheckSecureLink()
+2023/06/12 18:13:32 [TRACE] hcbi43HAlww3ubFhjbrdMD AudWc CheckCount()
+2023/06/12 18:13:32 [TRACE] hcbi43HAlww3ubFhjbrdMD AudWc CheckExpire()
+2023/06/12 18:13:32 [TRACE] hcbi43HAlww3ubFhjbrdMD AudWc CheckAuth()
+2023/06/12 18:13:32 [TRACE] hcbi43HAlww3ubFhjbrdMD AudWc ServeLink()
+2023/06/12 18:13:32 [TRACE] hcbi43HAlww3ubFhjbrdMD AudWc Redirect()
+2023/06/12 18:13:32 [TRACE] hcbi43HAlww3ubFhjbrdMD AudWc GET 리다이렉트
+2023/06/12 18:13:32 [TRACE] hcbi43HAlww3ubFhjbrdMD /AudWc 컨텍스트저장 UKey:'AudWc'
+2023/06/12 18:13:33 [TRACE] 3q1ubaWpN8DjBGG55cA6fN /link/get 컨텍스트저장 UKey:''
+2023/06/12 18:13:38 [TRACE] dmyHCI4VNiu3OK4bO4TuYD ----------------------------------------------------
+2023/06/12 18:13:38 [TRACE] dmyHCI4VNiu3OK4bO4TuYD /AudWc 토큰생성: f77664c7-7834-4bbb-a512-7e9beed7a198
+2023/06/12 18:13:38 [TRACE] dmyHCI4VNiu3OK4bO4TuYD 2024-06-07 00:00:00 +0700 +07
+2023/06/12 18:13:38 [TRACE] dmyHCI4VNiu3OK4bO4TuYD ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 18:13:38 [TRACE] dmyHCI4VNiu3OK4bO4TuYD AudWc CheckExists()
+2023/06/12 18:13:38 [TRACE] dmyHCI4VNiu3OK4bO4TuYD AudWc CheckSecureLink()
+2023/06/12 18:13:38 [TRACE] dmyHCI4VNiu3OK4bO4TuYD AudWc CheckCount()
+2023/06/12 18:13:38 [TRACE] dmyHCI4VNiu3OK4bO4TuYD AudWc CheckExpire()
+2023/06/12 18:13:38 [TRACE] dmyHCI4VNiu3OK4bO4TuYD AudWc CheckAuth()
+2023/06/12 18:13:38 [TRACE] dmyHCI4VNiu3OK4bO4TuYD AudWc ServeLink()
+2023/06/12 18:13:38 [TRACE] dmyHCI4VNiu3OK4bO4TuYD AudWc Redirect()
+2023/06/12 18:13:38 [TRACE] dmyHCI4VNiu3OK4bO4TuYD AudWc GET 리다이렉트
+2023/06/12 18:13:38 [TRACE] dmyHCI4VNiu3OK4bO4TuYD /AudWc 컨텍스트저장 UKey:'AudWc'
+2023/06/12 18:13:38 [TRACE] 9M7nqakDNMWl23FLpWMv5c /link/get 컨텍스트저장 UKey:''
+2023/06/12 18:13:51 [TRACE] jc4QsRchzsv9OFFUU0vPZh ----------------------------------------------------
+2023/06/12 18:13:51 [TRACE] jc4QsRchzsv9OFFUU0vPZh /AudWc 요청토큰: 77bd72eb-3258-4035-a642-38e566ca408b
+2023/06/12 18:13:51 [TRACE] jc4QsRchzsv9OFFUU0vPZh 2024-06-07 00:00:00 +0700 +07
+2023/06/12 18:13:51 [TRACE] jc4QsRchzsv9OFFUU0vPZh ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 18:13:51 [TRACE] jc4QsRchzsv9OFFUU0vPZh AudWc CheckExists()
+2023/06/12 18:13:51 [TRACE] jc4QsRchzsv9OFFUU0vPZh AudWc CheckSecureLink()
+2023/06/12 18:13:51 [TRACE] jc4QsRchzsv9OFFUU0vPZh AudWc CheckCount()
+2023/06/12 18:13:51 [TRACE] jc4QsRchzsv9OFFUU0vPZh AudWc CheckExpire()
+2023/06/12 18:13:51 [TRACE] jc4QsRchzsv9OFFUU0vPZh AudWc CheckAuth()
+2023/06/12 18:13:51 [TRACE] jc4QsRchzsv9OFFUU0vPZh AudWc ServeLink()
+2023/06/12 18:13:51 [TRACE] jc4QsRchzsv9OFFUU0vPZh AudWc Redirect()
+2023/06/12 18:13:51 [TRACE] jc4QsRchzsv9OFFUU0vPZh AudWc GET 리다이렉트
+2023/06/12 18:13:51 [TRACE] jc4QsRchzsv9OFFUU0vPZh /AudWc 컨텍스트저장 UKey:'AudWc'
+2023/06/12 18:13:51 [TRACE] jvEum84O7Lk74rwvZ9Vlqf /link/get 컨텍스트저장 UKey:''
+2023/06/12 18:14:01 [TRACE] 1GKW0Smwebu5qxZZZVeJmZ /link/get 컨텍스트저장 UKey:''
+2023/06/12 18:21:44 [TRACE] 5kSHsuy0BeJ3nEcaKIBdq4 /link/get 컨텍스트저장 UKey:''
+2023/06/12 18:25:54 [TRACE] bsKnIAayFLbxnpu4wNxL9 /link/set 컨텍스트저장 UKey:'652n8'
+2023/06/12 18:26:06 [TRACE] idSqXdtEzPy5ctRuRhwL0Y ----------------------------------------------------
+2023/06/12 18:26:06 [TRACE] idSqXdtEzPy5ctRuRhwL0Y /652n8 토큰생성: 38d3917e-5391-4ca0-b951-5cffed607e9a
+2023/06/12 18:26:06 [TRACE] idSqXdtEzPy5ctRuRhwL0Y 2024-06-07 00:00:00 +0700 +07
+2023/06/12 18:26:06 [TRACE] idSqXdtEzPy5ctRuRhwL0Y ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 18:26:06 [TRACE] idSqXdtEzPy5ctRuRhwL0Y 652n8 CheckExists()
+2023/06/12 18:26:06 [TRACE] idSqXdtEzPy5ctRuRhwL0Y 652n8 CheckSecureLink()
+2023/06/12 18:26:06 [TRACE] idSqXdtEzPy5ctRuRhwL0Y 652n8 CheckCount()
+2023/06/12 18:26:06 [TRACE] idSqXdtEzPy5ctRuRhwL0Y 652n8 CheckExpire()
+2023/06/12 18:26:06 [TRACE] idSqXdtEzPy5ctRuRhwL0Y 652n8 CheckAuth()
+2023/06/12 18:26:06 [TRACE] idSqXdtEzPy5ctRuRhwL0Y 652n8 ServeLink()
+2023/06/12 18:26:06 [TRACE] idSqXdtEzPy5ctRuRhwL0Y 652n8 Redirect()
+2023/06/12 18:26:06 [TRACE] idSqXdtEzPy5ctRuRhwL0Y 652n8 GET 리다이렉트
+2023/06/12 18:26:06 [TRACE] idSqXdtEzPy5ctRuRhwL0Y /652n8 컨텍스트저장 UKey:'652n8'
+2023/06/12 18:26:06 [TRACE] acXNwgBuHd77iPY2Zl75h /link/get 컨텍스트저장 UKey:''
+2023/06/12 18:27:01 [TRACE] 32uNa6ceG74aL82GImPOqK ----------------------------------------------------
+2023/06/12 18:27:01 [TRACE] 32uNa6ceG74aL82GImPOqK /652n8 요청토큰: 38d3917e-5391-4ca0-b951-5cffed607e9a
+2023/06/12 18:27:01 [TRACE] 32uNa6ceG74aL82GImPOqK 2024-06-07 00:00:00 +0700 +07
+2023/06/12 18:27:01 [TRACE] 32uNa6ceG74aL82GImPOqK ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 18:27:01 [TRACE] 32uNa6ceG74aL82GImPOqK 652n8 CheckExists()
+2023/06/12 18:27:01 [TRACE] 32uNa6ceG74aL82GImPOqK 652n8 CheckSecureLink()
+2023/06/12 18:27:01 [TRACE] 32uNa6ceG74aL82GImPOqK 652n8 CheckCount()
+2023/06/12 18:27:01 [TRACE] 32uNa6ceG74aL82GImPOqK 652n8 CheckExpire()
+2023/06/12 18:27:01 [TRACE] 32uNa6ceG74aL82GImPOqK 652n8 CheckAuth()
+2023/06/12 18:27:01 [TRACE] 32uNa6ceG74aL82GImPOqK 652n8 ServeLink()
+2023/06/12 18:27:01 [TRACE] 32uNa6ceG74aL82GImPOqK 652n8 Redirect()
+2023/06/12 18:27:01 [TRACE] 32uNa6ceG74aL82GImPOqK 652n8 GET 리다이렉트
+2023/06/12 18:27:01 [TRACE] 32uNa6ceG74aL82GImPOqK /652n8 컨텍스트저장 UKey:'652n8'
+2023/06/12 18:27:01 [TRACE] hgTr61q4MTm1nMFsiUIIik /link/get 컨텍스트저장 UKey:''
+2023/06/12 18:27:56 [TRACE] dBWIzsNluiYhLOXii9dBEu /link/set 컨텍스트저장 UKey:'DwKqY'
+2023/06/12 18:28:51 [TRACE] 3PweALwajCG8koyH8YyzTg ----------------------------------------------------
+2023/06/12 18:28:51 [TRACE] 3PweALwajCG8koyH8YyzTg /DwKqY 요청토큰: 38d3917e-5391-4ca0-b951-5cffed607e9a
+2023/06/12 18:28:51 [TRACE] 3PweALwajCG8koyH8YyzTg 2024-06-07 00:00:00 +0700 +07
+2023/06/12 18:28:51 [TRACE] 3PweALwajCG8koyH8YyzTg ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 18:28:51 [TRACE] 3PweALwajCG8koyH8YyzTg DwKqY CheckExists()
+2023/06/12 18:28:51 [TRACE] 3PweALwajCG8koyH8YyzTg DwKqY CheckSecureLink()
+2023/06/12 18:28:51 [TRACE] 3PweALwajCG8koyH8YyzTg DwKqY CheckCount()
+2023/06/12 18:28:51 [TRACE] 3PweALwajCG8koyH8YyzTg DwKqY CheckExpire()
+2023/06/12 18:28:51 [TRACE] 3PweALwajCG8koyH8YyzTg DwKqY CheckAuth()
+2023/06/12 18:28:51 [TRACE] 3PweALwajCG8koyH8YyzTg DwKqY ServeLink()
+2023/06/12 18:28:51 [TRACE] 3PweALwajCG8koyH8YyzTg DwKqY Redirect()
+2023/06/12 18:28:51 [TRACE] 3PweALwajCG8koyH8YyzTg DwKqY GET 리다이렉트
+2023/06/12 18:28:51 [TRACE] 3PweALwajCG8koyH8YyzTg /DwKqY 컨텍스트저장 UKey:'DwKqY'
+2023/06/12 18:28:51 [TRACE] icYV4v8HU7GjRvoHir2rwe /link/get 컨텍스트저장 UKey:''
+2023/06/12 18:32:44 [TRACE] 11ooUafLeqt798YhpeS8BB /link/set 컨텍스트저장 UKey:'652nk'
+2023/06/12 18:32:57 [TRACE] aXuRpM2P33w2UW7ayBLiDk ----------------------------------------------------
+2023/06/12 18:32:57 [TRACE] aXuRpM2P33w2UW7ayBLiDk /652nk 요청토큰: 38d3917e-5391-4ca0-b951-5cffed607e9a
+2023/06/12 18:32:57 [TRACE] aXuRpM2P33w2UW7ayBLiDk 2024-06-07 00:00:00 +0700 +07
+2023/06/12 18:32:57 [TRACE] aXuRpM2P33w2UW7ayBLiDk ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 18:32:57 [TRACE] aXuRpM2P33w2UW7ayBLiDk 652nk CheckExists()
+2023/06/12 18:32:57 [TRACE] aXuRpM2P33w2UW7ayBLiDk 652nk CheckSecureLink()
+2023/06/12 18:32:57 [TRACE] aXuRpM2P33w2UW7ayBLiDk 652nk CheckCount()
+2023/06/12 18:32:57 [TRACE] aXuRpM2P33w2UW7ayBLiDk 652nk CheckExpire()
+2023/06/12 18:32:57 [TRACE] aXuRpM2P33w2UW7ayBLiDk 652nk CheckAuth()
+2023/06/12 18:32:57 [TRACE] aXuRpM2P33w2UW7ayBLiDk 652nk ServeLink()
+2023/06/12 18:32:57 [TRACE] aXuRpM2P33w2UW7ayBLiDk 652nk Redirect()
+2023/06/12 18:32:57 [TRACE] aXuRpM2P33w2UW7ayBLiDk 652nk GET 리다이렉트
+2023/06/12 18:32:57 [TRACE] aXuRpM2P33w2UW7ayBLiDk /652nk 컨텍스트저장 UKey:'652nk'
+2023/06/12 18:32:57 [TRACE] l0WxXQ4vCBZ62tjk1f8vN /link/get 컨텍스트저장 UKey:''
+2023/06/12 18:33:42 [TRACE] 82OFYHt9Zub6D9msG5Pa1c /link/set 컨텍스트저장 UKey:'SJloM'
+2023/06/12 18:33:49 [TRACE] eAk2OjGLBx1f3cyTGbhmcL ----------------------------------------------------
+2023/06/12 18:33:49 [TRACE] eAk2OjGLBx1f3cyTGbhmcL /SJloM 요청토큰: 38d3917e-5391-4ca0-b951-5cffed607e9a
+2023/06/12 18:33:49 [TRACE] eAk2OjGLBx1f3cyTGbhmcL 2024-06-07 00:00:00 +0700 +07
+2023/06/12 18:33:49 [TRACE] eAk2OjGLBx1f3cyTGbhmcL ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 18:33:49 [TRACE] eAk2OjGLBx1f3cyTGbhmcL SJloM CheckExists()
+2023/06/12 18:33:49 [TRACE] eAk2OjGLBx1f3cyTGbhmcL SJloM CheckSecureLink()
+2023/06/12 18:33:49 [TRACE] eAk2OjGLBx1f3cyTGbhmcL SJloM CheckCount()
+2023/06/12 18:33:49 [TRACE] eAk2OjGLBx1f3cyTGbhmcL SJloM CheckExpire()
+2023/06/12 18:33:49 [TRACE] eAk2OjGLBx1f3cyTGbhmcL SJloM CheckAuth()
+2023/06/12 18:33:49 [TRACE] eAk2OjGLBx1f3cyTGbhmcL SJloM ServeLink()
+2023/06/12 18:33:49 [TRACE] eAk2OjGLBx1f3cyTGbhmcL SJloM Redirect()
+2023/06/12 18:33:49 [TRACE] eAk2OjGLBx1f3cyTGbhmcL SJloM GET 리다이렉트
+2023/06/12 18:33:49 [TRACE] eAk2OjGLBx1f3cyTGbhmcL /SJloM 컨텍스트저장 UKey:'SJloM'
+2023/06/12 18:33:49 [TRACE] kIi1VGXjph8hujkoNy7SEc /link/get 컨텍스트저장 UKey:''
+2023/06/12 18:34:53 [TRACE] 12tfyVJnMHsbQuS8XQ9Pyh /link/set 컨텍스트저장 UKey:'ztodb'
+2023/06/12 18:35:00 [TRACE] fY7wzaZFfAUjHPf22coySx ----------------------------------------------------
+2023/06/12 18:35:00 [TRACE] fY7wzaZFfAUjHPf22coySx /ztodb 요청토큰: 38d3917e-5391-4ca0-b951-5cffed607e9a
+2023/06/12 18:35:00 [TRACE] fY7wzaZFfAUjHPf22coySx 2024-06-07 00:00:00 +0700 +07
+2023/06/12 18:35:00 [TRACE] fY7wzaZFfAUjHPf22coySx ub.urlybud.aqua.castis.io 라이선스 정상
+2023/06/12 18:35:00 [TRACE] fY7wzaZFfAUjHPf22coySx ztodb CheckExists()
+2023/06/12 18:35:00 [TRACE] fY7wzaZFfAUjHPf22coySx ztodb CheckSecureLink()
+2023/06/12 18:35:00 [TRACE] fY7wzaZFfAUjHPf22coySx ztodb CheckCount()
+2023/06/12 18:35:00 [TRACE] fY7wzaZFfAUjHPf22coySx ztodb CheckExpire()
+2023/06/12 18:35:00 [TRACE] fY7wzaZFfAUjHPf22coySx ztodb CheckAuth()
+2023/06/12 18:35:00 [TRACE] fY7wzaZFfAUjHPf22coySx ztodb ServeLink()
+2023/06/12 18:35:00 [TRACE] fY7wzaZFfAUjHPf22coySx ztodb Redirect()
+2023/06/12 18:35:00 [TRACE] fY7wzaZFfAUjHPf22coySx ztodb GET 리다이렉트
+2023/06/12 18:35:00 [TRACE] fY7wzaZFfAUjHPf22coySx /ztodb 컨텍스트저장 UKey:'ztodb'
+2023/06/12 18:35:01 [TRACE] 1VMgyRI0qRtjrdqzdhSlX6 /link/get 컨텍스트저장 UKey:''
+2023/06/12 20:26:24 [TRACE] jrBw5xfKCtxj2zNgPCaX2A /link/get 컨텍스트저장 UKey:''

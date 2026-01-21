@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <property name="app_home" value="." />
+
+  <property name="FILE_PATH" value="${app_home}/logs/app.log" />
+  <property name="ROLLING_FILENAME_PATTERN"
+            value="${app_home}/logs/app.%d{yyyy-MM-dd}.log" />
+  <property name="PATTERN" value="[%date{ISO8601}] [%-5level] %logger{32}:%line - %msg%n%throwable" />
+  <springProfile name="dev">
+    <property name="PATTERN" value="[%date{ISO8601}] %highlight([%-5level]) %logger{32}:%line - %msg%n%throwable" />
+  </springProfile>
+
+
+  <appender name="STDOUT"
+            class="ch.qos.logback.core.ConsoleAppender">
+    <withJansi>true</withJansi>
+    <encoder
+            class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <charset>UTF-8</charset>
+      <Pattern>
+        ${PATTERN}
+      </Pattern>
+    </encoder>
+  </appender>
+
+  <appender name="FILE"
+            class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${FILE_PATH}</file>
+    <encoder
+            class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <charset>UTF-8</charset>
+      <Pattern>
+        ${PATTERN}
+      </Pattern>
+    </encoder>
+
+    <rollingPolicy
+            class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${ROLLING_FILENAME_PATTERN}</fileNamePattern>
+      <maxHistory>10</maxHistory>
+    </rollingPolicy>
+  </appender>
+
+  <root level="INFO">
+    <!-- TODO: Look into Async appenders for efficiency. -->
+    <appender-ref ref="FILE" />
+    <appender-ref ref="STDOUT" />
+  </root>
+
+  <logger name="com.evoucher.evoucherbe" level="INFO"/>
+  <logger name="org.springframework.*" level="INFO"/>
+  <logger name="org.hibernate.engine.internal.StatisticalLoggingSessionEventListener" level="INFO" />
+</configuration>

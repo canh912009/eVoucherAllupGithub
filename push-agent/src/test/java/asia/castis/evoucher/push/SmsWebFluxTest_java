@@ -1,0 +1,29 @@
+package asia.castis.evoucher.push;
+
+import asia.castis.evoucher.push.model.PAMessage;
+import asia.castis.evoucher.push.repositories.PARepository;
+import asia.castis.evoucher.push.service.SmsMessageService;
+import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Import;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.web.reactive.function.client.WebClient;
+
+@ExtendWith(SpringExtension.class)
+@RunWith(SpringRunner.class)
+@WebFluxTest
+@Import(SmsMessageService.class)
+public class SmsWebFluxTest {
+    @MockBean
+    PARepository paRepository;
+    @Autowired
+    private WebClient webClientSMS;
+
+    @Test
+    void testRequestSmsToken() {}
+}

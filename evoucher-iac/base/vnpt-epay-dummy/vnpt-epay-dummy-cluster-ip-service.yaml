@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vnpt-epay-dummy-cluster-ip-service
+  namespace: production
+spec:
+  selector:
+    app: vnpt-epay-dummy
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8086 # Replace this with the port your pod is listening on

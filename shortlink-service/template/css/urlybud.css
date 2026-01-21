@@ -1,0 +1,84 @@
+a:link, a:visited, a:active {color:#32B8F1;}
+a:hover {font-weight:bold}
+
+html, body {height:100%; margin:0; font-family:맑은 고딕; font-size:13px}
+
+td[data-page] {width:100px; text-align:center; color:#EDF2FE}
+td[data-page]:hover {font-weight:bold; cursor:pointer}
+
+.hidden {display:none}
+.full {width:100%; height:100%; border-spacing:0; border-collapse:collapse;}
+.full td {padding:0px}
+.ui-corner-all {border-radius: 10px;} /* Jquery UI Modal 모서리 둥글게 */
+
+#menu {height:60px; background-color:#3E465A; color:white}
+#main {vertical-align:top; padding:20px;}
+
+#search {height:100%;}
+#search input {height:30px; box-sizing: border-box; border:1px solid #838383; vertical-align: middle; border-radius:3px}
+#search input:focus {outline: none !important; border:1px solid #00ACEF;}
+#search input[type=text] {width:120px}
+#search input[type=button] {color:white; width:100px; background-color:#3E465A; cursor:pointer}
+#search input[name=limit] {width:50px}
+#search input[value=검색] {background-color:#00ACEF}
+
+#contents > thead > tr > th {height:40px; font-weight:bold; font-size:24px; vertical-align:top; text-align:left}
+#contents > tbody {color:#838383}
+#contents > tbody > tr:nth-child(1) > td {height:60px; border:1px solid #EBEBEB; background-color:white}
+#contents > tbody > tr:nth-child(2) > td {border:1px solid #EBEBEB; background-color:white}
+
+#list {height:100%; overflow-y:auto;}
+
+#data {width:100%; background-color:#EFEFEF}
+#data thead {background-color:#3E465A; color:white}
+#data tbody {background-color:white}
+#data tbody td {text-align:center; height:25px; color:#838383;}
+#data tbody tr:hover {background-color:#F3F4F9; cursor:pointer}
+
+#detail {display:none}
+#div-detail {display:none}
+#div-detail label {color:#757575; width:200px; display:inline-block}
+#div-detail input {border:1px solid #EEEEEE; border-radius:3px; height:25px; margin-top:5px}
+#div-detail input[type=button] {width:100px; height:30px; background-color:white; color:#757575}
+#div-detail input[type=submit] {width:100px; height:30px; background-color:#00ACEF; color:white}
+#div-detail select {border:1px solid #EEEEEE; border-radius:3px; height:25px; margin-top:5px}
+#div-detail input:focus {outline: none !important; border:1px solid #00ACEF;}
+#div-detail input:read-only {background-color:lightgray}
+#div-detail select:focus {outline: none !important; border:1px solid #00ACEF;}
+#div-detail p {text-align:right}
+
+#div-main {height:100%; background-color:#F3F4F9; /*border-radius:10px*/; max-width:400px}
+#div-alert {display:none; position:relative; background-color:white}
+#div-alert div {position:absolute; right:0; bottom:0; display:inline-block; padding:10px}
+#div-alert button {margin-left:10px; background-color:#00ACEF; border:1px solid lightgray; color:white; font-size:13px; width:100px; height:30px; border-radius:3px}
+#div-alert button:focus {outline: none !important; border:1px solid gray;}
+
+/* 로그인 페이지 */
+#table-login {background-color:#3E465A; width:100%; height:100%;}
+#table-login > tbody > tr > td {text-align:center}
+#table-login-outer {display:inline-block}
+#table-login-outer > tbody > tr > td {/*padding:100px*/}
+#table-login-outer > tbody > tr > td:nth-child(1) {/*padding:100px; border-right:1px solid #4F5A74*/}
+#table-login-inner {color:#EDEEEF; text-align:center; width:300px}
+#table-login-inner td {font-size:16px}
+#table-login-inner input {box-sizing: border-box; border:2px solid #4F5A74; width:300px; height:40px; background-color:#3E465A; color:white; font-size:13px; padding:5px}
+#table-login-inner input:focus {outline: none !important; border:2px solid #00ACEF;}
+#table-login-inner input:focus::-webkit-input-placeholder { color: #EDEEEF; } 
+#table-login-inner input:focus::-moz-placeholder { color: #EDEEEF; } 
+#table-login-inner input:focus:-ms-input-placeholder { color: #EDEEEF; } 
+#table-login-inner input:focus::-ms-input-placeholder { color: #EDEEEF; }
+#table-login-inner input[type=text], input[type=password] {}
+#table-login-inner input[type=submit] {background-color:#00ACEF; border:2px solid #00ACEF}
+
+/* 비밀번호변경 팝업 */
+#div-passreset {display:none; background-color:#3E465A; color:#EDEEEF; border-radius:8px !important}
+#div-passreset form {text-align:center; padding-bottom:20px}
+#div-passreset input {box-sizing: border-box; border:2px solid #4F5A74; width:300px; height:40px; background-color:#3E465A; color:white; font-size:13px; padding:5px; margin-top:5px}
+#div-passreset input:focus {outline: none !important; border:2px solid #00ACEF;}
+#div-passreset input:focus::-webkit-input-placeholder { color: #EDEEEF; } 
+#div-passreset input:focus::-moz-placeholder { color: #EDEEEF; } 
+#div-passreset input:focus:-ms-input-placeholder { color: #EDEEEF; } 
+#div-passreset input:focus::-ms-input-placeholder { color: #EDEEEF; }
+#div-passreset input[type=text], input[type=password] {}
+#div-passreset input[type=submit] {background-color:#00ACEF; border:2px solid #00ACEF; width:148px}
+#div-passreset input[type=button] {width:148px}

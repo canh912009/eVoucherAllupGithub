@@ -1,0 +1,24 @@
+server:
+  servlet:
+    context-path: /partner
+  port: 8084
+
+spring:
+  application:
+    name: external-service-api
+  datasource:
+    url: ${SECRETS_DB_URL:jdbc:mariadb://192.168.105.88:13306/e_voucher}
+    username: ${SECRETS_DB_USERNAME:castis}
+    password: ${SECRETS_DB_PASSWORD:castis}
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+  jackson:
+    time-zone=: Asia/Ho_Chi_Minh
+
+servers:
+  admin-api: ${ADMIN_API_URL:http://admin-api-cluster-ip-service/}
+  file-upload-api: ${FILE_UPLOAD_API_URL:http://image-server-cluster-ip-service/}

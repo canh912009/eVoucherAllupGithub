@@ -1,0 +1,31 @@
+import ConfirmationCard from '@/components/common/confirmation-card';
+import {
+  useModalAction,
+  useModalState,
+} from '@/components/ui/modal/modal.context';
+import { useDeleteSupplierMutation } from '@/data/supplier';
+
+const SupplierDeleteView = () => {
+  const { mutate: deleteSupplier, isLoading: loading } =
+    useDeleteSupplierMutation();
+
+  const { data } = useModalState();
+  const { closeModal } = useModalAction();
+
+  function handleDelete() {
+    deleteSupplier({
+      id: data,
+    });
+    closeModal();
+  }
+
+  return (
+    <ConfirmationCard
+      onCancel={closeModal}
+      onDelete={handleDelete}
+      deleteBtnLoading={loading}
+    />
+  );
+};
+
+export default SupplierDeleteView;

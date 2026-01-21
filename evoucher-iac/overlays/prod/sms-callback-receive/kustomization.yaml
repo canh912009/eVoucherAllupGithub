@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../../../base/sms-callback-receive/
+namespace: production
+configMapGenerator:
+- files:
+  - application.properties
+  name: sms-callback-receive-properties
+images:
+- name: registry.git.altimedia.vn/evoucher/sms-callback-receive
+  newTag: main_d6c962af

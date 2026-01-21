@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: otp-service
+  namespace: production
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: otp-service
+  template:
+    metadata:
+      labels:
+        app: otp-service
+    spec:
+      containers:
+        - name: otp-service
+          image: registry.git.altimedia.vn/evoucher/otp-service:main
+          ports:
+            - containerPort: 19931 # Replace this with the port the application listens on
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: otp-service-properties
+      imagePullSecrets:
+        - name: regcred

@@ -1,0 +1,101 @@
+server:
+  servlet:
+    context-path: /
+  port: 8080
+  tomcat:
+    relaxed-path-chars: <,>,[,\,],^,`,{,|,}
+    relaxed-query-chars: <,>,[,\,],^,`,{,|,}
+
+spring:
+  application:
+    name: admin-api
+  datasource:
+    #    url: ${SECRETS_DB_URL:jdbc:mariadb://192.168.0.125:3306/e_voucher}
+    url: ${SECRETS_DB_URL:jdbc:mariadb://192.168.0.125:3306/e_voucher_clone}
+    username: ${SECRETS_DB_USERNAME:castis}
+    password: ${SECRETS_DB_PASSWORD:castis}
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+  #        hbm2ddl:
+  #          auto: update
+  convertor:
+    key: ${DATABASE_CONVERTOR_KEY:XaYbCz3579CzXaYb0246813579aBcDeF}
+  jackson:
+    time-zone=: Asia/Ho_Chi_Minh
+  redis:
+    host: ${SECRETS_REDIS_HOST:192.168.0.125}
+    port: ${SECRETS_REDIS_PORT:6379}
+    standalone: true
+    timeout: 60000
+    jedis:
+      pool:
+        max-active: 100
+        max-wait: -1ms
+        min-idle: 10
+        max-idle: 30
+
+auth:
+  secret: ${AUTH_SECRET_KEY:1234567890}
+  expirationTime: ${AUTH_EXPIRE_TIME:86400000}
+
+servers:
+  #  publishServer: ${PUBLISH_SERVER_URL:http://192.168.0.100:8081/publish-service}
+  publishServer: ${PUBLISH_SERVER_URL:http://localhost:8081/publish-service}
+  evoucherServiceBe: ${EVOUCHER_SERVICE_BE_SERVER_URL:http://localhost:8083/}
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    config-url: /v3/api-docs/swagger-config
+    urls:
+      - url: /v3/api-docs
+        name: Admin API Service
+openapi:
+  service:
+    title: admin-service doc
+    version: 1.0.0
+    gateway-url: ${URL_SERVER:http://192.168.0.125:8080}
+
+
+e-voucher:
+  service-be:
+    url: http://localhost:8083
+  partner-service:
+    url: http://localhost:8090
+#    url: http://192.168.0.125:8090
+
+vnpt-epay:
+  supplier-id: 1234567895
+
+gift-pop:
+  authentication-key: QVFVQTpRbXQyVERkMmRIbHZWMloyYkVF
+  url: https://sandbox-pos.giftpop.vn:9901/interface
+ur-box:
+  app-secret: f8876e0e88b69b1aa1b4411c71931adf
+  app-id: 500000282
+  url: https://sandapi.urbox.dev
+  path:
+    get-brands: /4.0/gift/brand
+    get-goods: /4.0/gift/lists
+    get-good: /4.0/gift/detail
+
+job:
+  sync-store:
+    cron: 0 0 3 * * *
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 120000
+        readTimeout: 120000
+rest-template:
+  connectTime: 120000
+  readTimeout: 120000

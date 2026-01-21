@@ -1,0 +1,4 @@
+variables:
+  GIT_STRATEGY: clone
+include:
+  - local: ".gitlab-ci/.gitlab-ci-build.yml"

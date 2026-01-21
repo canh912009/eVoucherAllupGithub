@@ -1,0 +1,106 @@
+server:
+  servlet:
+    context-path: /
+  port: 8080
+# 2024-06-17
+  tomcat:
+    relaxed-path-chars: <,>,[,\,],^,`,{,|,}
+    relaxed-query-chars: <,>,[,\,],^,`,{,|,}
+spring:
+  application:
+    name: admin-api
+  datasource:
+    url: ${SECRETS_DB_URL:jdbc:mariadb://192.168.105.88:13306/e_voucher}
+    username: ${SECRETS_DB_USERNAME:castis}
+    password: ${SECRETS_DB_PASSWORD:castis}
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: false
+  convertor:
+    key: ${DATABASE_CONVERTOR_KEY:XaYbCz3579CzXaYb0246813579aBcDeF}
+  #2024-08-21
+  jackson:
+    time-zone: Asia/Ho_Chi_Minh
+  #end
+  redis:
+    host: ${SECRETS_REDIS_HOST:192.168.105.88}
+    port: ${SECRETS_REDIS_PORT:36379}
+    timeout: 60000
+    jedis:
+      pool:
+        max-active: 100
+        max-wait: -1ms
+        min-idle: 10
+        max-idle: 30
+# 2024-07-03
+    standalone: false
+# end
+auth:
+  secret: ${AUTH_SECRET_KEY:1234567890}
+  expirationTime: ${AUTH_EXPIRE_TIME:86400000}
+
+servers:
+  publishServer: ${PUBLISH_SERVER_URL:http://publish-service-cluster-ip-service/publish-service}
+  evoucherServiceBe: ${EVOUCHER_SERVICE_BE_SERVER_URL:http://evoucher-service-be-cluster-ip-service}
+
+springdoc:
+  swagger-ui:
+    enabled: false
+  api-docs:
+    enabled: false
+
+e-voucher:
+  service-be:
+    url: http://evoucher-service-be-cluster-ip-service
+  #2024-07-26
+  partner-service:
+    url: http://partner-service-cluster-ip-service
+  #end
+vnpt-epay:
+  supplier-id: 1234567895
+#2024-02-21
+gift-pop:
+  authentication-key: QVFVQTpRbXQyVERkMmRIbHZWMloyYkVF
+  url: https://sandbox-pos.giftpop.vn:9901/interface
+#2024-05-13
+ur-box:
+  app-secret: f8876e0e88b69b1aa1b4411c71931adf
+  app-id: 500000282
+  url: https://sandapi.urbox.dev
+  path:
+    get-brands: /4.0/gift/brand
+    get-goods: /4.0/gift/lists
+    get-good: /4.0/gift/detail
+#2024-07-26
+job:
+  sync-store:
+    cron: 0 0 3 * * * # change on 2024-08-06
+#end
+# 2024-11-20
+watane:
+  api-key: 5CD28778-3A86-4095-B2EB-A9B1BBBDBB45
+  secret-key: GV0U0!9pePptBqi%
+  appId: aqua
+  url: https://watanegw-sbb.payoo.vn/
+  key-store:
+    path: /app/config/castis_watane.p12
+    password: FzkXp3UnhaMOHFp
+    alias: castis_watane_key
+    key:
+      password: FzkXp3UnhaMOHFp
+#end
+
+# 2025-03-25
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 120000
+        readTimeout: 120000
+  rest-template:
+    connectTime: 120000
+    readTimeout: 120000
+ # end

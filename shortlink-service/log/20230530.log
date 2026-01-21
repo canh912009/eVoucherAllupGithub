@@ -1,0 +1,574 @@
+2023/05/30 09:22:11 [INFO] Random Seed Initialized
+2023/05/30 09:22:11 [INFO] Log Level TRACE
+2023/05/30 09:22:11 [INFO] Log Path /root/urlybud/urlybud/log
+2023/05/30 09:22:11 [INFO] Process ID 494609
+2023/05/30 09:22:11 [INFO] Build Date 2023-05-30_11:08:25
+2023/05/30 09:22:11 [INFO] Build Version v1.0.0-27-g961289c
+2023/05/30 09:22:11 [INFO] Build Revision 961289c9f6e0edb303a826651b112874aef72fe7
+2023/05/30 09:22:11 [INFO] License Info
+2023/05/30 09:22:11 [INFO] [31m	2099-12-31 192.168.0.125[0m
+2023/05/30 09:22:11 [INFO] [31m	2123-05-06 localhost[0m
+2023/05/30 09:22:11 [INFO] Database Connected
+2023/05/30 09:22:11 [INFO] Database Connection Info Hosts:[localhost:27017]
+2023/05/30 09:22:11 [INFO] Database Connection Info HTTPClient:&{0xed9600 <nil> <nil> 0s}
+2023/05/30 09:22:11 [INFO] Database Index Created log:RequestTime_1 unique:false
+2023/05/30 09:22:11 [INFO] Database Index Created log:ReqID_1 unique:false
+2023/05/30 09:22:11 [INFO] Database Index Created log:Path_1 unique:false
+2023/05/30 09:22:11 [INFO] Database Index Created log:Dir_1 unique:false
+2023/05/30 09:22:11 [INFO] Database Index Created link:Seq_1 unique:false
+2023/05/30 09:22:11 [INFO] Database Index Created link:Bid_1 unique:false
+2023/05/30 09:22:11 [INFO] Database Index Created link:Cid_1 unique:false
+2023/05/30 09:22:11 [INFO] Database Index Created link:CSeq_1 unique:false
+2023/05/30 09:22:11 [INFO] Database Index Created link:Gid_1 unique:false
+2023/05/30 09:22:11 [INFO] Database Index Created link:Uid_1 unique:false
+2023/05/30 09:22:11 [INFO] Database Index Created link:Idt_1 unique:false
+2023/05/30 09:22:11 [INFO] Database Index Created link:Status_1 unique:false
+2023/05/30 09:22:11 [INFO] Database Index Created link:Parent_1 unique:false
+2023/05/30 09:22:11 [INFO] Database Index Created evtlog:Idt_1 unique:false
+2023/05/30 09:22:11 [INFO] API List
+2023/05/30 09:22:11 [INFO] 	/event/list         : event.List
+2023/05/30 09:22:11 [INFO] 	/link/claim         : link.Claim
+2023/05/30 09:22:11 [INFO] 	/link/get           : link.Get
+2023/05/30 09:22:11 [INFO] 	/link/list          : link.List
+2023/05/30 09:22:11 [INFO] 	/link/set           : link.Set
+2023/05/30 09:22:11 [INFO] 	/link/tumbler/add   : link.TAdd
+2023/05/30 09:22:11 [INFO] 	/link/tumbler/set   : link.TSet
+2023/05/30 09:22:11 [INFO] Rule List
+2023/05/30 09:22:11 [INFO] 	atype               : link.AType
+2023/05/30 09:22:11 [INFO] 	max                 : validator.Max
+2023/05/30 09:22:11 [INFO] 	min                 : validator.Min
+2023/05/30 09:22:11 [INFO] 	url                 : validator.Url
+2023/05/30 09:22:11 [INFO] Auth Type List
+2023/05/30 09:22:11 [INFO] 	AuthBoxPassword
+2023/05/30 09:22:11 [INFO] 	AuthPassword
+2023/05/30 09:22:11 App Started. :2000 main.muxA  
+2023/05/30 09:22:11 App Started. :80 main.muxB  
+2023/05/30 09:23:25 [TRACE] iKJi8MSRG7sk72TXK981wI ----------------------------------------------------
+2023/05/30 09:23:25 [TRACE] iKJi8MSRG7sk72TXK981wI / 토큰생성: 008ae525-ebce-46fb-ae87-51ed8270fded
+2023/05/30 09:23:25 [TRACE] iKJi8MSRG7sk72TXK981wI 2099-12-31 00:00:00 +0700 +07
+2023/05/30 09:23:25 [TRACE] iKJi8MSRG7sk72TXK981wI 192.168.0.125 라이선스 정상
+2023/05/30 09:23:25 [TRACE] iKJi8MSRG7sk72TXK981wI / CheckExists()
+2023/05/30 09:23:25 [TRACE] iKJi8MSRG7sk72TXK981wI / 링크를 찾을 수 없음
+2023/05/30 09:23:25 [TRACE] iKJi8MSRG7sk72TXK981wI ExpectedError() Code:B404 Param:[]
+2023/05/30 09:23:25 [TRACE] iKJi8MSRG7sk72TXK981wI / 컨텍스트저장 UKey:'/'
+2023/05/30 09:24:27 [TRACE] 4yR5I7JVRNddKJZMlewxM6 ----------------------------------------------------
+2023/05/30 09:24:27 [TRACE] 4yR5I7JVRNddKJZMlewxM6 / 토큰생성: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 09:24:27 [TRACE] 4yR5I7JVRNddKJZMlewxM6 2099-12-31 00:00:00 +0700 +07
+2023/05/30 09:24:27 [TRACE] 4yR5I7JVRNddKJZMlewxM6 192.168.0.125 라이선스 정상
+2023/05/30 09:24:27 [TRACE] 4yR5I7JVRNddKJZMlewxM6 / CheckExists()
+2023/05/30 09:24:27 [TRACE] 4yR5I7JVRNddKJZMlewxM6 / 링크를 찾을 수 없음
+2023/05/30 09:24:27 [TRACE] 4yR5I7JVRNddKJZMlewxM6 ExpectedError() Code:B404 Param:[]
+2023/05/30 09:24:27 [TRACE] 4yR5I7JVRNddKJZMlewxM6 / 컨텍스트저장 UKey:'/'
+2023/05/30 09:33:48 [TRACE] 3n3vGbS0f5Dg8zelEBvUjn / 컨텍스트저장 UKey:''
+2023/05/30 09:34:12 [TRACE] b2ilxZ75WIBlxssOBFiXem / 컨텍스트저장 UKey:''
+2023/05/30 09:34:27 [TRACE] 6aFrMiL1szKdnWPNJDPXBJ 클라이언트 map[ClientName:evoucher Idt:1685413263730 _id:c4e0f406-4bb1-4a74-8e46-83fafdda3776]
+2023/05/30 09:34:27 [TRACE] 6aFrMiL1szKdnWPNJDPXBJ / 컨텍스트저장 UKey:''
+2023/05/30 09:34:33 [TRACE] 5I4VwwKYnzv5dKXbMhTCVO /link/get 컨텍스트저장 UKey:''
+2023/05/30 09:34:39 [TRACE] eGpzcCbYaYxktc9IwX1Kyd /link/list 컨텍스트저장 UKey:''
+2023/05/30 09:34:45 [TRACE] 7REfJAaPOTw8x00nxWnZx5 /link/list 컨텍스트저장 UKey:''
+2023/05/30 09:35:41 [TRACE] 2Ik36aFW7ohlrlP9YM0MX0 /link/list 컨텍스트저장 UKey:''
+2023/05/30 11:24:41 [TRACE] 5E7lGTEAqQc15caCI9hax /link/list 컨텍스트저장 UKey:''
+2023/05/30 11:24:57 [TRACE] 5RW0PRPGFVq38K1J2BnIFA /link/list 컨텍스트저장 UKey:''
+2023/05/30 11:27:38 [TRACE] 74YaZxOtuFF72tUr9XsW9b /link/list 컨텍스트저장 UKey:''
+2023/05/30 11:28:30 [TRACE] 2IwEUzle6g21t891VmpeGX /link/list 컨텍스트저장 UKey:''
+2023/05/30 11:54:02 [TRACE] 7I7hzLMXoxfbo0DJjTLFQt /link/set 컨텍스트저장 UKey:'ok8Hm'
+2023/05/30 12:04:45 [TRACE] 3dTEfONgXifewBS0ZqorjX /link/set 컨텍스트저장 UKey:'ok8HK'
+2023/05/30 12:04:45 [TRACE] 7pNOASK3CA6daRIXNxM5jT /link/modify 컨텍스트저장 UKey:''
+2023/05/30 12:04:47 [TRACE] a4XDWZzQx6H29sCfBSsZNz /link/set 컨텍스트저장 UKey:'pkYJY'
+2023/05/30 12:04:47 [TRACE] 91XHzPrgaFRi9Kx5MHOe11 /link/modify 컨텍스트저장 UKey:''
+2023/05/30 12:05:26 [TRACE] 3mGS38d8Y6JeterGEgEw3k /link/set 컨텍스트저장 UKey:'OFXuK'
+2023/05/30 12:05:26 [TRACE] 99GKEGQieZV6raUB2KehUz /link/modify 컨텍스트저장 UKey:''
+2023/05/30 12:06:40 [TRACE] dLqYbcQcOxx6VRQSDgxKNF /link/set 컨텍스트저장 UKey:'32w5C'
+2023/05/30 12:07:20 [TRACE] 63s4pycUhrnkPVgmudhGUr ----------------------------------------------------
+2023/05/30 12:07:20 [TRACE] 63s4pycUhrnkPVgmudhGUr /32w5C 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 12:07:20 [TRACE] 63s4pycUhrnkPVgmudhGUr 2099-12-31 00:00:00 +0700 +07
+2023/05/30 12:07:20 [TRACE] 63s4pycUhrnkPVgmudhGUr 192.168.0.125 라이선스 정상
+2023/05/30 12:07:20 [TRACE] 63s4pycUhrnkPVgmudhGUr 32w5C CheckExists()
+2023/05/30 12:07:20 [TRACE] 63s4pycUhrnkPVgmudhGUr 32w5C CheckSecureLink()
+2023/05/30 12:07:20 [TRACE] 63s4pycUhrnkPVgmudhGUr 32w5C CheckCount()
+2023/05/30 12:07:20 [TRACE] 63s4pycUhrnkPVgmudhGUr 32w5C CheckExpire()
+2023/05/30 12:07:20 [TRACE] 63s4pycUhrnkPVgmudhGUr 32w5C CheckAuth()
+2023/05/30 12:07:20 [TRACE] 63s4pycUhrnkPVgmudhGUr 32w5C ServeLink()
+2023/05/30 12:07:20 [TRACE] 63s4pycUhrnkPVgmudhGUr 32w5C Redirect()
+2023/05/30 12:07:20 [TRACE] 63s4pycUhrnkPVgmudhGUr 32w5C GET 리다이렉트
+2023/05/30 12:07:20 [TRACE] 63s4pycUhrnkPVgmudhGUr /32w5C 컨텍스트저장 UKey:'32w5C'
+2023/05/30 12:07:21 [TRACE] 1J9EAlJSXHaiHxd8CjTG45 /link/get 컨텍스트저장 UKey:''
+2023/05/30 12:07:21 [TRACE] kf946vuvfCn2rttHZi6VbM 자신의 Cc로 검사
+2023/05/30 12:07:21 [TRACE] kf946vuvfCn2rttHZi6VbM 자신의 Cc와 요청 Cc 다름.
+2023/05/30 12:07:21 [TRACE] kf946vuvfCn2rttHZi6VbM /link/claim 컨텍스트저장 UKey:''
+2023/05/30 12:07:21 [TRACE] 8VhlK8eJc5V5z3BLVJ9s8i /link/set 컨텍스트저장 UKey:'pkYLb'
+2023/05/30 12:09:11 [TRACE] bbF05qrhhUvflYr4OeRqPf /link/get 컨텍스트저장 UKey:''
+2023/05/30 12:09:11 [TRACE] iAIhPOBmU54ehmVe5bmXyk 자신의 Cc로 검사
+2023/05/30 12:09:11 [TRACE] iAIhPOBmU54ehmVe5bmXyk 자신의 Cc와 요청 Cc 다름.
+2023/05/30 12:09:11 [TRACE] iAIhPOBmU54ehmVe5bmXyk /link/claim 컨텍스트저장 UKey:''
+2023/05/30 12:09:11 [TRACE] 1HXbwERX3F3lTw6kPkqUKC /link/set 컨텍스트저장 UKey:'a8oj2'
+2023/05/30 12:10:40 [TRACE] 2AWZYyxHwln6ljeUuD7kze /link/get 컨텍스트저장 UKey:''
+2023/05/30 12:10:40 [TRACE] idlsF4VDgGP2JBCyHk38eq 자신의 Cc로 검사
+2023/05/30 12:10:40 [TRACE] idlsF4VDgGP2JBCyHk38eq 자신의 Cc와 요청 Cc 다름.
+2023/05/30 12:10:40 [TRACE] idlsF4VDgGP2JBCyHk38eq /link/claim 컨텍스트저장 UKey:''
+2023/05/30 12:10:40 [TRACE] iqqAZEOsFN62Dbbfd0plhB /link/set 컨텍스트저장 UKey:'if6yy'
+2023/05/30 12:10:43 [TRACE] 5e4CnAUSLtC8wPVuu0MBnb /link/get 컨텍스트저장 UKey:''
+2023/05/30 12:10:43 [TRACE] 3jYiEpOo9cQ1vyEC3Bj5qP 자신의 Cc로 검사
+2023/05/30 12:10:43 [TRACE] 3jYiEpOo9cQ1vyEC3Bj5qP 자신의 Cc와 요청 Cc 다름.
+2023/05/30 12:10:43 [TRACE] 3jYiEpOo9cQ1vyEC3Bj5qP /link/claim 컨텍스트저장 UKey:''
+2023/05/30 12:10:43 [TRACE] gcKkk5rDdN9erEzx4oG4Gl /link/set 컨텍스트저장 UKey:'Gzfji'
+2023/05/30 12:11:22 [TRACE] dIgHRvXTA7l4FjcRNl5N4l /link/get 컨텍스트저장 UKey:''
+2023/05/30 12:11:22 [TRACE] cPXmuEADDvdiwvDMfrGKhA 자신의 Cc로 검사
+2023/05/30 12:11:22 [TRACE] cPXmuEADDvdiwvDMfrGKhA 자신의 Cc와 요청 Cc 다름.
+2023/05/30 12:11:22 [TRACE] cPXmuEADDvdiwvDMfrGKhA /link/claim 컨텍스트저장 UKey:''
+2023/05/30 12:11:22 [TRACE] eojgje4Er0zdhzdFhssxYA /link/set 컨텍스트저장 UKey:'a8ojw'
+2023/05/30 13:00:20 [TRACE] 2hr9qCo6QX3jKNgILmpX1w /link/set 컨텍스트저장 UKey:'qlOPa'
+2023/05/30 13:21:44 [TRACE] 786nZ3VspbTcvCss3L0C0q /link/set 컨텍스트저장 UKey:'Fypjl'
+2023/05/30 13:23:02 [TRACE] 7iSplTMnEujfyp5Jn6VFCx /link/set 컨텍스트저장 UKey:'fcAu0'
+2023/05/30 13:24:14 [TRACE] c7eUT8jU33icF1ZXuv2HNd /link/set 컨텍스트저장 UKey:'652c6'
+2023/05/30 13:24:23 [TRACE] 7oO6cVLcVh1hXjVZKszCmE /link/set 컨텍스트저장 UKey:'kgMEE'
+2023/05/30 13:25:00 [TRACE] iREgbMdHiSJgxLIr0ENsAw /link/set 컨텍스트저장 UKey:'lhCH1'
+2023/05/30 13:25:11 [TRACE] 3CRS9NskSopfhb3yV99yUM ----------------------------------------------------
+2023/05/30 13:25:11 [TRACE] 3CRS9NskSopfhb3yV99yUM /lhCH1 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 13:25:11 [TRACE] 3CRS9NskSopfhb3yV99yUM 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:25:11 [TRACE] 3CRS9NskSopfhb3yV99yUM 192.168.0.125 라이선스 정상
+2023/05/30 13:25:11 [TRACE] 3CRS9NskSopfhb3yV99yUM lhCH1 CheckExists()
+2023/05/30 13:25:11 [TRACE] 3CRS9NskSopfhb3yV99yUM lhCH1 CheckSecureLink()
+2023/05/30 13:25:11 [TRACE] 3CRS9NskSopfhb3yV99yUM lhCH1 CheckCount()
+2023/05/30 13:25:11 [TRACE] 3CRS9NskSopfhb3yV99yUM lhCH1 CheckExpire()
+2023/05/30 13:25:11 [TRACE] 3CRS9NskSopfhb3yV99yUM lhCH1 CheckAuth()
+2023/05/30 13:25:11 [TRACE] 3CRS9NskSopfhb3yV99yUM lhCH1 ServeLink()
+2023/05/30 13:25:11 [TRACE] 3CRS9NskSopfhb3yV99yUM lhCH1 Redirect()
+2023/05/30 13:25:11 [TRACE] 3CRS9NskSopfhb3yV99yUM lhCH1 GET 리다이렉트
+2023/05/30 13:25:11 [TRACE] 3CRS9NskSopfhb3yV99yUM /lhCH1 컨텍스트저장 UKey:'lhCH1'
+2023/05/30 13:25:11 [TRACE] 4omj2DWKdqbbuurMylPjSD /link/get 컨텍스트저장 UKey:''
+2023/05/30 13:25:11 [TRACE] fX1EyjXyDU32NndwtVT21A /link/claim 컨텍스트저장 UKey:''
+2023/05/30 13:25:12 [TRACE] 61XehXEbk319FNemiPG7Q2 /link/set 컨텍스트저장 UKey:'NF7Da'
+2023/05/30 13:29:15 [TRACE] dgu4TPnkkB3anrPbVyhdOG ----------------------------------------------------
+2023/05/30 13:29:15 [TRACE] dgu4TPnkkB3anrPbVyhdOG / 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 13:29:15 [TRACE] dgu4TPnkkB3anrPbVyhdOG 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:29:15 [TRACE] dgu4TPnkkB3anrPbVyhdOG 192.168.0.125 라이선스 정상
+2023/05/30 13:29:15 [TRACE] dgu4TPnkkB3anrPbVyhdOG / CheckExists()
+2023/05/30 13:29:15 [TRACE] dgu4TPnkkB3anrPbVyhdOG / 링크를 찾을 수 없음
+2023/05/30 13:29:15 [TRACE] dgu4TPnkkB3anrPbVyhdOG ExpectedError() Code:B404 Param:[]
+2023/05/30 13:29:15 [TRACE] dgu4TPnkkB3anrPbVyhdOG / 컨텍스트저장 UKey:'/'
+2023/05/30 13:31:25 [TRACE] lRZBPWnbgvbb0iLRMKSUzD /link/tumbler/set 컨텍스트저장 UKey:''
+2023/05/30 13:31:44 [TRACE] 9q8yoZKTRIw8PCs1Dk3e4v /link/tumbler/set 컨텍스트저장 UKey:''
+2023/05/30 13:32:04 [TRACE] 23csqb7j1PHbXIJugDSVq9 /link/tumbler/set 컨텍스트저장 UKey:''
+2023/05/30 13:32:12 [TRACE] 8edomhh77K57um9wkELS7e /link/tumbler/set 컨텍스트저장 UKey:'@test123'
+2023/05/30 13:33:05 [TRACE] 2RToQHH9Cfaewtx2QdYbvB ----------------------------------------------------
+2023/05/30 13:33:05 [TRACE] 2RToQHH9Cfaewtx2QdYbvB /@test123 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 13:33:05 [TRACE] 2RToQHH9Cfaewtx2QdYbvB 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:33:05 [TRACE] 2RToQHH9Cfaewtx2QdYbvB 192.168.0.125 라이선스 정상
+2023/05/30 13:33:05 [TRACE] 2RToQHH9Cfaewtx2QdYbvB @test123 CheckExists()
+2023/05/30 13:33:05 [TRACE] 2RToQHH9Cfaewtx2QdYbvB @test123 CheckSecureLink()
+2023/05/30 13:33:05 [TRACE] 2RToQHH9Cfaewtx2QdYbvB @test123 자신의 Cc로 검증
+2023/05/30 13:33:05 [TRACE] 2RToQHH9Cfaewtx2QdYbvB @test123 CheckCount()
+2023/05/30 13:33:05 [TRACE] 2RToQHH9Cfaewtx2QdYbvB @test123 CheckExpire()
+2023/05/30 13:33:05 [TRACE] 2RToQHH9Cfaewtx2QdYbvB @test123 ServeTumbler()
+2023/05/30 13:33:05 [TRACE] 2RToQHH9Cfaewtx2QdYbvB ExpectedError() Code:B900 Param:[]
+2023/05/30 13:33:05 [TRACE] 2RToQHH9Cfaewtx2QdYbvB /@test123 컨텍스트저장 UKey:'@test123'
+2023/05/30 13:33:32 [TRACE] 1nnlwWPlXfhdnSmWxcoc3t ----------------------------------------------------
+2023/05/30 13:33:32 [TRACE] 1nnlwWPlXfhdnSmWxcoc3t /@test123 토큰생성: d24580a3-3501-4520-b039-a783086a6a86
+2023/05/30 13:33:32 [TRACE] 1nnlwWPlXfhdnSmWxcoc3t 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:33:32 [TRACE] 1nnlwWPlXfhdnSmWxcoc3t 192.168.0.125 라이선스 정상
+2023/05/30 13:33:32 [TRACE] 1nnlwWPlXfhdnSmWxcoc3t @test123 CheckExists()
+2023/05/30 13:33:32 [TRACE] 1nnlwWPlXfhdnSmWxcoc3t @test123 CheckSecureLink()
+2023/05/30 13:33:32 [TRACE] 1nnlwWPlXfhdnSmWxcoc3t @test123 자신의 Cc로 검증
+2023/05/30 13:33:32 [TRACE] 1nnlwWPlXfhdnSmWxcoc3t ExpectedError() Code:B245 Param:[]
+2023/05/30 13:33:32 [TRACE] 1nnlwWPlXfhdnSmWxcoc3t /@test123 컨텍스트저장 UKey:'@test123'
+2023/05/30 13:36:31 [TRACE] axR6oVmpreP2nNXW9DALGf /link/tumbler/add 컨텍스트저장 UKey:''
+2023/05/30 13:36:41 [TRACE] XFsb5DrisQ1TgyBfKdiu1 /link/tumbler/add 컨텍스트저장 UKey:''
+2023/05/30 13:36:55 [TRACE] 9SSvDvLJpFi7P5gnRMZvg5 /link/tumbler/add 컨텍스트저장 UKey:'xrH7c'
+2023/05/30 13:37:09 [TRACE] 1AzkFXGe2hrgFfIWS2lR5R ----------------------------------------------------
+2023/05/30 13:37:09 [TRACE] 1AzkFXGe2hrgFfIWS2lR5R /@test123 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 13:37:09 [TRACE] 1AzkFXGe2hrgFfIWS2lR5R 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:37:09 [TRACE] 1AzkFXGe2hrgFfIWS2lR5R 192.168.0.125 라이선스 정상
+2023/05/30 13:37:09 [TRACE] 1AzkFXGe2hrgFfIWS2lR5R @test123 CheckExists()
+2023/05/30 13:37:09 [TRACE] 1AzkFXGe2hrgFfIWS2lR5R @test123 CheckSecureLink()
+2023/05/30 13:37:09 [TRACE] 1AzkFXGe2hrgFfIWS2lR5R @test123 자신의 Cc로 검증
+2023/05/30 13:37:09 [TRACE] 1AzkFXGe2hrgFfIWS2lR5R @test123 CheckCount()
+2023/05/30 13:37:09 [TRACE] 1AzkFXGe2hrgFfIWS2lR5R @test123 CheckExpire()
+2023/05/30 13:37:09 [TRACE] 1AzkFXGe2hrgFfIWS2lR5R @test123 ServeTumbler()
+2023/05/30 13:37:09 [TRACE] 1AzkFXGe2hrgFfIWS2lR5R @test123 의 최신 링크로 이동
+2023/05/30 13:37:09 [TRACE] 1AzkFXGe2hrgFfIWS2lR5R @test123 Redirect()
+2023/05/30 13:37:09 [TRACE] 1AzkFXGe2hrgFfIWS2lR5R @test123 POST 리다이렉트
+2023/05/30 13:37:09 [TRACE] 1AzkFXGe2hrgFfIWS2lR5R /@test123 컨텍스트저장 UKey:'@test123'
+2023/05/30 13:37:09 [TRACE] bUmEIGdhlfifm6oe5oyyeV ----------------------------------------------------
+2023/05/30 13:37:09 [TRACE] bUmEIGdhlfifm6oe5oyyeV /xrH7c 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 13:37:09 [TRACE] bUmEIGdhlfifm6oe5oyyeV 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:37:09 [TRACE] bUmEIGdhlfifm6oe5oyyeV 192.168.0.125 라이선스 정상
+2023/05/30 13:37:09 [TRACE] bUmEIGdhlfifm6oe5oyyeV xrH7c CheckExists()
+2023/05/30 13:37:09 [TRACE] bUmEIGdhlfifm6oe5oyyeV xrH7c CheckSecureLink()
+2023/05/30 13:37:09 [TRACE] bUmEIGdhlfifm6oe5oyyeV xrH7c CheckCount()
+2023/05/30 13:37:09 [TRACE] bUmEIGdhlfifm6oe5oyyeV xrH7c CheckExpire()
+2023/05/30 13:37:09 [TRACE] bUmEIGdhlfifm6oe5oyyeV xrH7c CheckAuth()
+2023/05/30 13:37:09 [TRACE] bUmEIGdhlfifm6oe5oyyeV xrH7c ServeLink()
+2023/05/30 13:37:09 [TRACE] bUmEIGdhlfifm6oe5oyyeV xrH7c Redirect()
+2023/05/30 13:37:09 [TRACE] bUmEIGdhlfifm6oe5oyyeV xrH7c GET 리다이렉트
+2023/05/30 13:37:09 [TRACE] bUmEIGdhlfifm6oe5oyyeV /xrH7c 컨텍스트저장 UKey:'xrH7c'
+2023/05/30 13:37:10 [TRACE] e6RxnyN84hX9klu9vblrhJ /link/get 컨텍스트저장 UKey:''
+2023/05/30 13:37:10 [TRACE] 31dSpeXHEByk08oymng1O /link/claim 컨텍스트저장 UKey:''
+2023/05/30 13:37:10 [TRACE] alh4zpHctRTjz3O3ZiWgcZ /link/set 컨텍스트저장 UKey:'97yj1'
+2023/05/30 13:37:26 [TRACE] 8gBgNIv804o5OWOg679etD /link/get 컨텍스트저장 UKey:''
+2023/05/30 13:37:26 [TRACE] 4AAMWRu7UkM9ymv6cCN4Lv /link/claim 컨텍스트저장 UKey:''
+2023/05/30 13:37:26 [TRACE] dXDabIWY6Ep6jFsGKrVMuZ /link/set 컨텍스트저장 UKey:'upb1S'
+2023/05/30 13:38:02 [TRACE] f6f7H5AOwP25w25Aa1uT56 ----------------------------------------------------
+2023/05/30 13:38:02 [TRACE] f6f7H5AOwP25w25Aa1uT56 /@test123+ 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 13:38:02 [TRACE] f6f7H5AOwP25w25Aa1uT56 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:38:02 [TRACE] f6f7H5AOwP25w25Aa1uT56 192.168.0.125 라이선스 정상
+2023/05/30 13:38:02 [TRACE] f6f7H5AOwP25w25Aa1uT56 @test123 CheckExists()
+2023/05/30 13:38:02 [TRACE] f6f7H5AOwP25w25Aa1uT56 @test123 CheckSecureLink()
+2023/05/30 13:38:02 [TRACE] f6f7H5AOwP25w25Aa1uT56 @test123 자신의 Cc로 검증
+2023/05/30 13:38:02 [TRACE] f6f7H5AOwP25w25Aa1uT56 @test123 CheckCount()
+2023/05/30 13:38:02 [TRACE] f6f7H5AOwP25w25Aa1uT56 @test123 CheckExpire()
+2023/05/30 13:38:02 [TRACE] f6f7H5AOwP25w25Aa1uT56 @test123 ServeTumbler()
+2023/05/30 13:38:02 [TRACE] f6f7H5AOwP25w25Aa1uT56 @test123 CheckAuth()
+2023/05/30 13:38:02 [TRACE] f6f7H5AOwP25w25Aa1uT56 @test123 U링크 직접 요청하였거나 자체인증 실행 설정
+2023/05/30 13:38:02 [TRACE] f6f7H5AOwP25w25Aa1uT56 @test123 인증필요
+2023/05/30 13:38:02 [TRACE] f6f7H5AOwP25w25Aa1uT56 @test123 ShowAuthPage()
+2023/05/30 13:38:02 [TRACE] f6f7H5AOwP25w25Aa1uT56 /@test123+ 컨텍스트저장 UKey:'@test123'
+2023/05/30 13:38:05 [TRACE] jOwzxZx04Qh4jB3zi3rjZP ----------------------------------------------------
+2023/05/30 13:38:05 [TRACE] jOwzxZx04Qh4jB3zi3rjZP /@test123+ 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 13:38:05 [TRACE] jOwzxZx04Qh4jB3zi3rjZP 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:38:05 [TRACE] jOwzxZx04Qh4jB3zi3rjZP 192.168.0.125 라이선스 정상
+2023/05/30 13:38:05 [TRACE] jOwzxZx04Qh4jB3zi3rjZP @test123 CheckExists()
+2023/05/30 13:38:05 [TRACE] jOwzxZx04Qh4jB3zi3rjZP @test123 CheckSecureLink()
+2023/05/30 13:38:05 [TRACE] jOwzxZx04Qh4jB3zi3rjZP @test123 자신의 Cc로 검증
+2023/05/30 13:38:05 [TRACE] jOwzxZx04Qh4jB3zi3rjZP @test123 CheckCount()
+2023/05/30 13:38:05 [TRACE] jOwzxZx04Qh4jB3zi3rjZP @test123 CheckExpire()
+2023/05/30 13:38:05 [TRACE] jOwzxZx04Qh4jB3zi3rjZP @test123 ServeTumbler()
+2023/05/30 13:38:05 [TRACE] jOwzxZx04Qh4jB3zi3rjZP @test123 CheckAuth()
+2023/05/30 13:38:05 [TRACE] jOwzxZx04Qh4jB3zi3rjZP @test123 U링크 직접 요청하였거나 자체인증 실행 설정
+2023/05/30 13:38:05 [TRACE] jOwzxZx04Qh4jB3zi3rjZP @test123 의 링크 목록
+2023/05/30 13:38:05 [TRACE] jOwzxZx04Qh4jB3zi3rjZP @test123 Redirect()
+2023/05/30 13:38:05 [TRACE] jOwzxZx04Qh4jB3zi3rjZP @test123 POST 리다이렉트
+2023/05/30 13:38:05 [TRACE] jOwzxZx04Qh4jB3zi3rjZP /@test123+ 컨텍스트저장 UKey:'@test123'
+2023/05/30 13:38:08 [TRACE] gGrpyVKWtcp4QqzKXpUv5o ----------------------------------------------------
+2023/05/30 13:38:08 [TRACE] gGrpyVKWtcp4QqzKXpUv5o /xrH7c 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 13:38:08 [TRACE] gGrpyVKWtcp4QqzKXpUv5o 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:38:08 [TRACE] gGrpyVKWtcp4QqzKXpUv5o 192.168.0.125 라이선스 정상
+2023/05/30 13:38:08 [TRACE] gGrpyVKWtcp4QqzKXpUv5o xrH7c CheckExists()
+2023/05/30 13:38:08 [TRACE] gGrpyVKWtcp4QqzKXpUv5o xrH7c CheckSecureLink()
+2023/05/30 13:38:08 [TRACE] gGrpyVKWtcp4QqzKXpUv5o xrH7c CheckCount()
+2023/05/30 13:38:08 [TRACE] gGrpyVKWtcp4QqzKXpUv5o xrH7c CheckExpire()
+2023/05/30 13:38:08 [TRACE] gGrpyVKWtcp4QqzKXpUv5o xrH7c CheckAuth()
+2023/05/30 13:38:08 [TRACE] gGrpyVKWtcp4QqzKXpUv5o xrH7c ServeLink()
+2023/05/30 13:38:08 [TRACE] gGrpyVKWtcp4QqzKXpUv5o xrH7c Redirect()
+2023/05/30 13:38:08 [TRACE] gGrpyVKWtcp4QqzKXpUv5o xrH7c GET 리다이렉트
+2023/05/30 13:38:08 [TRACE] gGrpyVKWtcp4QqzKXpUv5o /xrH7c 컨텍스트저장 UKey:'xrH7c'
+2023/05/30 13:38:08 [TRACE] 5M8qORLnMsR8edlAEhH9Pv /link/get 컨텍스트저장 UKey:''
+2023/05/30 13:38:08 [TRACE] g4fC3gjX0LH5eBU3x9G5Nd /link/claim 컨텍스트저장 UKey:''
+2023/05/30 13:38:08 [TRACE] ggL9qRD2GOZibGAg2iJBoQ /link/set 컨텍스트저장 UKey:'LDrCP'
+2023/05/30 13:38:13 [TRACE] f8IJrbvsZj38suVJmK2okY ----------------------------------------------------
+2023/05/30 13:38:13 [TRACE] f8IJrbvsZj38suVJmK2okY /xrH7c 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 13:38:13 [TRACE] f8IJrbvsZj38suVJmK2okY 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:38:13 [TRACE] f8IJrbvsZj38suVJmK2okY 192.168.0.125 라이선스 정상
+2023/05/30 13:38:13 [TRACE] f8IJrbvsZj38suVJmK2okY xrH7c CheckExists()
+2023/05/30 13:38:13 [TRACE] f8IJrbvsZj38suVJmK2okY xrH7c CheckSecureLink()
+2023/05/30 13:38:13 [TRACE] f8IJrbvsZj38suVJmK2okY xrH7c CheckCount()
+2023/05/30 13:38:13 [TRACE] f8IJrbvsZj38suVJmK2okY xrH7c CheckExpire()
+2023/05/30 13:38:13 [TRACE] f8IJrbvsZj38suVJmK2okY xrH7c CheckAuth()
+2023/05/30 13:38:13 [TRACE] f8IJrbvsZj38suVJmK2okY xrH7c ServeLink()
+2023/05/30 13:38:13 [TRACE] f8IJrbvsZj38suVJmK2okY xrH7c Redirect()
+2023/05/30 13:38:13 [TRACE] f8IJrbvsZj38suVJmK2okY xrH7c GET 리다이렉트
+2023/05/30 13:38:13 [TRACE] f8IJrbvsZj38suVJmK2okY /xrH7c 컨텍스트저장 UKey:'xrH7c'
+2023/05/30 13:38:14 [TRACE] 6c0zfQ4AEKNb3RrN4qGmIZ /link/get 컨텍스트저장 UKey:''
+2023/05/30 13:38:14 [TRACE] eUBbrEsvkfJkFZMP4Cj8I0 /link/claim 컨텍스트저장 UKey:''
+2023/05/30 13:38:14 [TRACE] gVGtcbwV3zO9wvTnXqEgKQ /link/set 컨텍스트저장 UKey:'Exzos'
+2023/05/30 13:38:18 [TRACE] d5McZpDJPMAjNTfa6HKqjg /link/get 컨텍스트저장 UKey:''
+2023/05/30 13:38:18 [TRACE] 9kK1VViBpTf6EzEfIx8FXp /link/claim 컨텍스트저장 UKey:''
+2023/05/30 13:38:18 [TRACE] hEGgqkTQRpi9GtTiCJv3lD /link/set 컨텍스트저장 UKey:'Fyprh'
+2023/05/30 13:46:15 [TRACE] 4FwLLlrJLm64A5Z1gBNz2M /link/get 컨텍스트저장 UKey:''
+2023/05/30 13:46:15 [TRACE] 3vCnbVUhYRedQrFE6Mtbcz /link/claim 컨텍스트저장 UKey:''
+2023/05/30 13:46:15 [TRACE] g9KU3kKi4KykVWBECSYQqo /link/set 컨텍스트저장 UKey:'jfWFG'
+2023/05/30 13:47:10 [TRACE] fsxvjrBok16zoa8oZQRYL /link/get 컨텍스트저장 UKey:''
+2023/05/30 13:47:10 [TRACE] f4xLP3fyFfo1Nbldn286PG /link/claim 컨텍스트저장 UKey:''
+2023/05/30 13:47:11 [TRACE] gZCoDSxDCBbRkZnecrCFi /link/set 컨텍스트저장 UKey:'JBLBr'
+2023/05/30 13:47:11 [TRACE] eQvHX401b7mem15eD1vA0H /link/tumbler/set 컨텍스트저장 UKey:'@testbox123'
+2023/05/30 13:47:11 [TRACE] SLJfZNFLBl8XQ880cJ9BX /link/tumbler/add 컨텍스트저장 UKey:'wqR9K'
+2023/05/30 13:47:24 [TRACE] 88BN16Eyt0m5zmUVdmHo7e ----------------------------------------------------
+2023/05/30 13:47:24 [TRACE] 88BN16Eyt0m5zmUVdmHo7e /@testbox123 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 13:47:24 [TRACE] 88BN16Eyt0m5zmUVdmHo7e 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:47:24 [TRACE] 88BN16Eyt0m5zmUVdmHo7e 192.168.0.125 라이선스 정상
+2023/05/30 13:47:24 [TRACE] 88BN16Eyt0m5zmUVdmHo7e @testbox123 CheckExists()
+2023/05/30 13:47:24 [TRACE] 88BN16Eyt0m5zmUVdmHo7e @testbox123 CheckSecureLink()
+2023/05/30 13:47:24 [TRACE] 88BN16Eyt0m5zmUVdmHo7e @testbox123 자신의 Cc로 검증
+2023/05/30 13:47:24 [TRACE] 88BN16Eyt0m5zmUVdmHo7e @testbox123 CheckCount()
+2023/05/30 13:47:24 [TRACE] 88BN16Eyt0m5zmUVdmHo7e @testbox123 CheckExpire()
+2023/05/30 13:47:24 [TRACE] 88BN16Eyt0m5zmUVdmHo7e @testbox123 ServeTumbler()
+2023/05/30 13:47:24 [TRACE] 88BN16Eyt0m5zmUVdmHo7e @testbox123 의 최신 링크로 이동
+2023/05/30 13:47:24 [TRACE] 88BN16Eyt0m5zmUVdmHo7e @testbox123 CheckAuth()
+2023/05/30 13:47:24 [TRACE] 88BN16Eyt0m5zmUVdmHo7e @testbox123 U링크 직접 요청하였거나 자체인증 실행 설정
+2023/05/30 13:47:24 [TRACE] 88BN16Eyt0m5zmUVdmHo7e @testbox123 인증필요
+2023/05/30 13:47:24 [TRACE] 88BN16Eyt0m5zmUVdmHo7e @testbox123 ShowAuthPage()
+2023/05/30 13:47:24 [TRACE] 88BN16Eyt0m5zmUVdmHo7e /@testbox123 컨텍스트저장 UKey:'@testbox123'
+2023/05/30 13:47:26 [TRACE] gey6N5SxgyN3GJ7SAyPVfm ----------------------------------------------------
+2023/05/30 13:47:26 [TRACE] gey6N5SxgyN3GJ7SAyPVfm /@testbox123 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 13:47:26 [TRACE] gey6N5SxgyN3GJ7SAyPVfm 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:47:26 [TRACE] gey6N5SxgyN3GJ7SAyPVfm 192.168.0.125 라이선스 정상
+2023/05/30 13:47:26 [TRACE] gey6N5SxgyN3GJ7SAyPVfm @testbox123 CheckExists()
+2023/05/30 13:47:26 [TRACE] gey6N5SxgyN3GJ7SAyPVfm @testbox123 CheckSecureLink()
+2023/05/30 13:47:26 [TRACE] gey6N5SxgyN3GJ7SAyPVfm @testbox123 자신의 Cc로 검증
+2023/05/30 13:47:26 [TRACE] gey6N5SxgyN3GJ7SAyPVfm @testbox123 CheckCount()
+2023/05/30 13:47:26 [TRACE] gey6N5SxgyN3GJ7SAyPVfm @testbox123 CheckExpire()
+2023/05/30 13:47:26 [TRACE] gey6N5SxgyN3GJ7SAyPVfm @testbox123 ServeTumbler()
+2023/05/30 13:47:26 [TRACE] gey6N5SxgyN3GJ7SAyPVfm @testbox123 의 최신 링크로 이동
+2023/05/30 13:47:26 [TRACE] gey6N5SxgyN3GJ7SAyPVfm @testbox123 CheckAuth()
+2023/05/30 13:47:26 [TRACE] gey6N5SxgyN3GJ7SAyPVfm @testbox123 U링크 직접 요청하였거나 자체인증 실행 설정
+2023/05/30 13:47:26 [TRACE] gey6N5SxgyN3GJ7SAyPVfm @testbox123 Redirect()
+2023/05/30 13:47:26 [TRACE] gey6N5SxgyN3GJ7SAyPVfm @testbox123 POST 리다이렉트
+2023/05/30 13:47:26 [TRACE] gey6N5SxgyN3GJ7SAyPVfm /@testbox123 컨텍스트저장 UKey:'@testbox123'
+2023/05/30 13:47:26 [TRACE] jg09X7HJcLLgg6njq74VYs ----------------------------------------------------
+2023/05/30 13:47:26 [TRACE] jg09X7HJcLLgg6njq74VYs /wqR9K 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 13:47:26 [TRACE] jg09X7HJcLLgg6njq74VYs 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:47:26 [TRACE] jg09X7HJcLLgg6njq74VYs 192.168.0.125 라이선스 정상
+2023/05/30 13:47:26 [TRACE] jg09X7HJcLLgg6njq74VYs wqR9K CheckExists()
+2023/05/30 13:47:26 [TRACE] jg09X7HJcLLgg6njq74VYs wqR9K CheckSecureLink()
+2023/05/30 13:47:26 [TRACE] jg09X7HJcLLgg6njq74VYs wqR9K CheckCount()
+2023/05/30 13:47:26 [TRACE] jg09X7HJcLLgg6njq74VYs wqR9K CheckExpire()
+2023/05/30 13:47:26 [TRACE] jg09X7HJcLLgg6njq74VYs wqR9K CheckAuth()
+2023/05/30 13:47:26 [TRACE] jg09X7HJcLLgg6njq74VYs wqR9K U링크 직접 요청하였거나 자체인증 실행 설정
+2023/05/30 13:47:26 [TRACE] jg09X7HJcLLgg6njq74VYs wqR9K 인증필요
+2023/05/30 13:47:26 [TRACE] jg09X7HJcLLgg6njq74VYs wqR9K ShowAuthPage()
+2023/05/30 13:47:26 [TRACE] jg09X7HJcLLgg6njq74VYs /wqR9K 컨텍스트저장 UKey:'wqR9K'
+2023/05/30 13:47:28 [TRACE] blPdM660gEw6tIajQXGnMZ ----------------------------------------------------
+2023/05/30 13:47:28 [TRACE] blPdM660gEw6tIajQXGnMZ /wqR9K 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 13:47:28 [TRACE] blPdM660gEw6tIajQXGnMZ 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:47:28 [TRACE] blPdM660gEw6tIajQXGnMZ 192.168.0.125 라이선스 정상
+2023/05/30 13:47:28 [TRACE] blPdM660gEw6tIajQXGnMZ wqR9K CheckExists()
+2023/05/30 13:47:28 [TRACE] blPdM660gEw6tIajQXGnMZ wqR9K CheckSecureLink()
+2023/05/30 13:47:28 [TRACE] blPdM660gEw6tIajQXGnMZ wqR9K CheckCount()
+2023/05/30 13:47:28 [TRACE] blPdM660gEw6tIajQXGnMZ wqR9K CheckExpire()
+2023/05/30 13:47:28 [TRACE] blPdM660gEw6tIajQXGnMZ wqR9K CheckAuth()
+2023/05/30 13:47:28 [TRACE] blPdM660gEw6tIajQXGnMZ wqR9K U링크 직접 요청하였거나 자체인증 실행 설정
+2023/05/30 13:47:28 [TRACE] blPdM660gEw6tIajQXGnMZ wqR9K ServeLink()
+2023/05/30 13:47:28 [TRACE] blPdM660gEw6tIajQXGnMZ wqR9K Redirect()
+2023/05/30 13:47:28 [TRACE] blPdM660gEw6tIajQXGnMZ wqR9K GET 리다이렉트
+2023/05/30 13:47:28 [TRACE] blPdM660gEw6tIajQXGnMZ /wqR9K 컨텍스트저장 UKey:'wqR9K'
+2023/05/30 13:47:48 [TRACE] bxAYQTeBDRBce8gg4KehAM ----------------------------------------------------
+2023/05/30 13:47:48 [TRACE] bxAYQTeBDRBce8gg4KehAM /@testbox123 토큰생성: 3bebb4e7-6df7-4ef5-8ced-21759620b851
+2023/05/30 13:47:48 [TRACE] bxAYQTeBDRBce8gg4KehAM 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:47:48 [TRACE] bxAYQTeBDRBce8gg4KehAM 192.168.0.125 라이선스 정상
+2023/05/30 13:47:48 [TRACE] bxAYQTeBDRBce8gg4KehAM @testbox123 CheckExists()
+2023/05/30 13:47:48 [TRACE] bxAYQTeBDRBce8gg4KehAM @testbox123 CheckSecureLink()
+2023/05/30 13:47:48 [TRACE] bxAYQTeBDRBce8gg4KehAM @testbox123 자신의 Cc로 검증
+2023/05/30 13:47:48 [TRACE] bxAYQTeBDRBce8gg4KehAM ExpectedError() Code:B245 Param:[]
+2023/05/30 13:47:48 [TRACE] bxAYQTeBDRBce8gg4KehAM /@testbox123 컨텍스트저장 UKey:'@testbox123'
+2023/05/30 13:47:54 [TRACE] cgNDe5ed3HQeNQT72MgNJI ----------------------------------------------------
+2023/05/30 13:47:54 [TRACE] cgNDe5ed3HQeNQT72MgNJI /@testbox123 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 13:47:54 [TRACE] cgNDe5ed3HQeNQT72MgNJI 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:47:54 [TRACE] cgNDe5ed3HQeNQT72MgNJI 192.168.0.125 라이선스 정상
+2023/05/30 13:47:54 [TRACE] cgNDe5ed3HQeNQT72MgNJI @testbox123 CheckExists()
+2023/05/30 13:47:54 [TRACE] cgNDe5ed3HQeNQT72MgNJI @testbox123 CheckSecureLink()
+2023/05/30 13:47:54 [TRACE] cgNDe5ed3HQeNQT72MgNJI @testbox123 자신의 Cc로 검증
+2023/05/30 13:47:54 [TRACE] cgNDe5ed3HQeNQT72MgNJI @testbox123 CheckCount()
+2023/05/30 13:47:54 [TRACE] cgNDe5ed3HQeNQT72MgNJI @testbox123 CheckExpire()
+2023/05/30 13:47:54 [TRACE] cgNDe5ed3HQeNQT72MgNJI @testbox123 ServeTumbler()
+2023/05/30 13:47:54 [TRACE] cgNDe5ed3HQeNQT72MgNJI @testbox123 의 최신 링크로 이동
+2023/05/30 13:47:54 [TRACE] cgNDe5ed3HQeNQT72MgNJI @testbox123 CheckAuth()
+2023/05/30 13:47:54 [TRACE] cgNDe5ed3HQeNQT72MgNJI @testbox123 U링크 직접 요청하였거나 자체인증 실행 설정
+2023/05/30 13:47:54 [TRACE] cgNDe5ed3HQeNQT72MgNJI @testbox123 Redirect()
+2023/05/30 13:47:54 [TRACE] cgNDe5ed3HQeNQT72MgNJI @testbox123 POST 리다이렉트
+2023/05/30 13:47:54 [TRACE] cgNDe5ed3HQeNQT72MgNJI /@testbox123 컨텍스트저장 UKey:'@testbox123'
+2023/05/30 13:47:54 [TRACE] cnuvBQlQb7Mf8PDfUEm763 ----------------------------------------------------
+2023/05/30 13:47:54 [TRACE] cnuvBQlQb7Mf8PDfUEm763 /wqR9K 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 13:47:54 [TRACE] cnuvBQlQb7Mf8PDfUEm763 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:47:54 [TRACE] cnuvBQlQb7Mf8PDfUEm763 192.168.0.125 라이선스 정상
+2023/05/30 13:47:54 [TRACE] cnuvBQlQb7Mf8PDfUEm763 wqR9K CheckExists()
+2023/05/30 13:47:54 [TRACE] cnuvBQlQb7Mf8PDfUEm763 wqR9K CheckSecureLink()
+2023/05/30 13:47:54 [TRACE] cnuvBQlQb7Mf8PDfUEm763 wqR9K CheckCount()
+2023/05/30 13:47:54 [TRACE] cnuvBQlQb7Mf8PDfUEm763 wqR9K CheckExpire()
+2023/05/30 13:47:54 [TRACE] cnuvBQlQb7Mf8PDfUEm763 wqR9K CheckAuth()
+2023/05/30 13:47:54 [TRACE] cnuvBQlQb7Mf8PDfUEm763 wqR9K U링크 직접 요청하였거나 자체인증 실행 설정
+2023/05/30 13:47:54 [TRACE] cnuvBQlQb7Mf8PDfUEm763 wqR9K 인증필요
+2023/05/30 13:47:54 [TRACE] cnuvBQlQb7Mf8PDfUEm763 wqR9K ShowAuthPage()
+2023/05/30 13:47:54 [TRACE] cnuvBQlQb7Mf8PDfUEm763 /wqR9K 컨텍스트저장 UKey:'wqR9K'
+2023/05/30 13:47:57 [TRACE] 3iUMyaokIlldhm3sfAyzxB ----------------------------------------------------
+2023/05/30 13:47:57 [TRACE] 3iUMyaokIlldhm3sfAyzxB /wqR9K 요청토큰: 3bebb4e7-6df7-4ef5-8ced-21759620b851
+2023/05/30 13:47:57 [TRACE] 3iUMyaokIlldhm3sfAyzxB 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:47:57 [TRACE] 3iUMyaokIlldhm3sfAyzxB 192.168.0.125 라이선스 정상
+2023/05/30 13:47:57 [TRACE] 3iUMyaokIlldhm3sfAyzxB wqR9K CheckExists()
+2023/05/30 13:47:57 [TRACE] 3iUMyaokIlldhm3sfAyzxB wqR9K CheckSecureLink()
+2023/05/30 13:47:57 [TRACE] 3iUMyaokIlldhm3sfAyzxB wqR9K CheckCount()
+2023/05/30 13:47:57 [TRACE] 3iUMyaokIlldhm3sfAyzxB wqR9K CheckExpire()
+2023/05/30 13:47:57 [TRACE] 3iUMyaokIlldhm3sfAyzxB wqR9K CheckAuth()
+2023/05/30 13:47:57 [TRACE] 3iUMyaokIlldhm3sfAyzxB wqR9K U링크 직접 요청하였거나 자체인증 실행 설정
+2023/05/30 13:47:57 [TRACE] 3iUMyaokIlldhm3sfAyzxB wqR9K 인증필요
+2023/05/30 13:47:57 [TRACE] 3iUMyaokIlldhm3sfAyzxB wqR9K ShowAuthPage()
+2023/05/30 13:47:57 [TRACE] 3iUMyaokIlldhm3sfAyzxB /wqR9K 컨텍스트저장 UKey:'wqR9K'
+2023/05/30 13:48:00 [TRACE] hPIq2aidiPCap4VlOSV2sg ----------------------------------------------------
+2023/05/30 13:48:00 [TRACE] hPIq2aidiPCap4VlOSV2sg /wqR9K 요청토큰: 3bebb4e7-6df7-4ef5-8ced-21759620b851
+2023/05/30 13:48:00 [TRACE] hPIq2aidiPCap4VlOSV2sg 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:48:00 [TRACE] hPIq2aidiPCap4VlOSV2sg 192.168.0.125 라이선스 정상
+2023/05/30 13:48:00 [TRACE] hPIq2aidiPCap4VlOSV2sg wqR9K CheckExists()
+2023/05/30 13:48:00 [TRACE] hPIq2aidiPCap4VlOSV2sg wqR9K CheckSecureLink()
+2023/05/30 13:48:00 [TRACE] hPIq2aidiPCap4VlOSV2sg wqR9K CheckCount()
+2023/05/30 13:48:00 [TRACE] hPIq2aidiPCap4VlOSV2sg wqR9K CheckExpire()
+2023/05/30 13:48:00 [TRACE] hPIq2aidiPCap4VlOSV2sg wqR9K CheckAuth()
+2023/05/30 13:48:00 [TRACE] hPIq2aidiPCap4VlOSV2sg wqR9K U링크 직접 요청하였거나 자체인증 실행 설정
+2023/05/30 13:48:00 [TRACE] hPIq2aidiPCap4VlOSV2sg wqR9K ServeLink()
+2023/05/30 13:48:00 [TRACE] hPIq2aidiPCap4VlOSV2sg wqR9K Redirect()
+2023/05/30 13:48:00 [TRACE] hPIq2aidiPCap4VlOSV2sg wqR9K GET 리다이렉트
+2023/05/30 13:48:00 [TRACE] hPIq2aidiPCap4VlOSV2sg /wqR9K 컨텍스트저장 UKey:'wqR9K'
+2023/05/30 13:53:57 [TRACE] jfr8Xie422M3wWnqka24qy /link/set 컨텍스트저장 UKey:''
+2023/05/30 13:54:19 [TRACE] i0gWoWmL4Pk1T6rQUDnJUf /link/set 컨텍스트저장 UKey:''
+2023/05/30 13:54:24 [TRACE] jM2OIahdzZOkRithN9Pah9 /link/set 컨텍스트저장 UKey:'DwJqH'
+2023/05/30 13:54:31 [TRACE] 4NmnH3DxQsZbcFel6Mfb5g ----------------------------------------------------
+2023/05/30 13:54:31 [TRACE] 4NmnH3DxQsZbcFel6Mfb5g /DwJqH 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 13:54:31 [TRACE] 4NmnH3DxQsZbcFel6Mfb5g 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:54:31 [TRACE] 4NmnH3DxQsZbcFel6Mfb5g 192.168.0.125 라이선스 정상
+2023/05/30 13:54:31 [TRACE] 4NmnH3DxQsZbcFel6Mfb5g DwJqH CheckExists()
+2023/05/30 13:54:31 [TRACE] 4NmnH3DxQsZbcFel6Mfb5g DwJqH CheckSecureLink()
+2023/05/30 13:54:31 [TRACE] 4NmnH3DxQsZbcFel6Mfb5g DwJqH 자신의 Cc로 검증
+2023/05/30 13:54:31 [TRACE] 4NmnH3DxQsZbcFel6Mfb5g DwJqH CheckCount()
+2023/05/30 13:54:31 [TRACE] 4NmnH3DxQsZbcFel6Mfb5g DwJqH CheckExpire()
+2023/05/30 13:54:31 [TRACE] 4NmnH3DxQsZbcFel6Mfb5g DwJqH CheckAuth()
+2023/05/30 13:54:31 [TRACE] 4NmnH3DxQsZbcFel6Mfb5g DwJqH ServeLink()
+2023/05/30 13:54:31 [TRACE] 4NmnH3DxQsZbcFel6Mfb5g DwJqH Redirect()
+2023/05/30 13:54:31 [TRACE] 4NmnH3DxQsZbcFel6Mfb5g DwJqH POST 리다이렉트
+2023/05/30 13:54:31 [TRACE] 4NmnH3DxQsZbcFel6Mfb5g /DwJqH 컨텍스트저장 UKey:'DwJqH'
+2023/05/30 13:54:32 [TRACE] dvYSfR65rxfkyolR4ta1aT /link/set 컨텍스트저장 UKey:'LDrJE'
+2023/05/30 13:54:32 [TRACE] 7HytJqfWL6h3xr7jdsevoE /link/tumbler/set 컨텍스트저장 UKey:'@testbox123'
+2023/05/30 13:54:32 [TRACE] l7B6wRkapYa6UcfHqNGAzf /link/tumbler/add 컨텍스트저장 UKey:'if6FO'
+2023/05/30 13:55:59 [TRACE] ie15fStU2fViU34hAqwXQl ----------------------------------------------------
+2023/05/30 13:55:59 [TRACE] ie15fStU2fViU34hAqwXQl /DwJqH 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 13:55:59 [TRACE] ie15fStU2fViU34hAqwXQl 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:55:59 [TRACE] ie15fStU2fViU34hAqwXQl 192.168.0.125 라이선스 정상
+2023/05/30 13:55:59 [TRACE] ie15fStU2fViU34hAqwXQl DwJqH CheckExists()
+2023/05/30 13:55:59 [TRACE] ie15fStU2fViU34hAqwXQl DwJqH CheckSecureLink()
+2023/05/30 13:55:59 [TRACE] ie15fStU2fViU34hAqwXQl DwJqH 자신의 Cc로 검증
+2023/05/30 13:55:59 [TRACE] ie15fStU2fViU34hAqwXQl DwJqH CheckCount()
+2023/05/30 13:55:59 [TRACE] ie15fStU2fViU34hAqwXQl DwJqH CheckExpire()
+2023/05/30 13:55:59 [TRACE] ie15fStU2fViU34hAqwXQl DwJqH CheckAuth()
+2023/05/30 13:55:59 [TRACE] ie15fStU2fViU34hAqwXQl DwJqH ServeLink()
+2023/05/30 13:55:59 [TRACE] ie15fStU2fViU34hAqwXQl DwJqH Redirect()
+2023/05/30 13:55:59 [TRACE] ie15fStU2fViU34hAqwXQl DwJqH POST 리다이렉트
+2023/05/30 13:55:59 [TRACE] ie15fStU2fViU34hAqwXQl /DwJqH 컨텍스트저장 UKey:'DwJqH'
+2023/05/30 13:59:38 [TRACE] aY2yKm3oQsJhaG1LlwNdFo ----------------------------------------------------
+2023/05/30 13:59:38 [TRACE] aY2yKm3oQsJhaG1LlwNdFo /DwJqH 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 13:59:38 [TRACE] aY2yKm3oQsJhaG1LlwNdFo 2099-12-31 00:00:00 +0700 +07
+2023/05/30 13:59:38 [TRACE] aY2yKm3oQsJhaG1LlwNdFo 192.168.0.125 라이선스 정상
+2023/05/30 13:59:38 [TRACE] aY2yKm3oQsJhaG1LlwNdFo DwJqH CheckExists()
+2023/05/30 13:59:38 [TRACE] aY2yKm3oQsJhaG1LlwNdFo DwJqH CheckSecureLink()
+2023/05/30 13:59:38 [TRACE] aY2yKm3oQsJhaG1LlwNdFo DwJqH 자신의 Cc로 검증
+2023/05/30 13:59:38 [TRACE] aY2yKm3oQsJhaG1LlwNdFo DwJqH CheckCount()
+2023/05/30 13:59:38 [TRACE] aY2yKm3oQsJhaG1LlwNdFo DwJqH CheckExpire()
+2023/05/30 13:59:38 [TRACE] aY2yKm3oQsJhaG1LlwNdFo DwJqH CheckAuth()
+2023/05/30 13:59:38 [TRACE] aY2yKm3oQsJhaG1LlwNdFo DwJqH ServeLink()
+2023/05/30 13:59:38 [TRACE] aY2yKm3oQsJhaG1LlwNdFo DwJqH Redirect()
+2023/05/30 13:59:38 [TRACE] aY2yKm3oQsJhaG1LlwNdFo DwJqH POST 리다이렉트
+2023/05/30 13:59:38 [TRACE] aY2yKm3oQsJhaG1LlwNdFo /DwJqH 컨텍스트저장 UKey:'DwJqH'
+2023/05/30 14:22:46 [TRACE] dCd5w0HM88M87Ln2bnyGIH ----------------------------------------------------
+2023/05/30 14:22:46 [TRACE] dCd5w0HM88M87Ln2bnyGIH /DwJqH 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 14:22:46 [TRACE] dCd5w0HM88M87Ln2bnyGIH 2099-12-31 00:00:00 +0700 +07
+2023/05/30 14:22:46 [TRACE] dCd5w0HM88M87Ln2bnyGIH 192.168.0.125 라이선스 정상
+2023/05/30 14:22:46 [TRACE] dCd5w0HM88M87Ln2bnyGIH DwJqH CheckExists()
+2023/05/30 14:22:46 [TRACE] dCd5w0HM88M87Ln2bnyGIH DwJqH CheckSecureLink()
+2023/05/30 14:22:46 [TRACE] dCd5w0HM88M87Ln2bnyGIH DwJqH 자신의 Cc로 검증
+2023/05/30 14:22:46 [TRACE] dCd5w0HM88M87Ln2bnyGIH DwJqH CheckCount()
+2023/05/30 14:22:46 [TRACE] dCd5w0HM88M87Ln2bnyGIH DwJqH CheckExpire()
+2023/05/30 14:22:46 [TRACE] dCd5w0HM88M87Ln2bnyGIH DwJqH CheckAuth()
+2023/05/30 14:22:46 [TRACE] dCd5w0HM88M87Ln2bnyGIH DwJqH ServeLink()
+2023/05/30 14:22:46 [TRACE] dCd5w0HM88M87Ln2bnyGIH DwJqH Redirect()
+2023/05/30 14:22:46 [TRACE] dCd5w0HM88M87Ln2bnyGIH DwJqH POST 리다이렉트
+2023/05/30 14:22:46 [TRACE] dCd5w0HM88M87Ln2bnyGIH /DwJqH 컨텍스트저장 UKey:'DwJqH'
+2023/05/30 14:22:54 [TRACE] eOsPfEXxTS16fxme2hrBul ----------------------------------------------------
+2023/05/30 14:22:54 [TRACE] eOsPfEXxTS16fxme2hrBul /DwJqH 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 14:22:54 [TRACE] eOsPfEXxTS16fxme2hrBul 2099-12-31 00:00:00 +0700 +07
+2023/05/30 14:22:54 [TRACE] eOsPfEXxTS16fxme2hrBul 192.168.0.125 라이선스 정상
+2023/05/30 14:22:54 [TRACE] eOsPfEXxTS16fxme2hrBul DwJqH CheckExists()
+2023/05/30 14:22:54 [TRACE] eOsPfEXxTS16fxme2hrBul DwJqH CheckSecureLink()
+2023/05/30 14:22:54 [TRACE] eOsPfEXxTS16fxme2hrBul DwJqH 자신의 Cc로 검증
+2023/05/30 14:22:54 [TRACE] eOsPfEXxTS16fxme2hrBul DwJqH CheckCount()
+2023/05/30 14:22:54 [TRACE] eOsPfEXxTS16fxme2hrBul DwJqH CheckExpire()
+2023/05/30 14:22:54 [TRACE] eOsPfEXxTS16fxme2hrBul DwJqH CheckAuth()
+2023/05/30 14:22:54 [TRACE] eOsPfEXxTS16fxme2hrBul DwJqH ServeLink()
+2023/05/30 14:22:54 [TRACE] eOsPfEXxTS16fxme2hrBul DwJqH Redirect()
+2023/05/30 14:22:54 [TRACE] eOsPfEXxTS16fxme2hrBul DwJqH POST 리다이렉트
+2023/05/30 14:22:54 [TRACE] eOsPfEXxTS16fxme2hrBul /DwJqH 컨텍스트저장 UKey:'DwJqH'
+2023/05/30 14:27:33 [TRACE] cJLfoY1msx3lpKkP8sBAC ----------------------------------------------------
+2023/05/30 14:27:33 [TRACE] cJLfoY1msx3lpKkP8sBAC /DwJqH 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 14:27:33 [TRACE] cJLfoY1msx3lpKkP8sBAC 2099-12-31 00:00:00 +0700 +07
+2023/05/30 14:27:33 [TRACE] cJLfoY1msx3lpKkP8sBAC 192.168.0.125 라이선스 정상
+2023/05/30 14:27:33 [TRACE] cJLfoY1msx3lpKkP8sBAC DwJqH CheckExists()
+2023/05/30 14:27:33 [TRACE] cJLfoY1msx3lpKkP8sBAC DwJqH CheckSecureLink()
+2023/05/30 14:27:33 [TRACE] cJLfoY1msx3lpKkP8sBAC DwJqH 자신의 Cc로 검증
+2023/05/30 14:27:33 [TRACE] cJLfoY1msx3lpKkP8sBAC DwJqH CheckCount()
+2023/05/30 14:27:33 [TRACE] cJLfoY1msx3lpKkP8sBAC DwJqH CheckExpire()
+2023/05/30 14:27:33 [TRACE] cJLfoY1msx3lpKkP8sBAC DwJqH CheckAuth()
+2023/05/30 14:27:33 [TRACE] cJLfoY1msx3lpKkP8sBAC DwJqH ServeLink()
+2023/05/30 14:27:33 [TRACE] cJLfoY1msx3lpKkP8sBAC DwJqH Redirect()
+2023/05/30 14:27:33 [TRACE] cJLfoY1msx3lpKkP8sBAC DwJqH POST 리다이렉트
+2023/05/30 14:27:33 [TRACE] cJLfoY1msx3lpKkP8sBAC /DwJqH 컨텍스트저장 UKey:'DwJqH'
+2023/05/30 14:31:57 [TRACE] aitVMZRHjln9vOWAWVqn9y ----------------------------------------------------
+2023/05/30 14:31:57 [TRACE] aitVMZRHjln9vOWAWVqn9y /DwJqH 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 14:31:57 [TRACE] aitVMZRHjln9vOWAWVqn9y 2099-12-31 00:00:00 +0700 +07
+2023/05/30 14:31:57 [TRACE] aitVMZRHjln9vOWAWVqn9y 192.168.0.125 라이선스 정상
+2023/05/30 14:31:57 [TRACE] aitVMZRHjln9vOWAWVqn9y DwJqH CheckExists()
+2023/05/30 14:31:57 [TRACE] aitVMZRHjln9vOWAWVqn9y DwJqH CheckSecureLink()
+2023/05/30 14:31:57 [TRACE] aitVMZRHjln9vOWAWVqn9y DwJqH 자신의 Cc로 검증
+2023/05/30 14:31:57 [TRACE] aitVMZRHjln9vOWAWVqn9y DwJqH CheckCount()
+2023/05/30 14:31:57 [TRACE] aitVMZRHjln9vOWAWVqn9y DwJqH CheckExpire()
+2023/05/30 14:31:57 [TRACE] aitVMZRHjln9vOWAWVqn9y DwJqH CheckAuth()
+2023/05/30 14:31:57 [TRACE] aitVMZRHjln9vOWAWVqn9y DwJqH ServeLink()
+2023/05/30 14:31:57 [TRACE] aitVMZRHjln9vOWAWVqn9y DwJqH Redirect()
+2023/05/30 14:31:57 [TRACE] aitVMZRHjln9vOWAWVqn9y DwJqH POST 리다이렉트
+2023/05/30 14:31:57 [TRACE] aitVMZRHjln9vOWAWVqn9y /DwJqH 컨텍스트저장 UKey:'DwJqH'
+2023/05/30 14:33:07 [TRACE] ajXzXp6t8ON9CpzQk4kHSj ----------------------------------------------------
+2023/05/30 14:33:07 [TRACE] ajXzXp6t8ON9CpzQk4kHSj /DwJqH 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 14:33:07 [TRACE] ajXzXp6t8ON9CpzQk4kHSj 2099-12-31 00:00:00 +0700 +07
+2023/05/30 14:33:07 [TRACE] ajXzXp6t8ON9CpzQk4kHSj 192.168.0.125 라이선스 정상
+2023/05/30 14:33:07 [TRACE] ajXzXp6t8ON9CpzQk4kHSj DwJqH CheckExists()
+2023/05/30 14:33:07 [TRACE] ajXzXp6t8ON9CpzQk4kHSj DwJqH CheckSecureLink()
+2023/05/30 14:33:07 [TRACE] ajXzXp6t8ON9CpzQk4kHSj DwJqH 자신의 Cc로 검증
+2023/05/30 14:33:07 [TRACE] ajXzXp6t8ON9CpzQk4kHSj DwJqH CheckCount()
+2023/05/30 14:33:07 [TRACE] ajXzXp6t8ON9CpzQk4kHSj DwJqH CheckExpire()
+2023/05/30 14:33:07 [TRACE] ajXzXp6t8ON9CpzQk4kHSj DwJqH CheckAuth()
+2023/05/30 14:33:07 [TRACE] ajXzXp6t8ON9CpzQk4kHSj DwJqH ServeLink()
+2023/05/30 14:33:07 [TRACE] ajXzXp6t8ON9CpzQk4kHSj DwJqH Redirect()
+2023/05/30 14:33:07 [TRACE] ajXzXp6t8ON9CpzQk4kHSj DwJqH POST 리다이렉트
+2023/05/30 14:33:07 [TRACE] ajXzXp6t8ON9CpzQk4kHSj /DwJqH 컨텍스트저장 UKey:'DwJqH'
+2023/05/30 14:54:29 [TRACE] cmSJUhxy4YaigDeliAyPsT /link/set 컨텍스트저장 UKey:'32w71'
+2023/05/30 14:54:29 [TRACE] 43nO9BX8wyCfGYP45HMpgQ /link/tumbler/set 컨텍스트저장 UKey:'@testbox1234'
+2023/05/30 14:54:29 [TRACE] hnpLwjsjEIROXvKHXSHUj /link/tumbler/add 컨텍스트저장 UKey:'OFXUy'
+2023/05/30 14:54:48 [TRACE] 804Jjp0pTCYeMuILUuGdBc ----------------------------------------------------
+2023/05/30 14:54:48 [TRACE] 804Jjp0pTCYeMuILUuGdBc /testbox1234 요청토큰: 6efa6909-b89e-42a4-9bfb-48a46bf06fe0
+2023/05/30 14:54:48 [TRACE] 804Jjp0pTCYeMuILUuGdBc 2099-12-31 00:00:00 +0700 +07
+2023/05/30 14:54:48 [TRACE] 804Jjp0pTCYeMuILUuGdBc 192.168.0.125 라이선스 정상
+2023/05/30 14:54:48 [TRACE] 804Jjp0pTCYeMuILUuGdBc testbox1234 CheckExists()
+2023/05/30 14:54:48 [TRACE] 804Jjp0pTCYeMuILUuGdBc testbox1234 링크를 찾을 수 없음
+2023/05/30 14:54:48 [TRACE] 804Jjp0pTCYeMuILUuGdBc ExpectedError() Code:B404 Param:[]
+2023/05/30 14:54:48 [TRACE] 804Jjp0pTCYeMuILUuGdBc /testbox1234 컨텍스트저장 UKey:'testbox1234'
+2023/05/30 15:04:01 [TRACE] hmSULlVUCIPfh0PAOXujB4 /link/set 컨텍스트저장 UKey:'lhCO8'
+2023/05/30 15:04:01 [TRACE] jFguoZ7q9Wrc6EBMpXjiTX /link/tumbler/set 컨텍스트저장 UKey:'@testbox1234'
+2023/05/30 15:04:05 [TRACE] 9n2lp4rv3LUgSanxSuvKsK /link/set 컨텍스트저장 UKey:'misRe'
+2023/05/30 15:04:05 [TRACE] iY7zhaI4pQL8QJqgOWmq5F /link/tumbler/set 컨텍스트저장 UKey:'@testbox1234'
+2023/05/30 15:05:54 [TRACE] geKKiJ3FdCUfOInx73cQQ1 /link/set 컨텍스트저장 UKey:'CvTva'
+2023/05/30 15:05:54 [TRACE] b2IgxUEFQaT3AbxSfidXuU /link/tumbler/set 컨텍스트저장 UKey:'@testbox1234'
+2023/05/30 15:05:55 [TRACE] 24vYa0jubKT7z2WfBGAZ0C /link/set 컨텍스트저장 UKey:'JBLNM'
+2023/05/30 15:05:55 [TRACE] gEUCoduzaTBchtrBsbDjwL /link/tumbler/set 컨텍스트저장 UKey:'@testbox1234'
+2023/05/30 15:05:55 [TRACE] fFJjSLy0Rbf2XwlwLUkjcn /link/set 컨텍스트저장 UKey:'XNwos'
+2023/05/30 15:05:55 [TRACE] 273h6SrNfUz3q1ymZU2NiA /link/tumbler/set 컨텍스트저장 UKey:'@testbox1234'
+2023/05/30 15:05:57 [TRACE] hPdYKoO5zNneAsrKCxzALC /link/set 컨텍스트저장 UKey:'b9es2'
+2023/05/30 15:05:57 [TRACE] cuEXqQ1clZC7DKybaRSBRl /link/tumbler/set 컨텍스트저장 UKey:'@testbox1234'
+2023/05/30 15:06:28 [TRACE] kXgOWcQofXkfH9YDhVx95V /link/set 컨텍스트저장 UKey:'xrHna'
+2023/05/30 15:06:28 [TRACE] 743owjEL2hP1XiZ7aHfYll /link/tumbler/set 컨텍스트저장 UKey:'@testbox1234'
+2023/05/30 15:14:49 [TRACE] 40IQjvODi8skWnd6DM0Mq4 /link/set 컨텍스트저장 UKey:'gdqFO'
+2023/05/30 15:14:49 [TRACE] ax1tOtzDQ3iHHb3UCVwfA /link/tumbler/set 컨텍스트저장 UKey:'@testbox1234'
+2023/05/30 15:14:51 [TRACE] 7hiTn0LMPCDhbEYr9cXQN0 /link/set 컨텍스트저장 UKey:'DwJFa'
+2023/05/30 15:14:51 [TRACE] 3wODZp3aFPXcFii9Ugqv52 /link/tumbler/set 컨텍스트저장 UKey:'@testbox1234'
+2023/05/30 15:16:10 [TRACE] fOlGh6TQsGQcm7u69mWvbr /link/set 컨텍스트저장 UKey:'1Q2G'
+2023/05/30 15:16:10 [TRACE] 50UAKYyHml93UdYYSrdzrG /link/tumbler/set 컨텍스트저장 UKey:'@testbox1234'
+2023/05/30 15:16:56 [TRACE] gMqTZ5PHHWvi2510aADVXE /link/set 컨텍스트저장 UKey:'1Q2I'
+2023/05/30 15:16:56 [TRACE] 7l712XNhaRFCxWJP58doH /link/tumbler/set 컨텍스트저장 UKey:'@testbox1234'
+2023/05/30 15:20:43 [TRACE] 4F15scYcIB49oTsepCo8C3 /link/set 컨텍스트저장 UKey:'CvTGc'
+2023/05/30 15:20:55 [TRACE] 2WJO3hC10oc7NtCDwdeoHU /link/set 컨텍스트저장 UKey:'1Q2L'
+2023/05/30 15:22:43 [TRACE] 5HlUWrD6ROLcu8y2CEzWB2 /link/set 컨텍스트저장 UKey:'misZ2'
+2023/05/30 15:22:43 [TRACE] 8LJY1vB3R3o6T1J61YfiPP /link/tumbler/set 컨텍스트저장 UKey:'@testbox1234'
+2023/05/30 15:23:46 [TRACE] jrUIX9GoVB94WqmydhHNK /link/set 컨텍스트저장 UKey:'ExzOg'
+2023/05/30 15:23:46 [TRACE] 36KNhxrChzAbDB6wkIBIQS /link/tumbler/set 컨텍스트저장 UKey:'@testbox4321'
+2023/05/30 15:23:46 [TRACE] g4OK0rovZ1T6Z0DeI5IIQI /link/tumbler/add 컨텍스트저장 UKey:'ysxyw'
+2023/05/30 17:00:39 [TRACE] gl3hweMR62UlALr4yPl6HV ----------------------------------------------------
+2023/05/30 17:00:39 [TRACE] gl3hweMR62UlALr4yPl6HV / 토큰생성: c61a2f67-5495-4525-beb1-f25f6c85dab9
+2023/05/30 17:00:39 [TRACE] gl3hweMR62UlALr4yPl6HV 2099-12-31 00:00:00 +0700 +07
+2023/05/30 17:00:39 [TRACE] gl3hweMR62UlALr4yPl6HV 192.168.0.125 라이선스 정상
+2023/05/30 17:00:39 [TRACE] gl3hweMR62UlALr4yPl6HV / CheckExists()
+2023/05/30 17:00:39 [TRACE] gl3hweMR62UlALr4yPl6HV / 링크를 찾을 수 없음
+2023/05/30 17:00:39 [TRACE] gl3hweMR62UlALr4yPl6HV ExpectedError() Code:B404 Param:[]
+2023/05/30 17:00:39 [TRACE] gl3hweMR62UlALr4yPl6HV / 컨텍스트저장 UKey:'/'

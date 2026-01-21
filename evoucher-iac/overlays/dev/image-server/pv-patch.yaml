@@ -1,0 +1,6 @@
+- op: replace
+  path: /spec/nfs/server
+  value: 192.168.105.88
+- op: replace
+  path: /spec/capacity/storage
+  value: 20Gi

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-config
+  namespace: production
+data:
+  grafana.ini: |
+    [smtp]
+    enabled = true
+    host = aquaretail.hanbiro.net:465
+    user = no_reply@aquaretail.net
+    password = aqua1234!
+    skip_verify = true
+    from_address = no_reply@aquaretail.net
+    from_name = alert_monitoring

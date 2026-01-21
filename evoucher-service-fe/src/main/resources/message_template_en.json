@@ -1,0 +1,62 @@
+{
+  "template": "aQua gui toi Quy khach {customerName} ma QR tai duong link {shortLink} Vui long quet ma va lam theo huong dan.",
+  "language": "EN",
+  "data": [
+    {
+      "key": "customerName",
+      "type": "CUSTOM",
+      "encrypted": true,
+      "defaultValue": null,
+      "maxLength": 30
+    },
+    {
+      "key": "sender",
+      "type": "DISABLED",
+      "encrypted": false,
+      "defaultValue": null,
+      "maxLength": 30
+    },
+    {
+      "key": "message",
+      "type": "DISABLED",
+      "encrypted": false,
+      "defaultValue": null,
+      "maxLength": 30
+    },
+    {
+      "key": "productName",
+      "type": "DISABLED",
+      "encrypted": false,
+      "defaultValue": null,
+      "maxLength": 30
+    },
+    {
+      "key": "expireDate",
+      "type": "DISABLED",
+      "encrypted": false,
+      "defaultValue": null,
+      "maxLength": 30
+    },
+    {
+      "key": "transferMessage",
+      "type": "DISABLED",
+      "encrypted": false,
+      "defaultValue": null,
+      "maxLength": 30
+    },
+    {
+      "key": "shortLink",
+      "type": "CUSTOM",
+      "encrypted": false,
+      "defaultValue": null,
+      "maxLength": 50
+    },
+    {
+      "key": "cta2",
+      "type": "DISABLED",
+      "encrypted": false,
+      "defaultValue": null,
+      "maxLength": 30
+    }
+  ]
+}

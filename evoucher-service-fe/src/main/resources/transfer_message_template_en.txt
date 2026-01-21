@@ -1,0 +1,7 @@
+Dear %s,
+%s would like to %s
+Item: %s
+Expire: %s
+You can view detail and instruction on how to use the code %s
+For any assistance in using the code please dial our hotline %s
+Transfer message: %s

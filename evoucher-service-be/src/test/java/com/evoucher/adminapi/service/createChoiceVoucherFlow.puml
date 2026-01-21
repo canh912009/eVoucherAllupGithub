@@ -1,0 +1,49 @@
+@startuml
+actor Client
+participant EVoucherController
+participant EVoucherService
+participant VoucherBasicService
+participant GoodService
+participant PublishRepository
+participant VoucherServiceCommon
+database Database
+
+Client -> EVoucherController: POST /create/choice-voucher/v2
+activate EVoucherController
+
+EVoucherController -> EVoucherService: processCreateChoiceVoucherV2(request)
+activate EVoucherService
+
+EVoucherService -> VoucherBasicService: findById(request.getParentId())
+activate VoucherBasicService
+VoucherBasicService --> EVoucherService: parentVoucher
+deactivate VoucherBasicService
+
+EVoucherService -> GoodService: getGoodMapByIdIn(goodsIds)
+activate GoodService
+GoodService --> EVoucherService: goodMap
+deactivate GoodService
+
+EVoucherService -> PublishRepository: findById(parentVoucher.getPublishId())
+activate PublishRepository
+PublishRepository --> EVoucherService: publish
+deactivate PublishRepository
+
+loop for each product in request
+    EVoucherService -> EVoucherService: validateProduct(product, goodMap, parentVoucher)
+    EVoucherService -> EVoucherService: generateListChoiceVoucher(...)
+end
+
+EVoucherService -> VoucherServiceCommon: saveInformationOfVoucherChoice(voucherGenerateInfo, parentVoucher)
+activate VoucherServiceCommon
+VoucherServiceCommon -> Database: save vouchers and settlement logs
+VoucherServiceCommon --> EVoucherService: savedVouchers
+deactivate VoucherServiceCommon
+
+EVoucherService --> EVoucherController: List<String> (voucher EVs)
+deactivate EVoucherService
+
+EVoucherController --> Client: ResponseEntity<BaseResponse>
+deactivate EVoucherController
+
+@enduml

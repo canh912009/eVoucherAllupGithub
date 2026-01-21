@@ -1,0 +1,14 @@
+{
+    "id": "1",
+    "options": {
+        "siteTitle": "Evoucher",
+        "siteSubtitle": "Evoucher ecommerce",
+        "currency": "VND",
+        "logo": {
+            "id": "1",
+            "original": "/logo.svg",
+            "thumbnail": "/logo.svg"
+        }
+    },
+    "language": "vi"
+}

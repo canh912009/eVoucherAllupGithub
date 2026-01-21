@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jmetter
+  namespace: production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jmetter
+  template:
+    metadata:
+      labels:
+        app: jmetter
+    spec:
+      containers:
+        - name: jmetter
+          image: registry.git.castis.io/aqua-v/e-voucher/evoucher-jmetter:latest
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: jmetter-persistent-volume
+              mountPath: /userinfo/report  # Specify the path where you want to mount the volume
+      restartPolicy: Never
+      imagePullSecrets:
+        - name: regcred
+      volumes:
+        - name: jmetter-persistent-volume
+          persistentVolumeClaim:
+            claimName: jmetter-pvc  # Specify the name of the PVC you create
+

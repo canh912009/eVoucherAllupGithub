@@ -1,0 +1,27 @@
+#version: '3.8'
+#
+#services:
+#  db:
+#    image: mariadb:latest
+#    container_name: mariadb-evoucher-local
+#    environment:
+#      MYSQL_ROOT_PASSWORD: castis
+#      MYSQL_DATABASE: evoucher_local
+#      MYSQL_USER: canh
+#      MYSQL_PASSWORD: canh
+#    ports:
+#      - "3306:3306"
+#    volumes:
+#      - ./mariadb_data:/var/lib/mysql # Sử dụng volume tương đối hoặc named volume
+#      - ./db-init/init.sql:/docker-entrypoint-initdb.d/init.sql # Đường dẫn tương đối
+#
+#volumes:
+#  mariadb_data:
+
+services:
+  augment-proxy-jetbrains:
+    image: ghcr.io/nullmastermind/augmentgateway-local-proxy-jetbrains:latest
+    pull_policy: always
+    ports:
+      - '${PROXY_PORT:-1688}:8080'
+    restart: unless-stopped

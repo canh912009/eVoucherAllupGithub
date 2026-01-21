@@ -1,0 +1,30 @@
+server:
+  servlet:
+    context-path: /partner
+  port: 8084
+
+spring:
+  application:
+    name: external-service-api
+  datasource:
+    #    url: ${SECRETS_DB_URL:jdbc:mariadb://192.168.105.149:3306/e_voucher}
+    url: ${SECRETS_DB_URL:jdbc:mariadb://192.168.105.88:13306/e_voucher}
+    username: ${SECRETS_DB_USERNAME:castis}
+    password: ${SECRETS_DB_PASSWORD:castis}
+    driver-class-name: org.mariadb.jdbc.Driver
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      idle-timeout: 30000
+      max-lifetime: 1200000
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+  jackson:
+    time-zone=: Asia/Ho_Chi_Minh
+
+servers:
+  admin-api: ${ADMIN_API_URL:http://192.168.105.34:8080/}
+  file-upload-api: ${FILE_UPLOAD_API_URL:http://192.168.105.149:4000}

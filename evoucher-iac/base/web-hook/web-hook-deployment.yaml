@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-hook
+  namespace: production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-hook
+  template:
+    metadata:
+      labels:
+        app: web-hook
+    spec:
+      containers:
+        - name: web-hook
+          image: registry.git.altimedia.vn/evoucher/web-hook:main
+          ports:
+            - containerPort: 8089 # Replace this with the port the application listens on
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: web-hook-properties
+      imagePullSecrets:
+        - name: regcred

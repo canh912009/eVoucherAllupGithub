@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vnpt-epay-dummy
+  namespace: production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vnpt-epay-dummy
+  template:
+    metadata:
+      labels:
+        app: vnpt-epay-dummy
+    spec:
+      containers:
+        - name: vnpt-epay-dummy
+          image: registry.git.altimedia.vn/evoucher/vnpt-epay-dummy:latest
+          ports:
+            - containerPort: 8086 # Replace this with the port the application listens on
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: vnpt-epay-dummy-properties
+      imagePullSecrets:
+        - name: regcred

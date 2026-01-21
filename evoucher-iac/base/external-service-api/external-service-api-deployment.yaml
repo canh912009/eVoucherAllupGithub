@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: external-service-api
+  namespace: production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: external-service-api
+  template:
+    metadata:
+      labels:
+        app: external-service-api
+    spec:
+      containers:
+        - name: external-service-api
+          image: registry.git.altimedia.vn/evoucher/external-service-api:main
+          ports:
+            - containerPort: 1992 # Replace this with the port the application listens on
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: external-service-api-properties
+      imagePullSecrets:
+        - name: regcred

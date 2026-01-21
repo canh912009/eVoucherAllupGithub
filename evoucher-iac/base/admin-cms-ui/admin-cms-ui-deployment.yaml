@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin-cms-ui
+  namespace: production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: admin-cms-ui
+  template:
+    metadata:
+      labels:
+        app: admin-cms-ui
+    spec:
+      containers:
+        - name: admin-cms-ui
+          image: registry.git.altimedia.vn/evoucher/cms-ui:latest
+          ports:
+            - containerPort: 3000 # Replace this with the port the application listens on
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: regcred

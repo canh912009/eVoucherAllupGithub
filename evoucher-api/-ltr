@@ -1,0 +1,75 @@
+[1mdiff --git a/.dockerignore b/.dockerignore[m
+[1mindex 85477da..8ff8238 100644[m
+[1m--- a/.dockerignore[m
+[1m+++ b/.dockerignore[m
+[36m@@ -27,3 +27,5 @@[m [mdist/[m
+ .dockerignore[m
+ Jenkinsfile*[m
+ Dockerfile*[m
+[32m+[m[32m.gitlab-ci/[m
+[32m+[m[32m.gitlab-ci.yml[m
+[1mdiff --git a/.gitlab-ci.yml b/.gitlab-ci.yml[m
+[1mindex 5873182..b1ca9d6 100644[m
+[1m--- a/.gitlab-ci.yml[m
+[1m+++ b/.gitlab-ci.yml[m
+[36m@@ -1,3 +1,4 @@[m
+[32m+[m[32mvariables:[m
+[32m+[m[32m  GIT_STRATEGY: clone[m
+ include:[m
+[31m-  - local: ".gitlab-ci/.gitlab-ci-production.yml"[m
+[31m-  - local: ".gitlab-ci/.gitlab-ci-staging.yml"[m
+[32m+[m[32m  - local: ".gitlab-ci/.gitlab-ci-build.yml"[m
+[1mdiff --git a/.gitlab-ci/.gitlab-ci-production.yml b/.gitlab-ci/.gitlab-ci-production.yml[m
+[1mdeleted file mode 100644[m
+[1mindex ea6cfea..0000000[m
+[1m--- a/.gitlab-ci/.gitlab-ci-production.yml[m
+[1m+++ /dev/null[m
+[36m@@ -1,21 +0,0 @@[m
+[31m-stages:[m
+[31m-  - build[m
+[31m-[m
+[31m-variables:[m
+[31m-  CONTAINER_IMAGE: ${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_SLUG}_${CI_COMMIT_SHORT_SHA}[m
+[31m-[m
+[31m-build:[m
+[31m-  stage: build[m
+[31m-  script:[m
+[31m-    - echo "Building image..."[m
+[31m-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY[m
+[31m-    - docker build -t $CONTAINER_IMAGE .[m
+[31m-    - docker push $CONTAINER_IMAGE[m
+[31m-    - docker tag ${CONTAINER_IMAGE} ${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_SLUG}[m
+[31m-    - docker push ${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_SLUG}[m
+[31m-  tags:[m
+[31m-    - cicd_building_101[m
+[31m-  environment:[m
+[31m-    name: Production[m
+[31m-  only:[m
+[31m-    - main[m
+[1mdiff --git a/.gitlab-ci/.gitlab-ci-staging.yml b/.gitlab-ci/.gitlab-ci-staging.yml[m
+[1mdeleted file mode 100644[m
+[1mindex 5f2d75b..0000000[m
+[1m--- a/.gitlab-ci/.gitlab-ci-staging.yml[m
+[1m+++ /dev/null[m
+[36m@@ -1,21 +0,0 @@[m
+[31m-stages:[m
+[31m-  - build[m
+[31m-[m
+[31m-variables:[m
+[31m-  CONTAINER_IMAGE: ${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_SLUG}_${CI_COMMIT_SHORT_SHA}[m
+[31m-[m
+[31m-build:[m
+[31m-  stage: build[m
+[31m-  script:[m
+[31m-    - echo "Building image..."[m
+[31m-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY[m
+[31m-    - docker build -t $CONTAINER_IMAGE .[m
+[31m-    - docker push $CONTAINER_IMAGE[m
+[31m-    - docker tag ${CONTAINER_IMAGE} ${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_SLUG}[m
+[31m-    - docker push ${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_SLUG}[m
+[31m-  tags:[m
+[31m-    - cicd_building_101[m
+[31m-  environment:[m
+[31m-    name: Staging[m
+[31m-  only:[m
+[31m-    - staging[m

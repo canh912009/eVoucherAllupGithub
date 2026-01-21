@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-hook-cluster-ip-service
+  namespace: production
+spec:
+  selector:
+    app: web-hook
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8089 # Replace this with the port your pod is listening on
+

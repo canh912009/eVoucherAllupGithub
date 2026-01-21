@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: push-agent
+  namespace: production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: push-agent
+  template:
+    metadata:
+      labels:
+        app: push-agent
+    spec:
+      containers:
+        - name: push-agent
+          image: registry.git.altimedia.vn/evoucher/push-agent:main
+          ports:
+            - containerPort: 8085 # Replace this with the port the application listens on
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: push-agent-properties
+      imagePullSecrets:
+        - name: regcred

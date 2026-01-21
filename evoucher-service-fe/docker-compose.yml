@@ -1,0 +1,56 @@
+version: '3'
+# Not running well with Quartz
+services:
+  evoucher-service-fe:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src/main/resources:/app/resources
+    command: sh -c "sleep 15 && java -Dspring.config.location=/app/resources/application.properties -jar /app/app.jar"
+    ports:
+      - 19932:19932
+    logging:
+      options:
+        max-size: '10m'
+        max-file: '3'
+        labels: service=evoucher-service-fe
+    depends_on:
+      - elasticsearch
+#      - h2
+      - rabbitmq
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.9
+    environment:
+      - discovery.type=single-node
+    ports:
+      - 9200:9200
+    logging:
+      options:
+        max-size: '10m'
+        max-file: '3'
+        labels: service=elasticsearch
+#  h2:
+#    image: oscarfonts/h2:2.1.210
+#    platform: linux/amd64
+#    ports:
+#      - 9092:9092
+#    logging:
+#      options:
+#        max-size: '10m'
+#        max-file: '3'
+#        labels: service=h2
+#    volumes:
+#      - ./data:/opt/h2-data
+
+  rabbitmq:
+    image: rabbitmq:3.11
+    ports:
+      - 5672:5672
+      - 15672:15672
+    logging:
+      options:
+        max-size: '10m'
+        max-file: '3'
+        labels: service=rabbitmq

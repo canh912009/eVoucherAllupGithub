@@ -1,0 +1,12 @@
+{
+  "Beauty": { "vi": "Làm đẹp", "ko": "뷰티", "ja": "ビューティー", "zh": "美化" },
+  "Drinks & Desserts": { "vi": "Đồ uống", "ko": "음료 & 디저트", "ja": "ドリンク", "zh": "饮料" },
+  "Entertainment": { "vi": "Giải trí", "ko": "엔터테인먼트", "ja": "エンターテイメント", "zh": "娱乐" },
+  "Fashion": { "vi": "Thời trang", "ko": "패션", "ja": "ファッション", "zh": "时尚" },
+  "Online Platform": { "vi": "Ứng dụng", "ko": "앱", "ja": "アプリケーション", "zh": "应用" },
+  "Restaurant": { "vi": "Nhà hàng", "ko": "레스토랑", "ja": "レストラン", "zh": "餐厅" },
+  "Supermarket": { "vi": "Siêu thị", "ko": "슈퍼마켓", "ja": "スーパーマーケット", "zh": "超市" },
+  "Shopping": { "vi": "Mua sắm", "ko": "쇼핑", "ja": "ショッピング", "zh": "购物" },
+  "Utility": { "vi": "Tiện ích", "ko": "생활 서비스", "ja": "ユーティリティ", "zh": "实用程序" },
+  "Topup": { "vi": "Nạp thẻ điện thoại", "ko": "충전", "ja": "テレホンカード リチャージ", "zh": "手机卡充值" }
+}

@@ -1,0 +1,5 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - zalo-callback-receive-cluster-ip-service.yaml
+  - zalo-callback-receive-deployment.yaml

@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../../../base/evoucher-service-fe/
+namespace: dev
+configMapGenerator:
+- files:
+  - application.properties
+  name: evoucher-service-fe-properties
+images:
+- name: registry.git.altimedia.vn/evoucher/evoucher-service-fe
+  newTag: staging_1288866b

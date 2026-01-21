@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: evoucher-service-fe-cluster-ip-service
+  namespace: production
+spec:
+  selector:
+    app: evoucher-service-fe
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 19932 # Replace this with the port your pod is listening on
+

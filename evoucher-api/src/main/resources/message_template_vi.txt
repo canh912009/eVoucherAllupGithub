@@ -1,0 +1,7 @@
+Dear %s,
+%s
+Here is a gift voucher code for you at the link - %s to get goods or services at affiliated units.
+Voucher: %s
+This voucher will be expired on: %s
+You can view instructions on how to use the voucher HERE.
+For any assistance in using the voucher code, please call 1900 55 88 20 or via AQuà V website.

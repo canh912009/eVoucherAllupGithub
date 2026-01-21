@@ -1,0 +1,88 @@
+server:
+  servlet:
+    context-path: /
+  port: 8083
+
+spring:
+  application:
+    name: eVoucher-service-BE
+  datasource:
+    url: ${SECRETS_DB_URL:jdbc:mariadb://192.168.105.149:3306/evoucher_latest}
+    username: ${SECRETS_DB_USERNAME:castis}
+    password: ${SECRETS_DB_PASSWORD:castis}
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+  convertor:
+    key: ${DATABASE_CONVERTOR_KEY:XaYbCz3579CzXaYb0246813579aBcDeF}
+  jackson:
+    time-zone=: Asia/Ho_Chi_Minh
+  rabbitmq:
+    host: ${RABBIT_MQ_HOST:192.168.105.149}
+    port: ${RABBIT_MQ_PORT:5672}
+    username: ${RABBIT_MQ_USER_NAME:evoucher}
+    password: ${RABBIT_MQ_PASSWORD:evoucher}
+    listener:
+      simple:
+        retry:
+          enabled: true
+          max-attempts: 3
+          initial-interval: 100
+
+
+redis:
+  host: 192.168.105.149
+  port: 6379
+  isStandAlone: true
+  key:
+    buy-choice:
+      prefix: CHOOSE_CHOICE_
+
+short-link:
+  url:
+    request: ${SHORT_LINK_URL_REQUEST:http://192.168.105.149:2000}
+    token: ${SHORT_LINK_URL_TOKEN:c4e0f406-4bb1-4a74-8e46-83fafdda3776}
+    redirect: ${SHORT_LINK_URL_REDIRECT:http://192.168.105.149:80}
+    target: ${APPLICATION_URL:http://192.168.105.149:9000/voucher}
+    activate: ${ACTIVATION_URL:http://192.168.105.149:9000/activate}
+
+queues:
+  exchange: ${RABBIT_EXCHANGE:direct_exchange}
+  used_voucher:
+    queue: ${QUEUE_USED_VOUCHER:USED_VOUCHER}
+    routingKey: ${QUEUE_USED_VOUCHER_KEY:used_voucher}
+  receive_voucher:
+    queue: ${QUEUE_RECEIVE_VOUCHER:RECEIVED_VOUCHER}
+    routingKey: ${QUEUE_RECEIVE_VOUCHER_KEY:receive_voucher}
+  activate_voucher:
+    queue: ${QUEUE_ACTIVATE_VOUCHER:ACTIVATE_VOUCHER}
+    routingKey: ${QUEUE_ACTIVATE_VOUCHER_KEY:activate_voucher}
+  update_voucher:
+    queue: ${QUEUE_UPDATE_VOUCHER:UPDATE_VOUCHER}
+    routingKey: ${QUEUE_UPDATE_VOUCHER_KEY:update_voucher}
+  disable_voucher:
+    queue: ${QUEUE_DISABLE_VOUCHER:DISABLE_VOUCHER}
+    routingKey: ${QUEUE_DISABLE_VOUCHER_KEY:disable_voucher}
+  disable_voucher_result:
+    queue: ${QUEUE_DISABLE_VOUCHER_result:DISABLE_VOUCHER_RESULT}
+    routingKey: ${QUEUE_DISABLE_VOUCHER_RESULT_KEY:disable_voucher_result}
+
+system:
+  partner-service:
+    url: http://192.168.105.149:8090/
+
+servers:
+  publishServer: ${PUBLISH_SERVER_URL:http://localhost:8081/publish-service}
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 10000
+        readTimeout: 20000
+rest-template:
+  connectTime: 120000
+  readTimeout: 120000

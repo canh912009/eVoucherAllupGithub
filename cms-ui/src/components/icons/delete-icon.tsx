@@ -1,0 +1,11 @@
+export const DeleteIcon: React.FC<React.SVGAttributes<{}>> = (props) => (
+    <svg
+        {...props}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+    >
+        <path d="M17.5002 0L9.99912 7.5L2.49978 0L0 2.5L7.49934 10L0 17.5L2.49978 20L9.99912 12.5L17.5002 20L20 17.5L12.5007 10L20 2.5L17.5002 0Z" fill="#F24E1E"/>
+    </svg>
+
+);

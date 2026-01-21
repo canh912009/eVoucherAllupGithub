@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sms-callback-receive-cluster-ip-service
+  namespace: production
+spec:
+  selector:
+    app: sms-callback-receive
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9999 # Replace this with the port your sms_callback_receive pod is listening on
+

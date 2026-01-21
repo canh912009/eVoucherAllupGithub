@@ -1,0 +1,51 @@
+server:
+  servlet:
+    context-path: /publish-service-dummy
+  port: 8086
+spring:
+  rabbitmq:
+    host: 192.168.23.104
+    port: 35672
+    username: castis
+    password: castis
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://192.168.23.104:13306/e_voucher
+    username: castis
+    password: castis
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDBDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+    open-in-view: false
+  quartz:
+    jdbc:
+      initialize-schema: always
+    job-store-type: jdbc
+
+
+
+rabbitmq:
+  queue:
+    create-message: PUBLISH_VOUCHER
+    create-message-result: CREATE_MESSAGE_RESULT
+    send-message-result: SEND_MESSAGE_RESULT
+    voucher-handover: REQUEST_HANDOVER
+  exchange: publish_service_exchange
+  routing-key:
+    create-message: publish_service_evoucher
+    create-message-result: create_message_result
+    send-message-result: send_message_result
+    voucher-handover: request_handover
+e-voucher:
+  url:
+    service-be: http://evoucher-service-be-cluster-ip-service/evouchers/
+#    service-be: http://localhost:8080/regen-hmis/test
+#  username: admintest88
+#  password: admin@2023
+external-pin:
+  partner-name: testAccount
+  secret-key: 989cae2dd676f64b7c6937ee

@@ -1,0 +1,141 @@
+server:
+  servlet:
+    context-path: /publish-service
+  port: 8081
+spring:
+  rabbitmq:
+    host: 192.168.23.104
+    port: 35672
+    username: castis
+    password: castis
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://192.168.23.104:13306/e_voucher
+    username: castis
+    password: castis
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDBDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: 'false'
+    open-in-view: false
+  quartz:
+    jdbc:
+      initialize-schema: never
+    job-store-type: jdbc
+  kafka:
+    consumer:
+      properties:
+        spring:
+          json:
+            trusted:
+              packages=*:
+  convertor:
+    key: XaYbCz3579CzXaYb0246813579aBcDeF
+rabbitmq:
+  queue:
+    create-message: PUBLISH_VOUCHER
+    create-message-result: GENERATE_RESULT
+    send-message-result: SEND_MESSAGE_RESULT
+    voucher-handover: REQUEST_HANDOVER
+    update-store: UPDATE_STORE
+    resend-voucher: RESEND_VOUCHER
+  exchange: direct_exchange
+  routing-key:
+    create-message: publish_voucher
+    create-message-result: create_message_result
+    send-message-result: send_message_result
+    voucher-handover: transfer_voucher
+    update-store: update_store
+    resend-voucher: resend_voucher
+  #2024-08-26
+  jackson:
+    time-zone: Asia/Ho_Chi_Minh
+  #end
+e-voucher:
+  url:
+    #    service-be: http://192.168.0.125:8083/
+    service-be: http://evoucher-service-be-cluster-ip-service:80/evouchers
+#    service-be: http://localhost:8085/publish-service-dummy/
+#  username: admintest88
+#  password: admin@2023
+
+location:
+  log: /evoucher/logs/publish_service/
+  quartz-config: /castis/bin/publish-service/resources/
+
+#2024-02-04
+system:
+  decrypt:
+    vector: TotalRandoVector
+    key: XaYbCz3579CzXaYb0246813579aBcDeF
+#2024-02-27
+rsa:
+  evoucher:
+    private-key: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCpSo/JqNQPpn2g3ahHW+Jud8bPZsGrvm1nUCIT5xtKmPUYHFyz3+W3N1qWGDx4ZLlZgXGIR8XY3//MhZ7FgTFU0Nj5pBhmPOpcSgsCe5u0+/emQuC2/vkIT4zvkPQyfLJpqZXNQnJXAOgi++faEpsOXC0hbT6Rmb4+T8lRaFo1ibW2IR253zdVLg2xgWhCEJxL5jSOT/9B6GtH5wDBclg/AUprkV3sJRP6D6JXJZLmGZaCQR72kliLITYuFVVgryFPOlfZFvG8cBLRTbEIsLlS2FHQIssPqMDwdhtiJsJmcFgbW/gOH60vDvxlJ3vQsrVPkX6uOc4jVwe4NbroCUKDAgMBAAECggEAIr2bXk3YHtISy9VQ+Dvh7ruDwAIdUmpEt0PZim4NyrQy79y6JWuYD447d7vHhQlehACtVMMt1cC6FLWDDJLjlb06GZjULP7pNUE4myzUmkJu4t6skMEoR81TZcJAaq/uSQK1LCcrobEc8jjxrm3NBhhiZo6tnWGIie8DqEIa6Qtfi03JFs7EWOZCVXNwi5YZu4S0743vyo4d7j6uFuEPTKTMFZ8dmDlGmJVZAxOu2nuVREZ7GI0pnOED5DZ6WbVzl4ro2q7PpNWfPxRsr5V5TjgZyOcAse3AXWqag7FerxFgST/d48vs2sb8AoHyLwO2aNB294hkD+ChZFDO8+XxAQKBgQD8Kr7Bjz1aVszSTl22pZnZy5VXwrUjJCISgeWxsc4zy2T/a0OMuKnKGFlZsTChRcV5FSBU8Ettiy+LQn1JqOw/xUX4H5+sfP3EmuLrYzsvaxWdLwG9eEkoGrVJDB+U46px10YKHZmaYwna9hkEiXrSMnADn7VVqxk5cgi1TKdUgQKBgQCr3VK0tJmKxPWHOkt+67ta+lIvr+4+ugPINztgu92pkW+zDo6qNhKjZ8aV2Hst2XaEBuWGyvC+dRd5rDhFRpVrhdVgqjmvvFRJNkpD1A2vwKLcM+4augcFrFV8PFVKK0TCmgtTCkgLoGBK66P9oIgrDjqXg45bflakIccCSAzFAwKBgFF7moI/P+sGK081xXB0mH9ZGpvuLcv6LAxg7xD5TJFOAwfJ6Fz7etnz/kNOT1F9ky7qFbV8pFL0a9uLE6MOs7BzlYV06oq5JOM3zWWUfhZ3etd8zgokaTdNUhEVmsroujXpAxfXsr/Bivi3FyRxLD/pzmpNXDIfhJoccBXtfBCBAoGAVy85a45KbckovObnsYUoUCi4VJStCYkXrhPGvXXQJtsujOkPmm0/20EjzpQ5OLMemi9ddJmyswt3UzP4f7wkxJzp99Wi2fFx2In/9pS2NLhGZeq6GTjRoyEfZJy+r5dvlEDNCd0nWy6KardLQ7iSGzVmp8IHD4bxsOWprRCb2b0CgYEAv/z3y92tmjcyJ75p7Oh4kNxg/h+fbUyZNJjWasTITCXEWaHGzVNQkUNw2Y3xMLp7ej02Z2NOgDb5W0czt8rozIND3NiWeqMSc2d8uc6HNiM8X1A9iQaywxvmxX6w4bnbtxT7qlC75qkVBfeEBlFXpieEUonp9H+iXNccAQGgsjU=
+    public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqUqPyajUD6Z9oN2oR1vibnfGz2bBq75tZ1AiE+cbSpj1GBxcs9/ltzdalhg8eGS5WYFxiEfF2N//zIWexYExVNDY+aQYZjzqXEoLAnubtPv3pkLgtv75CE+M75D0MnyyaamVzUJyVwDoIvvn2hKbDlwtIW0+kZm+Pk/JUWhaNYm1tiEdud83VS4NsYFoQhCcS+Y0jk//QehrR+cAwXJYPwFKa5Fd7CUT+g+iVyWS5hmWgkEe9pJYiyE2LhVVYK8hTzpX2RbxvHAS0U2xCLC5UthR0CLLD6jA8HYbYibCZnBYG1v4Dh+tLw78ZSd70LK1T5F+rjnOI1cHuDW66AlCgwIDAQAB
+  gift-pop:
+    public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr79k5cnfPg0QgqFX0Fv6KDqS9rTR0s7g+68jLdpna2S5bCXNLS/Pe8G2gWchEzoogDzHMCUIZwnzpVMlCWgmCMkPO5arJLBoXyYTUPrvwBkqbkcogTL7pl7v4b5gBjW1IwJhPDPWNEaGcaQI3OpBrySSjZ8LZcwbYZJMt2aSKJpXb4Uq7GZIcVLdmRZjVyIm85x4ymvcoG6z6cSThyP79xEUm+n9B6t4w59jR8t5/miQIWstVrqmpN1S/kmATukc7H/Oh1/az/201pbeEa5laiA/XEYXE2EixJlSiJ9rPl/g78AK6QXhTVJA2VRqDOt3/xafLxHN2KVhFTEcAr4ybQIDAQAB
+
+gift-pop:
+  authentication-key: QVFVQTpRWEZhZURKSFlrOXhPRVJvYTNj
+  decrypt-pin-key: DS8NLLT0QXOIUIDL
+  url: https://pos.giftpop.vn:9901/interface
+
+#2024-03-26
+message:
+  transfer:
+    template-id: 2
+
+#2024-05-16
+ur-box:
+  key-store:
+    path: /app/config/castis_urbox.p12
+    password: YxkypLAnhuMOHXl
+    alias: castis_urbox_key
+    key:
+      password: YxkypLAnhuMOHXl
+  app-secret: 99c0a4d73dc4792cfee496f938d121b7
+  app-id: 1340
+  campaign_code: UG241081
+  transaction_info:
+    phone: 0999999999
+    email: castis_pe@castis.asia
+    full_name: AQUA E VOUCHER
+    site_user_id: AQUA_E_VOUCHER
+  url: https://api.urbox.vn/
+  path:
+    buy-gift: /2.0/cart/cartPayVoucher
+#2024-06-10
+redis:
+  host: 192.168.23.104
+  port: 36379
+  isStandAlone: false
+#2024-11-20
+watane:
+  check-trans:
+    interval: 0 */30 * * * *
+  key-store:
+    path: /app/config/castis_watane.p12
+    password: FzkXp3UnhaMOHFp
+    alias: castis_watane_key
+    key:
+      password: FzkXp3UnhaMOHFp
+  api-key: 0BA3235F-8B9A-46A7-A87E-90C172A19EAE
+  secret-key: C1Pxu7%RNVGFcec%
+  appId: aqua
+  url: https://gw.watane.vn/
+#end
+
+# 2025-03-25
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 120000
+        readTimeout: 120000
+  rest-template:
+    connectTime: 120000
+    readTimeout: 120000

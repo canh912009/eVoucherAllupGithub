@@ -1,0 +1,131 @@
+{
+	"setting": {
+		"language": "eng"
+	},
+	"kor": {
+
+		"//System ---------------------------------------------------------":"",
+		
+		"OK": "성공",
+		"BuildDate": "빌드날짜 %+v",
+		"BuildVersion": "빌드버전 %+v",
+		"BuildRevision": "깃리비전 %+v",
+		"DBConnErr": "데이터베이스 접속실패 conf/mongouri 확인",
+		"DBPingErr": "데이터베이스 에러(Ping): %v",
+		"DBConnOK": "데이터베이스 접속성공",	
+		"DBDisconnOK": "데이터베이스 접속종료",
+		"DBConnInfo": "데이터베이스 연결정보 %+v: %+v",
+		"DBIdxCreate": "데이터베이스 인덱스생성 %v:%v unique:%v",
+		"UKeySeqInit": "씨퀀스 초기값설정",
+		"LogLevel": "로그레벨설정 %s",
+		"LogPath": "로그파일경로 %s",
+		"LogClose": "로그자원반납",
+		"ProcessID": "프로세스ID %+v",		
+		"RandSeedInit": "랜덤씨드 초기화",
+		"LicenseInfo": "라이선스 정보",
+		"RDBDisconnOK": "RDB 접속종료",
+
+		"//A Error --------------------------------------------------------":"",
+
+		"JsonParseErr": "JSON 요청 파싱 에러",
+		"FormParseErr": "Form 요청 파싱 에러",
+		"TypeCastErr": "필드 %+v의 값'%+v'은(는) %+v 타입으로 변환할 수 없습니다.",
+		"Required": "%+v은(는) 필수입력입니다.",
+		"InvalidAlias": "앨리어스부적합: %+v은(는) + 기호 혹은 공백을 포함할 수 없습니다.",
+		"InvalidAuthType": "인증타입부적합: %+v은(는) 인증템플릿목록에 없습니다.",
+		"InvalidURL": "URL부적합: %+v은(는) http:// 혹은 https:// 로 시작해야 합니다.",
+		"MustHideSs": "Ss 옵션이 true이면 HideSs 역시 true로 설정해야 합니다.",
+		"MinErr": "크기에러: %+v은(는) %d 이상이어야 합니다.",
+		"MaxErr": "크기에러: %+v은(는) %d 이하여야 합니다.",
+		"TumblerNotFound": "'%+v'은(는) 존재하지 않는 텀블러 입니다.",
+		"LinkNotFound": "존재하지않는 UKey:'%+v'",
+		"InvalidClaimCode": "클레임코드가 다름",
+		"InvalidAToken": "API 요청 권한 없음. %s",
+		"InvalidEndpoint": "엔드포인트 경로 없음",
+		"SystemErr": "시스템 에러",
+		"DBErr": "데이터베이스 에러: %s",
+		"DupKeyErr": "키중복 에러: %s",
+
+		"//B Error --------------------------------------------------------":"",
+
+		"B241": "링크 허용(클릭) 횟수 초과",
+		"B242": "링크 유효(날짜) 기한 초과",
+		"B243": "비밀번호 오류 횟수 초과",
+		"B244": "인증정보가 틀립니다.",
+		"B245": "링크 클레임 실패",
+		"B403": "접근권한없음.",
+		"B404": "요청 페이지를 찾을 수 없습니다.",
+		"B500": "500 내부 시스템 오류",		
+		"B800": "라이선스만료",
+		"B810": "라이선스없음",
+		"B900": "텀블러가 비어있습니다.",
+
+		"//B Auth ---------------------------------------------------------":"",
+
+		"AuthPassword": "링크의 암호를 입력하세요.",
+		"AuthBoxPassword": "사서함 비밀번호를 입력하세요."
+	},
+	"eng": {
+
+		"//System ---------------------------------------------------------":"",
+		
+		"OK": "OK",
+		"BuildDate": "Build Date %+v",
+		"BuildVersion": "Build Version %+v",
+		"BuildRevision": "Build Revision %+v",
+		"DBConnErr": "Database Connection Error Check conf/mongouri",
+		"DBPingErr": "Database Ping Error: %v",
+		"DBConnOK": "Database Connected",	
+		"DBDisconnOK": "Database Disconnected",
+		"DBConnInfo": "Database Connection Info %+v: %+v",
+		"DBIdxCreate": "Database Index Created %v:%v unique:%v",
+		"UKeySeqInit": "UKey Sequence Initialized",
+		"LogLevel": "Log Level %s",
+		"LogPath": "Log Path %s",
+		"LogClose": "Log Closed",
+		"ProcessID": "Process ID %+v",		
+		"RandSeedInit": "Random Seed Initialized",
+		"LicenseInfo": "License Info",
+		"RDBDisconnOK": "RDB Disconnected",
+
+		"//A Error --------------------------------------------------------":"",
+
+		"JsonParseErr": "JSON Request Parse Error",
+		"FormParseErr": "Form Request Parse Error",
+		"TypeCastErr": "Field %+v's value '%+v' can not be casted %+v Type",
+		"Required": "%+v is required",
+		"InvalidAlias": "Invalid Alias: '%+v' can't include '+' or space",
+		"InvalidAuthType": "Invalid Auth Type: %+v",
+		"InvalidURL": "Invalid URL: %+v must have prefix http:// or https://",
+		"MustHideSs": "If Ss is true then HideSs must be true",
+		"MinErr": "%+v must be minimum of %d",
+		"MaxErr": "%+v must be maxmum of %d",
+		"TumblerNotFound": "Tumbler '%+v'is not exists",
+		"LinkNotFound": "Invalid ukey:'%+v'",
+		"InvalidClaimCode": "Invalid calim code",
+		"InvalidAToken": "API Permission denied. %s",
+		"InvalidEndpoint": "Invalid end-point",
+		"SystemErr": "System error",
+		"DBErr": "Database error: %s",
+		"DupKeyErr": "Key duplicated error: %s",
+
+		"//B Error --------------------------------------------------------":"",
+
+		"B241": "Exceeded allowed number of link clicks",
+		"B242": "Link expiration date exceeded",
+		"B243": "Exceeded maximum password attempts",
+		"B244": "Invalid password",
+		"B245": "Claim error",
+		"B403": "Access not allowed",
+		"B404": "Link not found",
+		"B500": "System error",		
+		"B800": "License expired",
+		"B810": "License not found",
+		"B900": "Tumbler is empty",
+
+		"//B Auth ---------------------------------------------------------":"",
+
+		"AuthPassword": "Enter Link Password",
+		"AuthBoxPassword": "Enter Tumbler Password"
+	}
+}

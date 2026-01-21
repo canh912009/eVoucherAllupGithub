@@ -1,0 +1,23 @@
+# Docker configuration for running the evoucher-file service:
+#
+# To start the service, you can use the following command:
+# docker run --name evoucher-file -d -p 4000:4000 \
+#            -v /home/account/Application/E-Voucher/uploads/public:/app/uploads/public \
+#            -v /home/account/Application/E-Voucher/uploads/private:/app/uploads/private \
+#            evoucher-file:v1.0.0
+#
+version: '3.8'
+
+services:
+  ev_file:
+    image: evoucher-file:v1.0.0
+    container_name: evoucher-file
+
+    # Ports mapping (host:container)
+    ports:
+      - "4000:4000"
+    
+    # Volume mapping for file uploads (host:container)
+    volumes:
+      - "/home/account/Application/E-Voucher/uploads/public:/app/uploads/public"
+      - "/home/account/Application/E-Voucher/uploads/private:/app/uploads/private"

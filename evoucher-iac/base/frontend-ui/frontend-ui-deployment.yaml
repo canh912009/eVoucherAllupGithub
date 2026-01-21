@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-ui
+  namespace: production
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: frontend-ui
+  template:
+    metadata:
+      labels:
+        app: frontend-ui
+    spec:
+      containers:
+        - name: frontend-ui
+          image: registry.git.altimedia.vn/evoucher/frontend-ui:main
+          ports:
+            - containerPort: 80 # Replace this with the port the application listens on
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: regcred

@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: image-server
+  namespace: production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: image-server
+  template:
+    metadata:
+      labels:
+        app: image-server
+    spec:
+      containers:
+        - name: image-server
+          image: registry.git.altimedia.vn/evoucher/evoucher-image-server:latest
+          ports:
+            - containerPort: 4000 # Replace this with the port the application listens on
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: image-server-persistent-volume
+              mountPath: /home/evoucher/uploads  # Specify the path where you want to mount the volume
+      imagePullSecrets:
+        - name: regcred
+      volumes:
+        - name: image-server-persistent-volume
+          persistentVolumeClaim:
+            claimName: image-server-pvc  # Specify the name of the PVC you create
+

@@ -1,0 +1,69 @@
+<form id="f1" method="post" style="display:none">
+    <input name="_Ss" id="_Ss">
+    <input name="_Cc" id="_Cc">
+</form>
+<div id="x"></div>
+<script src="template/js/jquery-1.11.3.js"></script>
+<script>
+
+let data = { 
+    _Ss:"%s",
+    _Cc:"%s",
+    Seq:0
+}
+
+$(function(){
+    if (localStorage.getItem("_Cc")!= data._Cc) {
+        document.write("Invalid ClaimCode.")
+        return;
+    }
+    list();
+});
+
+function list() {
+    $.ajax({
+        type: 'POST',
+        data: data,
+        success: success,
+        error: error
+    });
+}
+
+function success(r) {
+    console.log(r)
+    if (r == null) {
+        $("#x").append("텀블러가 비어있습니다.")
+        return;
+    }
+    for (i=0; i<r.length; i++) {
+        let row = r[i];
+        /*
+        _Ss(텀블러)와 _Cc(클레임코드) 를 POST 방식으로 전송
+        _Ss와 _Cc가 노출되지 않기 때문에 보안상 안전함.        
+        */
+        let $a = $("<A>").text(row.Title).attr("href", "javascript:click('"+row.S+"')");
+        
+        /*
+        아래코드는 링크목록 클릭시 Get 방식으로 동작하나 권장하지 않음.
+        _Ss가 노출됨. 그러나 _Cc는 노출되지 않음.
+        얼리버드가 다시 POST요청으로 _Cc를 획득함.
+        */
+        // let href = "/" + row.S + "?_Ss=" + data._Ss;
+        // let $a = $("<A>").text(row.Title).attr("href", href);
+        $("#x").append(row.Idt)
+            .append(" ")
+            .append($a)
+            .append("<br>");
+    }
+}
+function click(ukey){
+    $("#f1").attr("action", "/" + ukey);
+    $("#_Ss").val(data._Ss);
+    $("#_Cc").val(data._Cc);
+    document.forms[0].submit();
+}
+
+function error(xhr, status, error) {
+    alert(xhr.responseText);
+}
+</script>

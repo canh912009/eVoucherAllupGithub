@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pos-api
+  namespace: production
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: pos-api
+  template:
+    metadata:
+      labels:
+        app: pos-api
+    spec:
+      containers:
+        - name: pos-api
+          image: registry.git.altimedia.vn/evoucher/pos-api:main
+          ports:
+            - containerPort: 8088 # Replace this with the port the application listens on
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: pos-api-properties
+      imagePullSecrets:
+        - name: regcred

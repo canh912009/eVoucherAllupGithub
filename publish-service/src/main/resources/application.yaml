@@ -1,0 +1,98 @@
+server:
+  servlet:
+    context-path: /publish-service
+  port: 8081
+spring:
+  rabbitmq:
+    host: 192.168.105.149
+    port: 5673
+    username: castis
+    password: castis
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://192.168.105.149:3306/evoucher_latest
+    username: evoucher
+    password: Alti@1234
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDBDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: 'false'
+    open-in-view: false
+  quartz:
+    jdbc:
+      initialize-schema: never
+    job-store-type: jdbc
+  kafka:
+    consumer:
+      properties:
+        spring:
+          json:
+            trusted:
+              packages=*:
+  convertor:
+    key: XaYbCz3579CzXaYb0246813579aBcDeF
+
+
+
+system:
+  decrypt:
+    vector: TotalRandoVector
+    key: XaYbCz3579CzXaYb0246813579aBcDeF
+
+
+rabbitmq:
+  queue:
+    create-message: PUBLISH_VOUCHER_
+    create-message-result: GENERATE_RESULT_
+    send-message-result: SEND_MESSAGE_RESULT_
+    voucher-handover: REQUEST_HANDOVER_
+    update-store: UPDATE_STORE_
+    resend-voucher: RESEND_VOUCHER_
+  exchange: direct_exchange_
+  routing-key:
+    create-message: publish_voucher_
+    create-message-result: create_message_result_
+    send-message-result: send_message_result_
+    voucher-handover: transfer_voucher_
+    update-store: update_store_
+    resend-voucher: resend_voucher_
+e-voucher:
+  url:
+    #    service-be: http://192.168.0.125:8083/
+    service-be: http://192.168.0.104:8083/evouchers
+#    service-be: http://localhost:8085/publish-service-dummy/
+#  username: admintest88
+#  password: admin@2023
+
+location:
+#  log: /evoucher/logs/publish_service/
+#  quartz-config: /castis/bin/publish-service/resources/
+  log: ../publish_service_log/
+rsa:
+  evoucher:
+    private-key: ${RSA_PRIVATE_KEY_INTERNAL}
+    public-key: ${RSA_PUBLISH_KEY_INTERNAL}
+  gift-pop:
+    public-key: ${RSA_PUBLISH_KEY_GIFTPOP}
+
+gift-pop:
+  authentication-key: ${GIFT_POP_AUTH_KEY}
+  decrypt-pin-key: ${GIFT_POP_DECRYPT_PIN_KEY}
+  url: ${GIFT_POP_URL}
+
+message:
+  transfer:
+    template-id: 2
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 120000
+        readTimeout: 120000
+rest-template:
+  connectTime: 120000
+  readTimeout: 120000

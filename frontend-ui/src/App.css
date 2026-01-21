@@ -1,0 +1,20 @@
+* {
+    font-family: Roboto !important;
+}
+
+:root {
+    color-scheme: only light;
+}
+
+body {
+    background-color: rgb(254, 231, 21, 0.5);
+    color: #000000; /* Màu chữ light mode */
+}
+
+/* Hoặc đối với dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: white; /* Màu nền dark mode */
+        color: black; /* Màu chữ dark mode */
+    }
+}

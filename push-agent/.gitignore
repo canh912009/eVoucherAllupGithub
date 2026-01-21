@@ -1,0 +1,6 @@
+.idea
+target
+catalina.base_IS_UNDEFINED
+src/main/resources/application-dev.properties
+*.tmp
+.DS_Store

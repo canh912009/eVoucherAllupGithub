@@ -1,0 +1,24 @@
+server:
+  servlet:
+    context-path: /partner
+  port: 8084
+
+spring:
+  application:
+    name: external-service-api
+  datasource:
+    url: ${SECRETS_DB_URL:jdbc:mariadb://localhost:3306/e_voucher}
+    username: ${SECRETS_DB_USERNAME:castis}
+    password: ${SECRETS_DB_PASSWORD:castis}
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: false
+  jackson:
+    time-zone=: Asia/Ho_Chi_Minh
+
+servers:
+  admin-api: ${ADMIN_API_URL}
+  file-upload-api: ${FILE_UPLOAD_API_URL:https://ev-img.aqua.gift}

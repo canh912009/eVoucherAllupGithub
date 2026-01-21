@@ -1,0 +1,18 @@
+2023/07/21 09:42:29 [TRACE] kxRj1gpvoT4lCBv0PCYz86 /link/get 컨텍스트저장 UKey:'kgPZ6'
+2023/07/21 09:42:33 [TRACE] gxwrNsdrpVVcLp0v325Rn8 /link/get 컨텍스트저장 UKey:'kgPZ6'
+2023/07/21 09:42:42 [TRACE] eVH9WWXLTM3Pz5zP8tCiq /link/set 컨텍스트저장 UKey:'snzBi'
+2023/07/21 09:43:27 [TRACE] ZwOgLDGMkL9oOvALllL6t ----------------------------------------------------
+2023/07/21 09:43:27 [TRACE] ZwOgLDGMkL9oOvALllL6t /snzBi 토큰생성: abce05d7-91da-4044-81c1-8ffebbb7ccf2
+2023/07/21 09:43:27 [TRACE] ZwOgLDGMkL9oOvALllL6t 2024-06-07 00:00:00 +0700 +07
+2023/07/21 09:43:27 [TRACE] ZwOgLDGMkL9oOvALllL6t ub.urlybud.aqua.castis.io 라이선스 정상
+2023/07/21 09:43:27 [TRACE] ZwOgLDGMkL9oOvALllL6t snzBi CheckExists()
+2023/07/21 09:43:27 [TRACE] ZwOgLDGMkL9oOvALllL6t snzBi CheckSecureLink()
+2023/07/21 09:43:27 [TRACE] ZwOgLDGMkL9oOvALllL6t snzBi CheckCount()
+2023/07/21 09:43:27 [TRACE] ZwOgLDGMkL9oOvALllL6t snzBi CheckExpire()
+2023/07/21 09:43:27 [TRACE] ZwOgLDGMkL9oOvALllL6t snzBi CheckAuth()
+2023/07/21 09:43:27 [TRACE] ZwOgLDGMkL9oOvALllL6t snzBi ServeLink()
+2023/07/21 09:43:27 [TRACE] ZwOgLDGMkL9oOvALllL6t snzBi Redirect()
+2023/07/21 09:43:27 [TRACE] ZwOgLDGMkL9oOvALllL6t snzBi GET 리다이렉트
+2023/07/21 09:43:27 [TRACE] ZwOgLDGMkL9oOvALllL6t /snzBi 컨텍스트저장 UKey:'snzBi'
+2023/07/21 15:00:36 [TRACE] i5npjFdZAU21769P8BfCVk /link/get 컨텍스트저장 UKey:'snzBi'
+2023/07/21 17:41:57 [TRACE] 4fqoKz7E5TKcd20duhHSBg /link/get 컨텍스트저장 UKey:'snzBi'

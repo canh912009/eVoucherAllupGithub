@@ -1,0 +1,257 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    app.kubernetes.io/instance: k8tz
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: k8tz
+    app.kubernetes.io/version: 0.16.0
+    helm.sh/chart: k8tz-0.16.0
+    k8tz.io/controller-namespace: "true"
+  name: k8tz
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app.kubernetes.io/instance: k8tz
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: k8tz
+    app.kubernetes.io/version: 0.16.0
+    helm.sh/chart: k8tz-0.16.0
+  name: k8tz
+  namespace: k8tz
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/instance: k8tz
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: k8tz
+    app.kubernetes.io/version: 0.16.0
+    helm.sh/chart: k8tz-0.16.0
+  name: k8tz-role
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  verbs:
+  - get
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  verbs:
+  - get
+  - list
+  - watch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    app.kubernetes.io/instance: k8tz
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: k8tz
+    app.kubernetes.io/version: 0.16.0
+    helm.sh/chart: k8tz-0.16.0
+  name: k8tz-role-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: k8tz-role
+subjects:
+- kind: ServiceAccount
+  name: k8tz
+  namespace: k8tz
+---
+apiVersion: v1
+data:
+  tls.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURGRENDQWZ5Z0F3SUJBZ0lSQU43WUMwRVdrQmpsWGpuTTBNQ0dYV2N3RFFZSktvWklodmNOQVFFTEJRQXcKR0RFV01CUUdBMVVFQXhNTmF6aDBlaTVyT0hSNkxuTjJZekFlRncweU5EQXpNREV4T1RJeE1EWmFGdzB6T0RBegpNREl4T1RJeE1EWmFNQmd4RmpBVUJnTlZCQU1URFdzNGRIb3VhemgwZWk1emRtTXdnZ0VpTUEwR0NTcUdTSWIzCkRRRUJBUVVBQTRJQkR3QXdnZ0VLQW9JQkFRQ29QWitXM2tmTEpjb0prK2NKRWFaV2UwMUNsdVVqVWs2YXM3aGYKMTFxOFo0d3BZSUdIUDNpRVIvZ0hMR2JoQVlzUEJXWjZ5OXJjMUFOTWUzV2s3TjZPbit0T2cweldvNDBNUkVLVwphREVZQ05FVmNiYzhyVE5MWGtCeEh3Tll1RVRxa3JuMDB6VlAxRFdjcWMwakVqcldkNWJGR3M0QmxZRmlOSVFFClRxbUhFWGYyY0hFc2dYbkYrNU5TTElqNFo1QnB4SWVGVjdpVVJVdkpHcFFSdGY3SkQwemtoNnVTQ3BVQkdpQ1QKYmxDV0JMTXF4cVlRazNuWHpUSkhhVVFwUTc3c3NJb21BbU45QngyYTNxTDV2V3g2ZjI4SHhaWVZOSnBYY0h2SwpzY2plTEdOMGljNkFjMGk0WXVVTmQ4TEkwMWdKY2VwQSthZ1J4TGxhRlNUK1RpN0RBZ01CQUFHaldUQlhNQTRHCkExVWREd0VCL3dRRUF3SUZvREFkQmdOVkhTVUVGakFVQmdnckJnRUZCUWNEQVFZSUt3WUJCUVVIQXdJd0RBWUQKVlIwVEFRSC9CQUl3QURBWUJnTlZIUkVFRVRBUGdnMXJPSFI2TG1zNGRIb3VjM1pqTUEwR0NTcUdTSWIzRFFFQgpDd1VBQTRJQkFRQWI5L1J5WWhTTVBydXp4U21NUWRQaG5yRFFybmRZQS9Ba2pySmJEMENNM01GZ3FNblFIdm5TCmxKQVFXTEVzTnJpalFNeTR3dE5LM2QxYjZQM1pKYnY1b3Y3b1pIdkZNR1pmOGp0WlcrYmRDZE80RldheG4xbHoKTDY3NVN6TVFxb1hpQjBBclpHWkpxcldueWo4NXQycm9IZ2pjQmVMUWZacnZ3RFNVK2RNcU5UclpPcGJEdEQ3SwoyVFJ1UjByVDRhWGx2NXRNeDE4cUIxZ1Iwb3Q0UThmblU2UHFrSWFYVWs1RDIxWWVjNTA0LzZpZ2lmT0hsbmJaCjNkMkxFaHB3dFp5QVJjL3NSVU5DMzZvNTNiOVFHUkl6dmtvRjZ2OEJkM0VpOEx5Rm11SzhQZXIyaUdsdHV5VFoKSnI5cWloaUJWVkNDWkp6b3dGYWRzTE1zb2pGbG1abXcKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQ==
+  tls.key: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb3dJQkFBS0NBUUVBcUQyZmx0NUh5eVhLQ1pQbkNSR21WbnROUXBibEkxSk9tck80WDlkYXZHZU1LV0NCCmh6OTRoRWY0Qnl4bTRRR0xEd1ZtZXN2YTNOUURUSHQxcE96ZWpwL3JUb05NMXFPTkRFUkNsbWd4R0FqUkZYRzMKUEswelMxNUFjUjhEV0xoRTZwSzU5Tk0xVDlRMW5Lbk5JeEk2MW5lV3hSck9BWldCWWpTRUJFNnBoeEYzOW5CeApMSUY1eGZ1VFVpeUkrR2VRYWNTSGhWZTRsRVZMeVJxVUViWCt5UTlNNUllcmtncVZBUm9nazI1UWxnU3pLc2FtCkVKTjUxODB5UjJsRUtVTys3TENLSmdKamZRY2RtdDZpK2Ixc2VuOXZCOFdXRlRTYVYzQjd5ckhJM2l4amRJbk8KZ0hOSXVHTGxEWGZDeU5OWUNYSHFRUG1vRWNTNVdoVWsvazR1d3dJREFRQUJBb0lCQUV1R1Bsb1B0dEx2Ujk4OAowZjQwT2lPZ2ZuSmlJc0xVZEF6bW1PSU5YdUlzNmJLNWErdzNCZmI4QjgvUWt1NTNMdUd6WHVuSkVac0lZZUszCm1YeE1DU3lsaFpCZFNPVWh6bk92UU9VY0tNM05SMjhFK1dqM3A0c3g2R1BmdERUam82eFo2YmlLQitpcUx0Y0IKTXVHSGtYb3RmVFZHYnl3dTNVSWtxUTcxOFF4OGhGUno3R1FDSk1PaDNtVm1jZzBONWlMY3VJeDBUdkJVRW1kbwp3YnJxZjA4M1BzMzVFYkFOd1JIdjlMek0vRkVpNW9hWjZ4eld2Qk5ZSUZBMmMwWE5xMzVnOC9mU1N1blJCZUNwCnJXTDhJYStpZG0rL0pEZlkveDFCQ2t3WC9Mb2Q2Rm5wZ3JzV0E0NFJwUzJXbkhYWjRUMkp2UXhIMnYvK0lmcHEKUktSUFBtRUNnWUVBM1RrOXVNZ1ZXNFpSRndSRUNXcmRtbkE4YnFkQkRrVVdLNWZzRVF5cFZ1MFQwLzZFWnFkMApyZFNlcEhIL2ViMGtDT21ONWFwdGpqUVR0ekQ3SUZCSk1zamJPY09aOVhXMHlzOVQwb2Rjb2dkYklBZy8rUGpVCmtYMUphTXA5d1l0dlJmdlN6UHJ4WCtDekdldEJQZnB4dTlPZ0ZPQ3NWbFRranlFUDFJTVRsWjBDZ1lFQXdyQXQKcW9GVEJDRG92SDVRL2N5dGlqVTcreUg4OHQvenNBMEdlWVU5S0FCRFZHQkp5aVVaaDg2cnF4UGcydFRZelVHOQphd2V6NHlEMHA0aEI1OS9LNHVsYTJGMmVxMEI1V0FsQjhtbDBXSm05bkxPR3NXbGtDOXhZRmRoVWg4OUFxVW95CmtBTmNRdERqbDN6aWxVUDRwSGJocGRrYlR4Z0YrM0E0cVd4NDE5OENnWUEvVmVNSTR5ZlNNMHRHQnErZjdwdVIKV3E3Q2sxbjV4dWZKQlU3TnRzMUltTW1EZVN2WTQvcHd4aDNCUU8zK29ac09maWRrNkgxREtEKzR3K294M3lxRgp3cUdaRVJvai8xWUtkbjh1R0JqNlBwYmxQZGRxNVhxZVNMdGFxQmFHOGUraW5xMUVpRmZRdGxrd2czMERUSStCClVkNVQrOXI3UUlUTFFaRHhxN0ZRdFFLQmdBbGdHcExmYjNQL2NiWENEM3hwWXVJSTlqNTl3SVNockVhS0dnbTQKRk4zY1JXSEcwVWJleW4venYraVpLSGJoVVI5eFR3SGNlUmt5K1JVb1JxUTM3cmxHcTQxSDFPQkNWcFdhdklaRAo5Y3BlZlBjUzNpV2xBYUJnbUExVlFaellxakI4MWpxQkx1dzR5dno4a3B6RmpTKytXZGQyd1EzcUJqKzVnOEVFCjdEelpBb0dCQUs4ZHg1NytDbEdJNFY2MzM2U2JoaFNFYm5zZmdPU3hiRHRrZExmOFQ2cVpHaVdLMDlPRGY1V1gKelVsVHB3QkJVZVVzRnB3MFk3YTNWcUZ0MzViRG1GRENERWlnbDh0YS9MZDBnbTNDaDVtT004OWMyS25sZTVMKwpqVmxueVlNYmFDeGxHSTRXdG02MjBjQ3RCYUpJVGF5NzM0cFlwL0hNQWtRRk5Pdk04RlNTCi0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0t
+kind: Secret
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/instance: k8tz
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: k8tz
+    app.kubernetes.io/version: 0.16.0
+    helm.sh/chart: k8tz-0.16.0
+  name: k8tz-tls
+  namespace: k8tz
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/instance: k8tz
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: k8tz
+    app.kubernetes.io/version: 0.16.0
+    helm.sh/chart: k8tz-0.16.0
+  name: k8tz
+  namespace: k8tz
+spec:
+  ports:
+  - name: https
+    port: 443
+    protocol: TCP
+    targetPort: https
+  selector:
+    app.kubernetes.io/instance: k8tz
+    app.kubernetes.io/name: k8tz
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/instance: k8tz
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: k8tz
+    app.kubernetes.io/version: 0.16.0
+    helm.sh/chart: k8tz-0.16.0
+  name: k8tz
+  namespace: k8tz
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: k8tz
+      app.kubernetes.io/name: k8tz
+  template:
+    metadata:
+      annotations:
+        checksum/config: 9878ea30d9dad9d231c79cd3ca75ee520e823469b073ac8d9ac504dc8918e793
+      labels:
+        app.kubernetes.io/instance: k8tz
+        app.kubernetes.io/name: k8tz
+    spec:
+      containers:
+      - args:
+        - webhook
+        - --timezone
+        - Asia/Ho_Chi_Minh
+        - --injection-strategy
+        - initContainer
+        - --inject=true
+        - --container-name=k8tz
+        - --bootstrap-image
+        - quay.io/k8tz/k8tz:0.16.0
+        image: quay.io/k8tz/k8tz:0.16.0
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: https
+            scheme: HTTPS
+        name: k8tz
+        ports:
+        - containerPort: 8443
+          name: https
+          protocol: TCP
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: https
+            scheme: HTTPS
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          runAsNonRoot: true
+          seccompProfile:
+            type: RuntimeDefault
+        volumeMounts:
+        - mountPath: /run/secrets/tls
+          name: tls
+          readOnly: true
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
+      serviceAccountName: k8tz
+      volumes:
+      - name: tls
+        secret:
+          secretName: k8tz-tls
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    helm.sh/hook: test
+  labels:
+    app.kubernetes.io/instance: k8tz
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: k8tz
+    app.kubernetes.io/version: 0.16.0
+    helm.sh/chart: k8tz-0.16.0
+  name: k8tz-health-test
+  namespace: k8tz
+spec:
+  containers:
+  - args:
+    - --insecure
+    - https://k8tz:443/health
+    image: curlimages/curl:7.78.0
+    name: curl
+  restartPolicy: Never
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: MutatingWebhookConfiguration
+metadata:
+  labels:
+    app.kubernetes.io/instance: k8tz
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: k8tz
+    app.kubernetes.io/version: 0.16.0
+    helm.sh/chart: k8tz-0.16.0
+  name: k8tz
+webhooks:
+- admissionReviewVersions:
+  - v1
+  - v1beta1
+  clientConfig:
+    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURGRENDQWZ5Z0F3SUJBZ0lSQU43WUMwRVdrQmpsWGpuTTBNQ0dYV2N3RFFZSktvWklodmNOQVFFTEJRQXcKR0RFV01CUUdBMVVFQXhNTmF6aDBlaTVyT0hSNkxuTjJZekFlRncweU5EQXpNREV4T1RJeE1EWmFGdzB6T0RBegpNREl4T1RJeE1EWmFNQmd4RmpBVUJnTlZCQU1URFdzNGRIb3VhemgwZWk1emRtTXdnZ0VpTUEwR0NTcUdTSWIzCkRRRUJBUVVBQTRJQkR3QXdnZ0VLQW9JQkFRQ29QWitXM2tmTEpjb0prK2NKRWFaV2UwMUNsdVVqVWs2YXM3aGYKMTFxOFo0d3BZSUdIUDNpRVIvZ0hMR2JoQVlzUEJXWjZ5OXJjMUFOTWUzV2s3TjZPbit0T2cweldvNDBNUkVLVwphREVZQ05FVmNiYzhyVE5MWGtCeEh3Tll1RVRxa3JuMDB6VlAxRFdjcWMwakVqcldkNWJGR3M0QmxZRmlOSVFFClRxbUhFWGYyY0hFc2dYbkYrNU5TTElqNFo1QnB4SWVGVjdpVVJVdkpHcFFSdGY3SkQwemtoNnVTQ3BVQkdpQ1QKYmxDV0JMTXF4cVlRazNuWHpUSkhhVVFwUTc3c3NJb21BbU45QngyYTNxTDV2V3g2ZjI4SHhaWVZOSnBYY0h2SwpzY2plTEdOMGljNkFjMGk0WXVVTmQ4TEkwMWdKY2VwQSthZ1J4TGxhRlNUK1RpN0RBZ01CQUFHaldUQlhNQTRHCkExVWREd0VCL3dRRUF3SUZvREFkQmdOVkhTVUVGakFVQmdnckJnRUZCUWNEQVFZSUt3WUJCUVVIQXdJd0RBWUQKVlIwVEFRSC9CQUl3QURBWUJnTlZIUkVFRVRBUGdnMXJPSFI2TG1zNGRIb3VjM1pqTUEwR0NTcUdTSWIzRFFFQgpDd1VBQTRJQkFRQWI5L1J5WWhTTVBydXp4U21NUWRQaG5yRFFybmRZQS9Ba2pySmJEMENNM01GZ3FNblFIdm5TCmxKQVFXTEVzTnJpalFNeTR3dE5LM2QxYjZQM1pKYnY1b3Y3b1pIdkZNR1pmOGp0WlcrYmRDZE80RldheG4xbHoKTDY3NVN6TVFxb1hpQjBBclpHWkpxcldueWo4NXQycm9IZ2pjQmVMUWZacnZ3RFNVK2RNcU5UclpPcGJEdEQ3SwoyVFJ1UjByVDRhWGx2NXRNeDE4cUIxZ1Iwb3Q0UThmblU2UHFrSWFYVWs1RDIxWWVjNTA0LzZpZ2lmT0hsbmJaCjNkMkxFaHB3dFp5QVJjL3NSVU5DMzZvNTNiOVFHUkl6dmtvRjZ2OEJkM0VpOEx5Rm11SzhQZXIyaUdsdHV5VFoKSnI5cWloaUJWVkNDWkp6b3dGYWRzTE1zb2pGbG1abXcKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQ==
+    service:
+      name: k8tz
+      namespace: k8tz
+      path: /
+      port: 443
+  failurePolicy: Fail
+  name: admission-controller.k8tz.io
+  namespaceSelector:
+    matchExpressions:
+    - key: k8tz.io/controller-namespace
+      operator: NotIn
+      values:
+      - "true"
+    - key: kubernetes.io/metadata.name
+      operator: NotIn
+      values:
+      - k8tz
+      - kube-system
+  rules:
+  - apiGroups:
+    - ""
+    apiVersions:
+    - v1
+    operations:
+    - CREATE
+    resources:
+    - pods
+  - apiGroups:
+    - batch
+    apiVersions:
+    - v1
+    operations:
+    - CREATE
+    resources:
+    - cronjobs
+  sideEffects: None

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jmetter-pvc
+  namespace: production
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: standard
+  resources:
+    requests:
+      storage: 200Gi
+  selector:
+    matchLabels:
+      app: jmetter  # Match the label used in the PV

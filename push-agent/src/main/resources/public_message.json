@@ -1,0 +1,12 @@
+{
+  "mobileNumber":"0966312666",
+  "message":"Message content for testing purpose",
+  "publishDetailId":0,
+  "imageUrl":null,
+  "templateId":0,
+  "templateData":null,
+  "smsMsg":null,
+  "failover":0,
+  "callbackUrl":null,
+  "brandName":"FTI"
+}

@@ -1,0 +1,128 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: evoucher-ingress
+  namespace: dev
+  annotations:
+    #nginx.ingress.kubernetes.io/rewrite-target: /$1
+    #nginx.ingress.kubernetes.io/use-regex: "true"
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/affinity: "cookie"
+    nginx.ingress.kubernetes.io/session-cookie-name: "evoucher-cookie"
+    nginx.ingress.kubernetes.io/session-cookie-expires: "172800"
+    nginx.ingress.kubernetes.io/session-cookie-max-age: "172800"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/affinity-mode: persistent
+    nginx.ingress.kubernetes.io/session-cookie-hash: sha1
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    # ADD 2025/03/06 to fix X-Language in the header
+    nginx.ingress.kubernetes.io/cors-allow-origin: "*"
+    nginx.ingress.kubernetes.io/cors-allow-methods: "GET, POST, OPTIONS, PATCH, PUT, DELETE"
+    nginx.ingress.kubernetes.io/cors-allow-headers: "X-Language, Content-Type, Authorization"
+    nginx.ingress.kubernetes.io/cors-max-age: "86400"
+spec:
+  #ingressClassName: nginx
+  rules:
+    - host: cms.aqua.altimedia.vn  # Replace with your desired subdomain or domain
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: admin-cms-ui-cluster-ip-service
+                port:
+                  number: 80
+    - host: smsreport.altimedia.vn # Replace with your desired subdomain or domain
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: sms-callback-receive-cluster-ip-service 
+                port:
+                  number: 80
+    - host: zaloreport.altimedia.vn # Replace with your desired subdomain or domain
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: zalo-callback-receive-cluster-ip-service
+                port:
+                  number: 80
+    - host: ub-urly.altimedia.vn  # Replace with your desired subdomain or domain
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: short-link-service-cluster-ip-service
+                port:
+                  number: 80
+    - host: userui.aqua.altimedia.vn # Replace with your desired subdomain or domain
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend-ui-cluster-ip-service
+                port:
+                  number: 80
+    - host: mock-fe.aqua.altimedia.vn # Replace with your desired subdomain or domain
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: evoucher-api-cluster-ip-service
+                port:
+                  number: 80
+    - host: mock-be.aqua.altimedia.vn # Replace with your desired subdomain or domain
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: admin-api-cluster-ip-service 
+                port:
+                  number: 80
+    - host: sync.aqua.altimedia.vn # Replace with your desired subdomain or domain
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: web-hook-cluster-ip-service 
+                port:
+                  number: 80
+    - host: pos.aqua.altimedia.vn # Replace with your desired subdomain or domain
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: pos-api-cluster-ip-service
+                port:
+                  number: 8088
+
+# add 20250325
+    - host: exapi.aqua.altimedia.vn
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: external-service-api-cluster-ip-service
+                port:
+                  number: 80

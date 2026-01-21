@@ -1,0 +1,73 @@
+server:
+  servlet:
+    context-path: /
+  port: 8083
+
+spring:
+  application:
+    name: eVoucher-service-BE
+  datasource:
+    url: ${SECRETS_DB_URL}
+    username: ${SECRETS_DB_USERNAME}
+    password: ${SECRETS_DB_PASSWORD}
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: false
+  convertor:
+    key: ${DATABASE_CONVERTOR_KEY}
+  jackson:
+    time-zone: Asia/Ho_Chi_Minh
+  rabbitmq:
+    host: ${RABBIT_MQ_HOST}
+    port: ${RABBIT_MQ_PORT}
+    username: ${RABBIT_MQ_USER_NAME}
+    password: ${RABBIT_MQ_PASSWORD}
+    listener:
+      simple:
+        retry:
+          enabled: true
+          max-attempts: 3
+          initial-interval: 100
+
+short-link:
+  url:
+    request: ${SHORT_LINK_URL_REQUEST}
+    token: ${SHORT_LINK_URL_TOKEN}
+    redirect: ${SHORT_LINK_URL_REDIRECT}
+    target: ${APPLICATION_URL}
+    activate: ${ACTIVATION_URL}
+
+queues:
+  exchange: ${RABBIT_EXCHANGE}
+  used_voucher:
+    queue: ${QUEUE_USED_VOUCHER}
+    routingKey: ${QUEUE_USED_VOUCHER_KEY}
+  receive_voucher:
+    queue: ${QUEUE_RECEIVE_VOUCHER}
+    routingKey: ${QUEUE_RECEIVE_VOUCHER_KEY}
+  activate_voucher:
+    queue: ${QUEUE_ACTIVATE_VOUCHER}
+    routingKey: ${QUEUE_ACTIVATE_VOUCHER_KEY}
+  update_voucher:
+    queue: ${QUEUE_UPDATE_VOUCHER}
+    routingKey: ${QUEUE_UPDATE_VOUCHER_KEY}
+  disable_voucher:
+    queue: ${QUEUE_DISABLE_VOUCHER:DISABLE_VOUCHER}
+    routingKey: ${QUEUE_DISABLE_VOUCHER_KEY:disable_voucher}
+  disable_voucher_result:
+    queue: ${QUEUE_DISABLE_VOUCHER_result:DISABLE_VOUCHER_RESULT}
+    routingKey: ${QUEUE_DISABLE_VOUCHER_RESULT_KEY:disable_voucher_result}
+external-pin:
+  vnpt-epay:
+    url: http://192.168.105.149:8086/publish-service-dummy
+  mapping:
+    balance: /query-balance
+    download-soft-pin: /download-soft-pin
+  partner-name: testAccount
+  secret-key: 989cae2dd676f64b7c6937ee
+
+servers:
+  publishServer: ${PUBLISH_SERVER_URL:http://192.168.105.149:8081/publish-service}

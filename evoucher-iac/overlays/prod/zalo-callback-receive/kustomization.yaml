@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../../../base/zalo-callback-receive/
+namespace: production
+configMapGenerator:
+- files:
+  - application.properties
+  name: zalo-callback-receive-properties
+images:
+- name: registry.git.altimedia.vn/evoucher/zalo-callback-receive
+  newTag: main_996542b5

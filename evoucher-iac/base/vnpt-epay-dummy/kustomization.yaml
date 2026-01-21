@@ -1,0 +1,5 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - vnpt-epay-dummy-cluster-ip-service.yaml
+  - vnpt-epay-dummy-deployment.yaml

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: evoucher-service-be
+  namespace: production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: evoucher-service-be
+  template:
+    metadata:
+      labels:
+        app: evoucher-service-be
+    spec:
+      containers:
+        - name: evoucher-service-be
+          image: registry.git.altimedia.vn/evoucher/evoucher-service-be:main
+          ports:
+            - containerPort: 8083 # Replace this with the port the application listens on
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: evoucher-service-be-properties
+      imagePullSecrets:
+        - name: regcred

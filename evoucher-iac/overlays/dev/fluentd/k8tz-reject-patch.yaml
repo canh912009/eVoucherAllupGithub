@@ -1,0 +1,4 @@
+- op: add
+  path: /spec/template/metadata/annotations
+  value: 
+    k8tz.io/inject: "false"

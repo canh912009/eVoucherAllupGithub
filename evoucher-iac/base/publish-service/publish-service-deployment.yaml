@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: publish-service
+  namespace: production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: publish-service
+  template:
+    metadata:
+      labels:
+        app: publish-service
+    spec:
+      containers:
+        - name: publish-service
+          image: registry.git.altimedia.vn/evoucher/publish-service:main
+          ports:
+            - containerPort: 8081 # Replace this with the port the application listens on
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: publish-service-properties
+      imagePullSecrets:
+        - name: regcred

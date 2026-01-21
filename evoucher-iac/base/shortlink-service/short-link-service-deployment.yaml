@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: short-link-service
+  namespace: production
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: short-link-service
+  template:
+    metadata:
+      labels:
+        app: short-link-service
+    spec:
+      containers:
+        - name: short-link-service
+          image: registry.git.altimedia.vn/evoucher/shortlink-service:latest
+          ports:
+            - containerPort: 2000 # Replace this with the port the application listens on
+            - containerPort: 80
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: regcred

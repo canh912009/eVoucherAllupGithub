@@ -1,0 +1,9 @@
+stages:
+  - build_staging
+  - build_production
+  - update_image_tag_staging
+  - update_image_tag_production
+
+include:
+  - local: ".gitlab-ci/.gitlab-ci-build.yml"
+  - local: ".gitlab-ci/.gitlab-ci-update-image-tag.yml"

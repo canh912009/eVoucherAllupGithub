@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: production
+resources:
+- ../../../base/admin-cms-ui
+images:
+- name: registry.git.altimedia.vn/evoucher/cms-ui
+  newTag: main_d29a3e2c

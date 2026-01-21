@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zalo-callback-receive
+  namespace: production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zalo-callback-receive
+  template:
+    metadata:
+      labels:
+        app: zalo-callback-receive
+    spec:
+      containers:
+        - name: zalo-callback-receive
+          image: registry.git.altimedia.vn/evoucher/zalo-callback-receive:main
+          ports:
+            - containerPort: 9998 # Replace this with the port the application listens on
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: zalo-callback-receive-properties
+      imagePullSecrets:
+        - name: regcred
+

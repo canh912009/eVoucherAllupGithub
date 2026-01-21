@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <springProperty name="app_name" source="spring.application.name"/>
+  <springProperty name="app_home" source="log.home"/>
+
+  <property name="FILE_PATH" value="${app_home}/${app_name}.log" />
+  <property name="ROLLING_FILENAME_PATTERN"
+            value="${app_home}/archive/${app_name}.%d{yyyy-MM-dd}.log" />
+<!--  <property name="PATTERN" value="[%date{ISO8601}] ([%-5level]) [%thread] %logger{32} - %msg%n%throwable" />-->
+<!--  <springProfile name="dev">-->
+<!--    <property name="PATTERN" value="[%date{ISO8601}] %highlight([%-5level]) [%thread] %logger{32} - %msg%n%throwable" />-->
+<!--  </springProfile>-->
+<!--  <springProfile name="dao">-->
+<!--    <property name="PATTERN" value="%magenta([%date{ISO8601}]) %highlight([%-5level]) %cyan([%thread]) %logger{32} - %msg%n%throwable" />-->
+<!--  </springProfile>-->
+
+
+  <appender name="STDOUT"
+            class="ch.qos.logback.core.ConsoleAppender">
+    <withJansi>true</withJansi>
+    <encoder
+            class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <charset>UTF-8</charset>
+      <Pattern>%magenta([%date{ISO8601}]) %highlight([%-5level]) %cyan([%thread]) %logger{32} - %msg%n%throwable</Pattern>
+    </encoder>
+  </appender>
+
+  <appender name="FILE"
+            class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${FILE_PATH}</file>
+    <encoder
+            class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <Pattern>[%date{ISO8601}] [%-5level] [%thread] %logger{32} - %msg%n</Pattern>
+    </encoder>
+
+    <rollingPolicy
+            class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${ROLLING_FILENAME_PATTERN}</fileNamePattern>
+      <maxHistory>80</maxHistory>
+    </rollingPolicy>
+  </appender>
+
+  <root level="INFO">
+    <appender-ref ref="STDOUT" />
+  </root>
+
+<!--  <logger name="com.evoucher.adminapi" level="INFO"/>-->
+  <logger name="org.springframework.*" level="INFO"/>
+  <logger name="org.hibernate.engine.internal.StatisticalLoggingSessionEventListener" level="INFO" />
+</configuration>

@@ -1,0 +1,1 @@
+alter table tb_brand add brand_cd varchar(255) null;

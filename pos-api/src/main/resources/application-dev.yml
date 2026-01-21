@@ -1,0 +1,15 @@
+
+location:
+  log: ./logs/
+server:
+  port: 8088
+contact: 1234-5678
+
+redis:
+  host: 192.168.0.125
+  port: 6379
+  isStandAlone: true
+
+component:
+  service-be:
+    url: http://192.168.0.125:8083/evoucher

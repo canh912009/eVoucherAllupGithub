@@ -1,0 +1,23 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../../base/fluentd/
+patches:
+- path: es-host-patch.yaml
+  target:
+    group: apps
+    kind: DaemonSet
+    name: fluentd
+    version: v1
+- path: ns-patch.yaml
+  target:
+    group: rbac.authorization.k8s.io
+    kind: ClusterRoleBinding
+    name: fluentd
+    version: v1
+- path: k8tz-reject-patch.yaml
+  target:
+    group: apps
+    kind: DaemonSet
+    name: fluentd
+    version: v1

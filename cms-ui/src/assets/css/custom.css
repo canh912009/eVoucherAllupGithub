@@ -1,0 +1,76 @@
+@tailwind components;
+
+@layer components {
+    .e_header {
+        margin-left: 18rem;
+        width: calc(100% - 18rem) !important;
+    }
+    .e_logo-wrapper {
+        margin-left: -18rem;
+    }
+    .e_size-bar-wrapper {
+        background-color: #990011 !important;
+    }
+    .e_size-bar {
+        background-color: #990011 !important;
+    }
+
+    .e_size-bar > ul {
+        background-color: #990011 !important;
+        margin-left: 1rem;
+    }
+
+    .e_size-bar > ul > li {
+        background-color: #990011 !important;
+    }
+
+    .e_size-bar > ul > li > button {
+        color: #FFFFFF !important;
+    }
+
+    .e_size-bar > ul > li > ul {
+        background-color: #990011 !important;
+    }
+
+    .e_size-bar > ul > li > ul > li {
+        background-color: #990011 !important;
+    }
+
+    .e_size-bar > ul > li > ul > li > button {
+        color: #FFFFFF !important;
+    }
+
+    .e_size-bar > ul > li > ul > li > button:focus {
+        background-color: #FF5454 !important;
+    }
+
+    .e_size-bar > ul > li > ul > li > ul {
+        background-color: #990011 !important;
+    }
+
+    .e_size-bar > ul > li > ul > li > ul > li {
+        background-color: #990011 !important;
+    }
+
+    .e_size-bar > ul > li > ul > li > ul > li > button {
+        color: #FFFFFF !important;
+    }
+
+    .e_hide-text {
+        font-size: 0;
+        color: transparent;
+        text-shadow: none;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+    }
+
+    .e_link {
+        text-decoration: underline;
+        color: #1a0dab;
+    }
+
+    .e_not_link {
+        color: #1a0dab;
+    }
+}

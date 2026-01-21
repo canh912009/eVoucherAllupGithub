@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../../../base/web-hook/
+namespace: production
+configMapGenerator:
+- files:
+  - application.properties
+  - castis_watane.p12
+  - payoox_public.pem
+  name: web-hook-properties
+images:
+- name: registry.git.altimedia.vn/evoucher/web-hook
+  newTag: main_750f11a1

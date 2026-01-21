@@ -1,0 +1,15 @@
+[
+  { "id": 1, "name": "Phúc Xá", "code": "PX", "parent_id": 1 },
+  { "id": 2, "name": "Trúc Bạch", "code": "TB", "parent_id": 1 },
+  { "id": 3, "name": "Vĩnh Phúc", "code": "VP", "parent_id": 1 },
+  { "id": 4, "name": "Cống Vị", "code": "CV", "parent_id": 1 },
+  { "id": 5, "name": "Liễu Giai", "code": "LG", "parent_id": 1 },
+  { "id": 6, "name": "Ngọc Hà", "code": "NH", "parent_id": 1 },
+  { "id": 7, "name": "Điện Biên", "code": "DB", "parent_id": 1 },
+  { "id": 8, "name": "Đội Cấn", "code": "DC", "parent_id": 1 },
+  { "id": 9, "name": "Ngọc Khánh", "code": "NK", "parent_id": 1 },
+  { "id": 10, "name": "Kim Mã", "code": "KM", "parent_id": 1 },
+  { "id": 11, "name": "Giảng Võ", "code": "GV", "parent_id": 1 },
+  { "id": 12, "name": "Thành Công", "code": "TC", "parent_id": 1 },
+  { "id": 13, "name": "Phúc Tân", "code": "PT", "parent_id": 1 }
+]

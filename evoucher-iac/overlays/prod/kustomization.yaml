@@ -1,0 +1,27 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - admin-api/
+  - admin-cms-ui/
+  - evoucher-api/
+  - evoucher-service-be/
+  - evoucher-service-fe/
+  - frontend-ui/
+  - image-server/
+  - ingress-resource/
+  - otp-service/
+  - pos-api/
+  - publish-service/
+  - push-agent/
+  - shortlink-service/
+  - sms-callback-receive/
+  - zalo-callback-receive/
+  - common-resource/
+  - vnpt-epay-dummy/
+  - fluentd/
+  - web-hook/
+  - partner-service/
+  - prometheus/
+  - grafana/
+  - kube-state-metrics/
+  - metrics-server/
