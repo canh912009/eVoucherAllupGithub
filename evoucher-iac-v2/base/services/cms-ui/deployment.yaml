@@ -1,0 +1,54 @@
+# ============================================================
+# CMS UI Deployment
+# Giao diện quản trị (admin CMS) cho hệ thống eVoucher.
+# Cho phép admin tạo/quản lý campaigns, products, deliveries.
+# Chạy trên React + Next.js, serve qua container port 3000.
+# ============================================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cms-ui
+  # namespace sẽ được override bởi overlay (dev/prod)
+  labels:
+    app: cms-ui
+    tier: frontend  # Phân loại: frontend (UI)
+spec:
+  replicas: 1  # Số lượng pod — tăng lên nếu cần HA
+  selector:
+    matchLabels:
+      app: cms-ui
+  template:
+    metadata:
+      labels:
+        app: cms-ui
+        tier: frontend
+    spec:
+      containers:
+        - name: cms-ui
+          image: cms-ui:latest  # TODO: Thay bằng image registry thực tế
+          ports:
+            - containerPort: 80  # Nginx mặc định serve trên port 80
+              name: http
+          resources:
+            requests:
+              cpu: 50m       # Yêu cầu tối thiểu CPU
+              memory: 64Mi   # Yêu cầu tối thiểu RAM
+            limits:
+              cpu: 200m      # Giới hạn tối đa CPU
+              memory: 256Mi  # Giới hạn tối đa RAM
+          # Health check: kiểm tra container còn hoạt động không
+          # Nếu fail liên tiếp → Kubernetes restart container
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 10  # Chờ 10s sau khi container start
+            periodSeconds: 30        # Kiểm tra mỗi 30s
+          # Readiness check: kiểm tra container sẵn sàng nhận traffic chưa
+          # Pod chỉ nhận traffic từ Service khi readiness probe thành công
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10

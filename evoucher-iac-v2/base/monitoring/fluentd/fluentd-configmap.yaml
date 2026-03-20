@@ -1,0 +1,71 @@
+# ============================================================
+# Fluentd ConfigMap
+# Định nghĩa pipeline xử lý log của Fluentd:
+# 1. SOURCE: Đọc log từ container files
+# 2. FILTER: Gắn metadata Kubernetes vào log
+# 3. OUTPUT: Gửi log đến Elasticsearch để lưu trữ và tìm kiếm
+# ============================================================
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fluentd-config
+  namespace: monitoring
+data:
+  fluent.conf: |
+    # ---- SOURCE: Đọc log từ container ----
+    # Fluentd đọc log files mà kubelet ghi ra cho mỗi container.
+    # Kubelet lưu stdout/stderr của mỗi container vào /var/log/containers/
+    <source>
+      @type tail
+      # Đường dẫn đến tất cả container log files
+      path /var/log/containers/*.log
+      # Loại trừ log của chính Fluentd để tránh vòng lặp vô hạn
+      # (Fluentd ghi log → đọc log của chính nó → ghi thêm log → ...)
+      exclude_path ["/var/log/containers/fluent*"]
+      # File lưu vị trí đọc cuối cùng (để không đọc lại log cũ khi restart)
+      pos_file /var/log/fluentd-containers.log.pos
+      # Tag prefix cho tất cả log records từ source này
+      tag kubernetes.*
+      # Đọc từ đầu file khi gặp file mới (không bỏ sót log)
+      read_from_head true
+      <parse>
+        @type regexp
+        # Parse format log của container runtime (containerd/docker)
+        # Format: <timestamp> <stream> <logtag> <log_message>
+        expression /^(?<time>.+) (?<stream>stdout|stderr)( (?<logtag>.))? (?<log>.*)$/
+        time_format %Y-%m-%dT%H:%M:%S.%NZ
+      </parse>
+    </source>
+
+    # ---- FILTER: Gắn metadata Kubernetes ----
+    # Plugin kubernetes_metadata tự động thêm thông tin:
+    # - pod_name, namespace_name, container_name
+    # - labels, annotations của pod
+    # Giúp tìm kiếm log theo pod/namespace/label trong Kibana
+    <filter kubernetes.**>
+      @type kubernetes_metadata
+    </filter>
+
+    # ---- OUTPUT: Gửi đến Elasticsearch ----
+    # Elasticsearch lưu trữ log để tìm kiếm qua Kibana.
+    # Host và port được cấu hình qua biến môi trường (env vars).
+    <match **>
+      @type elasticsearch
+      host "#{ENV['FLUENT_ELASTICSEARCH_HOST']}"
+      port "#{ENV['FLUENT_ELASTICSEARCH_PORT']}"
+      scheme "#{ENV['FLUENT_ELASTICSEARCH_SCHEME']}"
+      # Thêm timestamp vào mỗi log record
+      include_timestamp true
+      # Sử dụng format logstash để tương thích với Kibana
+      logstash_format true
+      # Prefix cho index name: fluentd-YYYY.MM.DD
+      logstash_prefix fluentd
+      <buffer>
+        # Gửi log đến ES mỗi 5 giây (cân bằng giữa độ trễ và hiệu năng)
+        flush_interval 5s
+        # Giới hạn kích thước mỗi chunk (batch) gửi đến ES
+        chunk_limit_size 2M
+        # Khoảng thời gian tối đa giữa các lần retry khi gửi thất bại
+        retry_max_interval 30
+      </buffer>
+    </match>

@@ -1,0 +1,94 @@
+# ============================================================
+# Fluentd DaemonSet
+# DaemonSet đảm bảo chạy đúng 1 Fluentd pod trên MỖI node
+# trong cluster để thu thập log từ tất cả container trên node đó.
+# Khi có node mới, DaemonSet tự động tạo Fluentd pod trên đó.
+# ============================================================
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: fluentd
+  namespace: monitoring
+  labels:
+    app: fluentd
+spec:
+  selector:
+    matchLabels:
+      app: fluentd
+  template:
+    metadata:
+      labels:
+        app: fluentd
+    spec:
+      # Sử dụng ServiceAccount "fluentd" đã tạo trong fluentd-rbac.yaml
+      # để có quyền đọc metadata pods/namespaces
+      serviceAccount: fluentd
+      serviceAccountName: fluentd
+      containers:
+        - name: fluentd
+          # Image chính thức từ Fluentd team, đã tích hợp sẵn
+          # plugin Elasticsearch output và Kubernetes metadata filter
+          image: fluent/fluentd-kubernetes-daemonset:v1.4.2-debian-elasticsearch-1.1
+          env:
+            # --- Cấu hình kết nối Elasticsearch ---
+            # Host máy chủ Elasticsearch (có thể là IP nội bộ hoặc service name)
+            - name: FLUENT_ELASTICSEARCH_HOST
+              value: "192.168.23.104"
+            # Port Elasticsearch (mặc định 9200, ở đây dùng 19200 — custom port)
+            - name: FLUENT_ELASTICSEARCH_PORT
+              value: "19200"
+            # Giao thức kết nối (http hoặc https)
+            - name: FLUENT_ELASTICSEARCH_SCHEME
+              value: "http"
+            # Tắt đọc log từ systemd (không cần trong container environment)
+            - name: FLUENTD_SYSTEMD_CONF
+              value: disable
+            # Loại trừ log của chính Fluentd để tránh vòng lặp vô hạn:
+            # Fluentd ghi log → đọc log chính nó → ghi thêm log → lặp lại
+            - name: FLUENT_CONTAINER_TAIL_EXCLUDE_PATH
+              value: /var/log/containers/fluent*
+            # Regex parse format log container runtime
+            - name: FLUENT_CONTAINER_TAIL_PARSER_TYPE
+              value: /^(?<time>.+) (?<stream>stdout|stderr)( (?<logtag>.))? (?<log>.*)$/
+            # Tắt sed processing (tránh lỗi với một số phiên bản image)
+            - name: FLUENT_ELASTICSEARCH_SED_DISABLE
+              value: "true"
+            # Thêm timestamp vào mỗi log record gửi đến ES
+            - name: FLUENT_ELASTICSEARCH_INCLUDE_TIMESTAMP
+              value: "true"
+          # Giới hạn tài nguyên cho Fluentd container
+          resources:
+            limits:
+              memory: 1024Mi  # Giới hạn 1GB RAM (Fluentd buffer có thể tốn memory)
+            requests:
+              cpu: 100m       # Yêu cầu tối thiểu 100 milliCPU
+              memory: 200Mi   # Yêu cầu tối thiểu 200MB RAM
+          volumeMounts:
+            # Mount /var/log từ node host — nơi chứa container log files
+            # và các system log files (syslog, auth.log, etc.)
+            - name: varlog
+              mountPath: /var/log
+            # Mount thư mục Docker containers — nơi Docker runtime
+            # lưu trữ log gốc của mỗi container
+            - name: varlibdockercontainers
+              mountPath: /var/lib/docker/containers
+              readOnly: true  # Chỉ đọc log, không ghi vào thư mục Docker
+            # Mount ConfigMap chứa cấu hình Fluentd
+            - name: fluentd-config
+              mountPath: /fluentd/etc/fluent.conf
+              subPath: fluent.conf
+      # Thời gian chờ tối đa để Fluentd flush buffer trước khi bị kill
+      terminationGracePeriodSeconds: 30
+      volumes:
+        # Thư mục log trên node host
+        - name: varlog
+          hostPath:
+            path: /var/log
+        # Thư mục Docker container logs trên node host
+        - name: varlibdockercontainers
+          hostPath:
+            path: /var/lib/docker/containers
+        # ConfigMap chứa cấu hình pipeline Fluentd
+        - name: fluentd-config
+          configMap:
+            name: fluentd-config

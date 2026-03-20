@@ -1,0 +1,56 @@
+# ============================================================
+# Prometheus RBAC (Role-Based Access Control)
+# Prometheus cần quyền truy cập Kubernetes API để tự động
+# phát hiện (service discovery) các target cần thu thập metrics.
+# ============================================================
+
+# --- ClusterRole ---
+# Định nghĩa quyền truy cập ở cấp cluster (không giới hạn namespace)
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: prometheus
+rules:
+  # Quyền đọc thông tin nodes, pods, services, endpoints
+  # - get: lấy thông tin chi tiết 1 resource
+  # - list: liệt kê tất cả resources
+  # - watch: theo dõi thay đổi real-time (event stream)
+  - apiGroups: [""]
+    resources:
+      - nodes          # Thông tin node (CPU, memory capacity)
+      - nodes/proxy    # Proxy đến kubelet metrics endpoint
+      - nodes/metrics  # Metrics endpoint trực tiếp từ node
+      - services       # Danh sách services để discover targets
+      - endpoints      # Endpoints thực tế của services (IP:port)
+      - pods           # Thông tin pods để discover targets
+    verbs: ["get", "list", "watch"]
+
+  # Quyền đọc ingress resources (giám sát ingress controller)
+  - apiGroups:
+      - extensions
+    resources:
+      - ingresses
+    verbs: ["get", "list", "watch"]
+
+  # Quyền truy cập endpoint /metrics (non-resource URL)
+  # Prometheus cần endpoint này để scrape metrics từ API server
+  - nonResourceURLs: ["/metrics"]
+    verbs: ["get"]
+
+---
+# --- ClusterRoleBinding ---
+# Gán ClusterRole "prometheus" cho ServiceAccount "default"
+# trong namespace "monitoring", cho phép Prometheus pod
+# sử dụng các quyền đã định nghĩa ở trên
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: prometheus
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: prometheus
+subjects:
+  - kind: ServiceAccount
+    name: default
+    namespace: monitoring  # ServiceAccount mặc định trong namespace monitoring

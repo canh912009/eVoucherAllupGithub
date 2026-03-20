@@ -1,0 +1,63 @@
+# ============================================================
+# Grafana Deployment
+# Grafana là công cụ visualization, hiển thị dashboard từ
+# nhiều data source (Prometheus, Elasticsearch, Jaeger...)
+# Giúp team theo dõi hệ thống qua biểu đồ trực quan.
+# ============================================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana
+  namespace: monitoring
+  labels:
+    app: grafana
+spec:
+  replicas: 1  # Grafana chỉ cần 1 instance (stateless, config lưu trong volume)
+  selector:
+    matchLabels:
+      app: grafana
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      containers:
+        - name: grafana
+          image: grafana/grafana:10.4.0  # Phiên bản LTS ổn định
+          ports:
+            - containerPort: 3000  # Grafana UI mặc định port 3000
+              name: http
+          env:
+            # Tài khoản admin mặc định — NÊN đổi sau khi deploy
+            - name: GF_SECURITY_ADMIN_USER
+              value: "admin"
+            - name: GF_SECURITY_ADMIN_PASSWORD
+              value: "admin"  # TODO: Dùng Secret thay vì hardcode
+            # Cho phép anonymous access (tùy chọn, bỏ nếu cần bảo mật)
+            - name: GF_AUTH_ANONYMOUS_ENABLED
+              value: "false"
+          resources:
+            requests:
+              cpu: 100m       # Yêu cầu tối thiểu CPU
+              memory: 128Mi   # Yêu cầu tối thiểu RAM
+            limits:
+              cpu: 500m       # Giới hạn tối đa CPU
+              memory: 512Mi   # Giới hạn tối đa RAM
+          volumeMounts:
+            # Mount datasource config để Grafana tự động kết nối Prometheus
+            - name: grafana-datasource
+              mountPath: /etc/grafana/provisioning/datasources
+            # Lưu trữ dashboard, user settings
+            - name: grafana-storage
+              mountPath: /var/lib/grafana
+      volumes:
+        - name: grafana-datasource
+          configMap:
+            name: grafana-datasource-config
+        # TODO: Dùng PVC cho production để không mất dashboard khi restart
+        # Ví dụ:
+        #   - name: grafana-storage
+        #     persistentVolumeClaim:
+        #       claimName: grafana-pvc
+        - name: grafana-storage
+          emptyDir: {}

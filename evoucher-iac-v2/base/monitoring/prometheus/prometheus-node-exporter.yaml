@@ -1,0 +1,80 @@
+# ============================================================
+# Prometheus Node Exporter
+# Node Exporter thu thập metrics phần cứng và hệ điều hành
+# từ mỗi node: CPU usage, memory usage, disk I/O, network I/O,
+# filesystem space, system load, etc.
+# ============================================================
+
+# --- DaemonSet ---
+# DaemonSet đảm bảo chạy đúng 1 pod trên MỖI node trong cluster.
+# Khi có node mới được thêm vào, DaemonSet tự động tạo pod trên đó.
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: node-exporter
+  namespace: monitoring
+  labels:
+    app: node-exporter
+spec:
+  selector:
+    matchLabels:
+      app: node-exporter
+  template:
+    metadata:
+      labels:
+        app: node-exporter
+    spec:
+      # hostNetwork: true — pod sử dụng network stack của node host
+      # thay vì network riêng của pod. Cần thiết để đọc metrics
+      # network interface chính xác từ node.
+      hostNetwork: true
+      # hostPID: true — pod có thể thấy tất cả processes trên node host.
+      # Cần thiết để node-exporter thu thập metrics về processes
+      # (số lượng process, CPU time per process, etc.)
+      hostPID: true
+      containers:
+        - name: node-exporter
+          image: prom/node-exporter:latest
+          args:
+            # Mount root filesystem của node host vào /host trong container.
+            # Node exporter đọc /proc, /sys từ đây để lấy metrics chính xác
+            # thay vì đọc từ container's own filesystem.
+            - "--path.rootfs=/host"
+          ports:
+            - containerPort: 9100  # Port mặc định của node-exporter
+              hostPort: 9100       # Expose trên node host (cho external access)
+              protocol: TCP
+          resources:
+            requests:
+              cpu: 50m       # Node exporter rất nhẹ, không cần nhiều CPU
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
+          volumeMounts:
+            # Mount root filesystem của node để đọc /proc, /sys, disk info
+            - name: rootfs
+              mountPath: /host
+              readOnly: true  # Chỉ đọc, không ghi để đảm bảo an toàn
+      volumes:
+        - name: rootfs
+          hostPath:
+            path: /  # Root filesystem của node host
+
+---
+# --- Service ---
+# Service ClusterIP để Prometheus có thể scrape metrics từ
+# tất cả node-exporter pods qua Kubernetes service discovery.
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-exporter
+  namespace: monitoring
+spec:
+  selector:
+    app: node-exporter
+  type: ClusterIP  # Chỉ cần truy cập nội bộ cluster (Prometheus scrape)
+  ports:
+    - name: metrics
+      port: 9100        # Port service expose
+      targetPort: 9100  # Port container node-exporter lắng nghe

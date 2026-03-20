@@ -1,0 +1,55 @@
+# ============================================================
+# Fluentd RBAC (Role-Based Access Control)
+# Fluentd cần quyền đọc metadata của pods để gắn thêm thông tin
+# (pod name, namespace, labels) vào log entries.
+# Giúp tìm kiếm và lọc log theo pod/namespace dễ dàng hơn.
+# ============================================================
+
+# --- ServiceAccount ---
+# Tài khoản riêng cho Fluentd, tách biệt với ServiceAccount mặc định
+# để tuân thủ nguyên tắc least privilege (quyền tối thiểu).
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: fluentd
+  namespace: monitoring
+  labels:
+    app: fluentd
+
+---
+# --- ClusterRole ---
+# Định nghĩa quyền truy cập cần thiết cho Fluentd.
+# ClusterRole (không phải Role) vì Fluentd cần đọc pods/namespaces
+# từ TẤT CẢ namespaces, không chỉ namespace monitoring.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: fluentd
+  labels:
+    app: fluentd
+rules:
+  - apiGroups: [""]
+    resources:
+      - pods        # Đọc thông tin pod (name, labels, annotations)
+      - namespaces  # Đọc thông tin namespace để gắn vào log
+    verbs:
+      - get    # Lấy chi tiết 1 resource cụ thể
+      - list   # Liệt kê tất cả resources
+      - watch  # Theo dõi thay đổi real-time (pod mới tạo/xóa)
+
+---
+# --- ClusterRoleBinding ---
+# Gán ClusterRole "fluentd" cho ServiceAccount "fluentd"
+# trong namespace "monitoring".
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: fluentd
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: fluentd
+subjects:
+  - kind: ServiceAccount
+    name: fluentd
+    namespace: monitoring

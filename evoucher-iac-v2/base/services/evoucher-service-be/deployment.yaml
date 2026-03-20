@@ -1,0 +1,73 @@
+# ============================================================
+# eVoucher Service BE Deployment
+# Backend service xử lý business logic voucher chính:
+# - Kích hoạt voucher (activation)
+# - Đổi/thanh toán voucher (exchange/redemption)
+# - Hủy giao dịch (cancel)
+# - Cập nhật trạng thái voucher (status update)
+# Kết nối đến: MariaDB, Redis, RabbitMQ, shortlink-service
+# Container port: 8083 (theo application.yaml hiện tại)
+# ============================================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: evoucher-service-be
+  # namespace sẽ được override bởi overlay (dev/prod)
+  labels:
+    app: evoucher-service-be
+    tier: backend  # Phân loại: backend (core service)
+spec:
+  replicas: 1  # Số lượng pod — tăng lên nếu cần HA
+  selector:
+    matchLabels:
+      app: evoucher-service-be
+  template:
+    metadata:
+      labels:
+        app: evoucher-service-be
+        tier: backend
+    spec:
+      containers:
+        - name: evoucher-service-be
+          image: evoucher-service-be:latest  # TODO: Thay bằng image registry thực tế
+          ports:
+            - containerPort: 8083  # Port tùy chỉnh cho service này (không dùng 8080 mặc định)
+              name: http
+          # Mount file cấu hình Spring Boot từ ConfigMap
+          # Overlay sẽ tạo ConfigMap "evoucher-service-be-config" với nội dung
+          # application.yaml phù hợp cho từng môi trường (dev/prod)
+          volumeMounts:
+            - name: app-config
+              mountPath: /app/config/application.yaml
+              subPath: application.yaml
+              readOnly: true
+          # Biến môi trường chỉ định vị trí file cấu hình
+          env:
+            - name: SPRING_CONFIG_LOCATION
+              value: /app/config/application.yaml
+          resources:
+            requests:
+              cpu: 200m       # Yêu cầu tối thiểu CPU
+              memory: 512Mi   # Yêu cầu tối thiểu RAM (Spring Boot + business logic)
+            limits:
+              cpu: 1000m      # Giới hạn tối đa 1 CPU
+              memory: 1024Mi  # Giới hạn tối đa 1GB RAM
+          # Spring Boot Actuator health check
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8083
+            initialDelaySeconds: 60  # Spring Boot cần thời gian khởi động
+            periodSeconds: 30
+            failureThreshold: 5
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8083
+            initialDelaySeconds: 30
+            periodSeconds: 10
+      volumes:
+        # ConfigMap chứa application.yaml — tạo từ overlay (dev/prod)
+        - name: app-config
+          configMap:
+            name: evoucher-service-be-config
