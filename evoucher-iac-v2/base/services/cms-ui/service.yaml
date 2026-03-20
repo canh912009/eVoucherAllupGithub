@@ -1,0 +1,19 @@
+# ============================================================
+# CMS UI Service
+# Service ClusterIP cho CMS UI.
+# Ingress sẽ route traffic đến service này dựa trên domain/path.
+# ============================================================
+apiVersion: v1
+kind: Service
+metadata:
+  name: admin-cms-ui-cluster-ip-service  # Giữ tên nhất quán với ingress hiện tại
+  labels:
+    app: cms-ui
+spec:
+  selector:
+    app: cms-ui  # Chọn pods có label app=cms-ui
+  type: ClusterIP  # Chỉ truy cập nội bộ cluster
+  ports:
+    - port: 80         # Port service expose (ingress kết nối đến đây)
+      targetPort: 80   # Port container lắng nghe
+      name: http

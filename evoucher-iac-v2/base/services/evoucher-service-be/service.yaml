@@ -1,0 +1,21 @@
+# ============================================================
+# eVoucher Service BE Service
+# Service ClusterIP cho eVoucher Service Backend.
+# Các service khác (admin-api, publish-service) gọi đến
+# service này để thực hiện các operations trên voucher.
+# Port mapping: Service port 80 → Container port 8083
+# ============================================================
+apiVersion: v1
+kind: Service
+metadata:
+  name: evoucher-service-be-cluster-ip-service  # Tên nhất quán với pattern hiện tại
+  labels:
+    app: evoucher-service-be
+spec:
+  selector:
+    app: evoucher-service-be  # Chọn pods có label app=evoucher-service-be
+  type: ClusterIP  # Chỉ truy cập nội bộ cluster
+  ports:
+    - port: 80          # Port service expose (convention chung cho tất cả services)
+      targetPort: 8083  # Forward đến container port 8083
+      name: http

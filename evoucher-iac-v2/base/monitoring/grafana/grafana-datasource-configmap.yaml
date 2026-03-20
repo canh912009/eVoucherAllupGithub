@@ -1,0 +1,26 @@
+# ============================================================
+# Grafana Datasource ConfigMap
+# ConfigMap chứa cấu hình datasource cho Grafana.
+# Grafana sẽ tự động load file này khi khởi động (provisioning).
+# Không cần cấu hình thủ công qua UI sau khi deploy.
+# ============================================================
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-datasource-config
+  namespace: monitoring
+data:
+  datasource.yaml: |
+    apiVersion: 1
+    datasources:
+      # Prometheus — nguồn dữ liệu metrics chính
+      - name: Prometheus
+        type: prometheus
+        # access: proxy — Grafana server gọi đến Prometheus (không phải browser).
+        # Browser không cần truy cập trực tiếp Prometheus → bảo mật hơn.
+        access: proxy
+        # URL sử dụng service name trong cùng namespace "monitoring"
+        # Kubernetes DNS tự động resolve: prometheus-service.monitoring.svc.cluster.local
+        url: http://prometheus-service:9090
+        isDefault: true  # Đặt làm datasource mặc định cho mọi dashboard mới
+        editable: true   # Cho phép chỉnh sửa datasource qua Grafana UI

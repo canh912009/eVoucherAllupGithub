@@ -1,0 +1,18 @@
+# ============================================================
+# Grafana Service
+# Service expose Grafana UI trong cluster.
+# Ingress sẽ trỏ đến service này để truy cập từ bên ngoài.
+# ============================================================
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana-cluster-ip-service  # Giữ tên nhất quán với ingress hiện tại
+  namespace: monitoring
+spec:
+  selector:
+    app: grafana  # Chọn pods có label app=grafana
+  type: ClusterIP  # Chỉ truy cập nội bộ cluster, expose ra ngoài qua Ingress
+  ports:
+    - port: 3000        # Port mà các service khác (ingress) kết nối đến
+      targetPort: 3000  # Port container Grafana lắng nghe
+      name: http

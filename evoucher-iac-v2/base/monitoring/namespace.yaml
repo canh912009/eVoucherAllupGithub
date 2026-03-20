@@ -1,0 +1,13 @@
+# ============================================================
+# Namespace: monitoring
+# Tạo namespace "monitoring" dùng chung cho các công cụ giám sát:
+# - Prometheus: thu thập và lưu trữ metrics
+# - Grafana: hiển thị dashboard và biểu đồ
+# - Fluentd: thu thập và chuyển tiếp log
+# ============================================================
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: monitoring
+  labels:
+    purpose: observability  # Đánh dấu namespace dùng cho giám sát hệ thống

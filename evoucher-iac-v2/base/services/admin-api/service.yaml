@@ -1,0 +1,21 @@
+# ============================================================
+# Admin API Service
+# Service ClusterIP cho Admin API.
+# Ingress route traffic từ domain admin vào service này.
+# Port mapping: Service port 80 → Container port 8080
+# (Ingress và các service khác gọi đến port 80 cho nhất quán)
+# ============================================================
+apiVersion: v1
+kind: Service
+metadata:
+  name: admin-api-cluster-ip-service  # Tên nhất quán với ingress và các service khác reference
+  labels:
+    app: admin-api
+spec:
+  selector:
+    app: admin-api  # Chọn pods có label app=admin-api
+  type: ClusterIP  # Chỉ truy cập nội bộ cluster
+  ports:
+    - port: 80          # Ingress kết nối đến port 80 (convention chung)
+      targetPort: 8080  # Forward đến container port 8080 (Spring Boot)
+      name: http

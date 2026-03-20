@@ -1,0 +1,71 @@
+# ============================================================
+# Admin API Deployment
+# Backend API cho CMS UI, chạy Spring Boot trên port 8080.
+# Xử lý tất cả operations quản trị: CRUD campaigns, products,
+# deliveries, stores, brands, suppliers.
+# Kết nối đến: MariaDB, Redis, evoucher-service-be, publish-service
+# ============================================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin-api
+  # namespace sẽ được override bởi overlay (dev/prod)
+  labels:
+    app: admin-api
+    tier: backend  # Phân loại: backend (API)
+spec:
+  replicas: 1  # Số lượng pod — tăng lên nếu cần HA
+  selector:
+    matchLabels:
+      app: admin-api
+  template:
+    metadata:
+      labels:
+        app: admin-api
+        tier: backend
+    spec:
+      containers:
+        - name: admin-api
+          image: admin-api:latest  # TODO: Thay bằng image registry thực tế
+          ports:
+            - containerPort: 8080  # Spring Boot default port
+              name: http
+          # Mount file cấu hình từ ConfigMap (khác nhau giữa dev/prod)
+          # Overlay sẽ tạo ConfigMap "admin-api-config" với nội dung
+          # application.yaml phù hợp cho từng môi trường
+          volumeMounts:
+            - name: app-config
+              mountPath: /app/config/application.yaml
+              subPath: application.yaml
+              readOnly: true
+          # Biến môi trường chỉ định vị trí file cấu hình Spring Boot
+          env:
+            - name: SPRING_CONFIG_LOCATION
+              value: /app/config/application.yaml
+          resources:
+            requests:
+              cpu: 200m       # Yêu cầu tối thiểu CPU
+              memory: 512Mi   # Yêu cầu tối thiểu RAM (Spring Boot cần nhiều RAM)
+            limits:
+              cpu: 1000m      # Giới hạn tối đa 1 CPU
+              memory: 1024Mi  # Giới hạn tối đa 1GB RAM
+          # Spring Boot Actuator health check endpoint
+          # Actuator tự động kiểm tra database connection, disk space, etc.
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 60  # Spring Boot cần thời gian khởi động (load context, connect DB)
+            periodSeconds: 30        # Kiểm tra mỗi 30s
+            failureThreshold: 5      # Cho phép fail 5 lần trước khi restart
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 30  # Chờ 30s trước khi bắt đầu check readiness
+            periodSeconds: 10        # Kiểm tra mỗi 10s
+      volumes:
+        # ConfigMap chứa application.yaml — được tạo từ overlay (dev/prod)
+        - name: app-config
+          configMap:
+            name: admin-api-config

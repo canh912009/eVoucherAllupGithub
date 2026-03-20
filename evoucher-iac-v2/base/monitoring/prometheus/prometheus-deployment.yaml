@@ -1,0 +1,66 @@
+# ============================================================
+# Prometheus Deployment
+# Prometheus là hệ thống monitoring và alerting mã nguồn mở.
+# Thu thập metrics từ các target theo mô hình pull (Prometheus
+# chủ động gọi đến target để lấy metrics).
+# ============================================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus-deployment
+  namespace: monitoring
+  labels:
+    app: prometheus-server
+spec:
+  replicas: 1  # Chỉ cần 1 instance Prometheus (không cần HA cho môi trường nhỏ)
+  selector:
+    matchLabels:
+      app: prometheus-server
+  template:
+    metadata:
+      labels:
+        app: prometheus-server
+    spec:
+      containers:
+        - name: prometheus
+          image: prom/prometheus  # Image chính thức từ Prometheus team
+          args:
+            # Đường dẫn đến file cấu hình chính (mount từ ConfigMap)
+            - "--config.file=/etc/prometheus/prometheus.yml"
+            # Thư mục lưu trữ dữ liệu TSDB (Time Series Database)
+            - "--storage.tsdb.path=/prometheus/"
+            # Giữ dữ liệu metrics trong 35 ngày — sau 35 ngày sẽ tự xóa
+            # Tăng giá trị này nếu cần giữ dữ liệu lâu hơn (tốn disk hơn)
+            - "--storage.tsdb.retention.time=35d"
+          ports:
+            - containerPort: 9090  # Prometheus UI và API endpoint
+              name: http
+          # Giới hạn tài nguyên cho Prometheus container
+          # Điều chỉnh theo số lượng target và scrape interval
+          resources:
+            requests:
+              cpu: 200m       # Yêu cầu tối thiểu 200 milliCPU
+              memory: 512Mi   # Yêu cầu tối thiểu 512MB RAM
+            limits:
+              cpu: 1000m      # Giới hạn tối đa 1 CPU
+              memory: 2048Mi  # Giới hạn tối đa 2GB RAM
+          volumeMounts:
+            # Mount cấu hình Prometheus từ ConfigMap
+            - name: prometheus-config-volume
+              mountPath: /etc/prometheus/
+            # Mount thư mục lưu trữ dữ liệu metrics
+            - name: prometheus-storage-volume
+              mountPath: /prometheus/
+      volumes:
+        # ConfigMap chứa prometheus.yml và prometheus.rules
+        - name: prometheus-config-volume
+          configMap:
+            defaultMode: 420
+            name: prometheus-server-conf
+        # LƯU Ý: emptyDir sẽ MẤT DỮ LIỆU khi pod bị xóa hoặc restart.
+        # Cho production, NÊN thay bằng PersistentVolumeClaim (PVC):
+        #   - name: prometheus-storage-volume
+        #     persistentVolumeClaim:
+        #       claimName: prometheus-pvc
+        - name: prometheus-storage-volume
+          emptyDir: {}

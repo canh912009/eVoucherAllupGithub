@@ -1,0 +1,25 @@
+# ============================================================
+# Prometheus Service
+# Service để expose Prometheus UI (port 9090) trong cluster.
+# Grafana sẽ kết nối đến service này để đọc metrics.
+# Các công cụ khác (Alertmanager, custom scripts) cũng dùng
+# service này để query PromQL.
+# ============================================================
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus-service
+  namespace: monitoring
+  annotations:
+    prometheus.io/scrape: 'true'   # Cho phép Prometheus tự scrape chính nó
+    prometheus.io/port: '9090'     # Port để scrape metrics
+spec:
+  selector:
+    app: prometheus-server  # Chọn pods có label app=prometheus-server
+  # ClusterIP: chỉ truy cập nội bộ cluster
+  # Nếu cần truy cập từ bên ngoài, sử dụng Ingress hoặc đổi thành NodePort
+  type: ClusterIP
+  ports:
+    - port: 9090        # Port mà service expose cho các client trong cluster
+      targetPort: 9090  # Port container Prometheus lắng nghe
+      name: http
